@@ -1,0 +1,118 @@
+
+.calendar {
+	background: white; border: 2px solid rgb(201, 215, 241); color: rgb(102, 102, 102); font-family: arial; font-size: 11px; margin-top: 2px; display: none; position: relative; cursor: default;margin-left:-37px;border-radius:4px;width:222px;overflow:hidden;
+}
+.calendar table {
+	background: white; color: rgb(102, 102, 102); font-family: tahoma,verdana,sans-serif; font-size: 12px; cursor: default;
+}
+.calendar .button {
+	padding: 1px; text-align: center;
+}
+.calendar thead .title {
+	padding: 1px; text-align: center; color: rgb(0, 0, 0);
+}
+.calendar thead .headrow {
+	line-height:30px;height:30px;overflow:hidden;border:#fff solid 1px;
+}
+.calendar thead .daynames {
+	
+}
+.calendar thead .name {
+	background: rgb(229, 236, 249); padding: 2px; text-align: center;
+}
+.calendar thead .weekend {
+	color: rgb(102, 102, 102);
+}
+.calendar thead .hilite {
+	background: rgb(216, 224, 228); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(0, 0, 0) rgb(0, 0, 0) rgb(255, 255, 255); padding: 0px;
+}
+.calendar thead .active {
+	background: rgb(184, 192, 196); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(255, 255, 255) rgb(255, 255, 255) rgb(0, 0, 0);
+}
+.calendar tbody .day {
+	padding: 2px 4px 2px 2px; width: 2em; text-align: center;
+}
+.calendar table .wn {
+	background: rgb(232, 244, 240); padding: 2px 3px 2px 2px; border-right-color: rgb(0, 0, 0); border-right-width: 1px; border-right-style: solid;
+}
+.calendar tbody .rowhilite td {
+	background: rgb(216, 228, 224);
+}
+.calendar tbody .rowhilite td.wn {
+	background: rgb(200, 212, 208);
+}
+.calendar tbody td.hilite {
+	border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(0, 0, 0) rgb(0, 0, 0) rgb(255, 255, 255); padding: 1px 3px 1px 1px;
+}
+.calendar tbody td.active {
+	border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(255, 255, 255) rgb(255, 255, 255) rgb(0, 0, 0); padding: 1px 1px 0px;
+}
+.calendar tbody td.selected {
+	background: rgb(0, 128, 0); border-color: rgb(0, 0, 0) rgb(255, 255, 255) rgb(255, 255, 255) rgb(0, 0, 0); padding: 2px 2px 0px; color: rgb(255, 255, 255); font-weight: bold;
+}
+.calendar tbody td.weekend {
+	
+}
+.calendar tbody td.today {
+	color: rgb(0, 0, 0); font-weight: bold;
+}
+.calendar tbody .disabled {
+	color: rgb(153, 153, 153);
+}
+.calendar tbody .emptycell {
+	visibility: hidden;
+}
+.calendar tbody .emptyrow {
+	display: none;
+}
+.calendar tfoot .footrow {
+	
+}
+.calendar tfoot .ttip {
+	background: rgb(255, 255, 255); padding: 1px; text-align: center; color: rgb(0, 0, 0);
+}
+.calendar tfoot .hilite {
+	background: rgb(216, 224, 228); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(0, 0, 0) rgb(0, 0, 0) rgb(255, 255, 255); padding: 1px;
+}
+.calendar tfoot .active {
+	border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(255, 255, 255) rgb(255, 255, 255) rgb(0, 0, 0); padding: 2px 0px 0px 2px;
+}
+.combo {
+	background: rgb(216, 224, 228); border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(0, 0, 0) rgb(0, 0, 0) rgb(255, 255, 255); padding: 1px; left: 0px; top: 0px; width: 4em; font-size: smaller; display: none; position: absolute; cursor: default;
+}
+.combo .label {
+	padding: 1px; text-align: center;
+}
+.combo .active {
+	background: white; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(255, 255, 255) rgb(255, 255, 255) rgb(0, 0, 0); padding: 0px;
+}
+.combo .hilite {
+	background: rgb(0, 68, 136); color: rgb(170, 238, 255);
+}
+.gray {
+	color: gray;
+}
+.ac_results {
+	background: rgb(255, 255, 255); margin: 0px 1px 0px 0px; border: 1px solid rgb(127, 157, 185); width: 100px; display: none; position: absolute; z-index: 10000;
+}
+.ac_results ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.ac_results li a {
+	padding: 1px 3px; color: rgb(51, 51, 51); font-family: "Î¢ÈíÑÅºÚ"; font-size: 14px; text-decoration: none; white-space: nowrap;
+}
+.ac_results li {
+	line-height: 26px;
+}
+.ac_over {
+	background: rgb(124, 180, 54);
+}
+.ac_results li a:hover {
+	background: rgb(124, 180, 54);
+}
+.rsSpan {
+	margin-right: 10px;
+}
+.ac_result_tip {
+	padding: 3px; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 1px; border-bottom-style: dashed;
+}

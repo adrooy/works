@@ -1,0 +1,93 @@
+sudo dpkg -i virtualbox-Ubuntu~precise_amd64.deb 
+sudo apt-get install -f  
+
+
+安装python MySQLdb
+    wget http://jaist.dl.sourceforge.net/project/mysql-python/mysql-python-test/1.2.4b4/MySQL-python-1.2.4b4.tar.gz
+    #解压
+    tar -zxvf MySQL-python-1.2.4b4.tar.gz
+    cd MySQL-python-1.2.4b4
+    #安装
+    python setup.py build
+    python setup.py install
+    出错解决
+    ImportError: No module named setuptools   apt-get install python-setuptools
+    mysql_config not found  apt-get install libmysqld-dev
+    gcc错误     apt-get install python-dev
+
+
+ubuntu配置android开发环境
+http://blog.csdn.net/typ0520/article/details/8019356
+
+virtualBox虚拟机配置
+http://zrqcbx.blog.163.com/blog/static/61611825201171933852622/
+
+appt在ubuntu_64运行出错
+sudo apt-get install lib32stdc++6
+sudo apt-get install lib32z1
+http://albertcn.blog.163.com/blog/static/20942014520139121217730/
+
+Android系统原理及开发要点详解
+深入浅出　google android
+
+find . -name '*.py' | xargs -n50 grep 'sys'
+
+
+tar -zcvf androguard.tar.gz androguard
+tar -ztvf androguard.tar.gz
+http://www.cppblog.com/CWindows/archive/2009/08/11/92872.html
+
+
+create database lottery default charset utf8;
+./manage.py syncdb --database=lottery
+django多数据库的应用
+http://my.oschina.net/u/572994/blog/108533
+
+ssh root@192.168.1.15 111111
+root !LBE_Privacy#
+
+统计中奖页面
+cat access.log  |grep 'http://116.255.240.163:8180/lottery/wandoujia/20140529/'  | wc -l
+
+
+mount -t cifs //NAS1/Backup/DB -o username=lbesec.org/xxxxx,password=yyyyyy/mnt/nas1/db
+
+dump数据
+mysqldump -uroot -p dbatest > dbatest_pet.sql
+
+
+mount -t cifs //NAS1/app_apk -o username=lbesec.org/xiangxiaowei,password= /opt/www/permission/androguard/download
+
+221.218.93.201
+116.255.240.163 
+cat /var/log/nginx/erro.log | grep 'lbe-desktop/1' | sort -r | head -20 | awk '{print $1" "$2" "$16}'
+root Eiweib4,7m0,2
+lbe Qaz,~Yr2E(6!F8YR
+
+查找指定内容的文件路径
+find . -type f  -exec grep 'accounts/login'  -l {} \;
+
+use git:
+git clone git@git.lbesec.com:backend/data.git
+
+git pull (svn update)
+git add (svn add)
+git commit xxx -m ''
+git push
+git log
+
+更新代码也是
+git pull
+
+git status
+git rm 
+git commit -m ''
+
+git status
+git add .
+git commit -m ''
+
+git push
+
+git config http.postBuffer 52428800
+

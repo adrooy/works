@@ -1,0 +1,120 @@
+{% extends "market/recommend/header.html" %}
+{% block title %}推荐页编辑{% endblock %}
+{% block content %}
+
+    <div style="height:2%;font-size:25px;margin-top:0.25%">
+    <p>banner列表</p>
+    </div>
+    <hr>
+    <div style="width:100%;height:27%;overflow:scroll;align:center;margin-top:2%">
+        <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+            <thead>
+                <tr>
+                    <th width="10%">banner名</th>
+                    <th width="10%">是否有效</th>
+                    <th width="10%">类型</th>
+                    <th width="10%">排列序号</th>
+                    <th width="10%">游戏ID</th>
+                    <th width="10%">专题ID</th>
+                    <th width="10%">banner图片</th>
+                    <th width="10%">bannerID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for banner in banners %}
+                    {% ifequal banner.id banner_id %}
+                    <tr id="banner" value="{{ banner.id }}" class="highlight">
+                    {% else %}
+                    <tr id="banner" value="{{ banner.id }}">
+                    {% endifequal %}
+                    {% if not banner.enabled %}
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.name }}</font></td>
+                        <td colspan="1"><font color="#DDDDDD">无效</font></td>
+                        {% if banner.game_id %}
+                        <td colspan="1"><font color="#DDDDDD">游戏</font></td>
+                        {% endif %}
+                        {% if banner.topic_id %}
+                        <td colspan="1"><font color="#DDDDDD">专题</font></td>
+                        {% endif %}
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.order_num }}</font></td>
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.game_id }}</font></td>
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.topic_id }}</font></td>
+                        <td colspan="1"><img src="{{ banner.pic_url }}"></td>
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.id }}</font></td>
+                    {% endif %}
+                    {% if banner.enabled %}
+                        <td colspan="1">{{ banner.name }}</font></td>
+                        <td colspan="1">有效</font></td>
+                        {% if banner.game_id %}
+                        <td colspan="1">游戏</font></td>
+                        {% endif %}
+                        {% if banner.topic_id %}
+                        <td colspan="1">专题</font></td>
+                        {% endif %}
+                        <td colspan="1">{{ banner.order_num }}</font></td>
+                        <td colspan="1">{{ banner.game_id }}</font></td>
+                        <td colspan="1">{{ banner.topic_id }}</font></td>
+                        <td colspan="1"><img src="{{ banner.pic_url }}"></td>
+                        <td colspan="1">{{ banner.id }}</font></td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height:5%;margin-bottom:2%;margin-top:2%">
+    <input type="button" id="banner_add" value="新增banner" class="submit_button"></input> 
+    <input type="button" id="banner_delete" value="删除banner" class="submit_button"></input> 
+    <input type="button" id="banner_isenabled" value="启用banner" class="submit_button"></input> 
+    <input type="button" id="banner_notenabled" value="禁用banner" class="submit_button"></input> 
+    <input type="button" id="banner_up" value="banner位置上移" class="submit_button"></input> 
+    <input type="button" id="banner_down" value="banner位置下移" class="submit_button"></input> 
+    <input type="button" id="banner_move" value="移动到指定位置" class="submit_button"></input> 
+    <input type="button" id="banner_alter" value="banner修改" class="submit_button"></input> 
+    </div>
+    <hr>
+
+    <div style="height:2%;font-size:25px;margin-top:0.25%">
+    <p id="index" style="visibility:hidden" value="{{index}}"></p>
+    <p>游戏列表</p>
+    </div>
+    <hr>
+
+    <div style="width:100%;height:27%;overflow:scroll;align:center;">
+        <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+            <thead>
+                <tr>
+                    <th width="20%">游戏名</th>
+                    <th width="20%">序号</th>
+                    <th width="20%">游戏ID</th>
+                    <th width="20%">游戏状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for game in games %}
+                {% ifequal game.game_id game_id %}
+                <tr id="game" value="{{ game.game_id }}" class="highlight">
+                {% else %}
+                <tr id="game" value="{{ game.game_id }}">
+                {% endifequal %}
+                    <td colspan="1">{{ game.game_name }}</td>
+                    <td colspan="1">{{ game.manual_num }}</td>
+                    <td colspan="1">{{ game.game_id }}</td>
+                    <td colspan="1">{{ game.enabled }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height:5%;margin-bottom:2%;margin-top:2%">
+    <input type="button" id="recgame_add" value="增加游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_delete" value="删除游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_up" value="游戏位置上移" class="submit_button"></input> 
+    <input type="button" id="recgame_down" value="游戏位置下移" class="submit_button"></input> 
+    <input type="button" id="recgame_move" value="移动到指定位置" class="submit_button"></input> 
+    <input type="button" id="game_detail" value="查看游戏详情" class="submit_button"></input> 
+    </div>
+ 
+{% endblock %}

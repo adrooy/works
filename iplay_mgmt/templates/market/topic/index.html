@@ -1,0 +1,66 @@
+{% extends "market/topic/header.html" %}
+{% block title %}专题调整{% endblock %}
+{% block content %}
+
+    <div style="height:5%;font-size:25px;margin-top:2%">
+    <p id="index" style="visibility:hidden" value="{{index}}"></p>
+    <p>专题页</p>
+    </div>
+    <hr>
+    <div style="width:100%;height:70%;overflow:scroll;align:center;margin-top:2%">
+        <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+            <thead>
+                <tr>
+                    <th width="10%">专题名</th>
+                    <th width="2%">是否有效</th>
+                    <th width="2%">排列序号</th>
+                    <th width="10%">专题简单描述</th>
+                    <th width="44%">专题详细描述</th>
+                    <th width="10%">专题图片</th>
+                    <th width="2%">专题ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for topic in topics %}
+                {% ifequal topic.id topic_id %}
+                <tr id="topic" value="{{ topic.id }}" class="highlight">
+                {% else %}
+                <tr id="topic" value="{{ topic.id }}">
+                {% endifequal %}
+                    {% if not topic.enabled %}
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.name }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">无效</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.order_num }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.short_desc }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.detail_desc }}</font></td>
+                    <td colspan="1"><img src="{{ topic.pic_url }}"></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.id }}</font></td>
+                    {% endif %}
+                    {% if topic.enabled %}
+                    <td colspan="1">{{ topic.name }}</td>
+                    <td colspan="1">有效</td>
+                    <td colspan="1">{{ topic.order_num }}</td>
+                    <td colspan="1">{{ topic.short_desc }}</td>
+                    <td colspan="1">{{ topic.detail_desc }}</td>
+                    <td colspan="1"><img src="{{ topic.pic_url }}"></td>
+                    <td colspan="1">{{ topic.id }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+
+    <div style="height:5%;margin-bottom:2%;margin-top:2%">
+    <input type="button" id="topic_add" value="新增专题" class="submit_button"></input> 
+    <input type="button" id="topic_notenabled" value="禁用专题" class="submit_button"></input> 
+    <input type="button" id="topic_isenabled" value="启用专题" class="submit_button"></input> 
+    <input type="button" id="topic_up" value="专题位置上移" class="submit_button"></input> 
+    <input type="button" id="topic_down" value="专题位置下移" class="submit_button"></input> 
+    <input type="button" id="topic_move" value="移动到指定位置" class="submit_button"></input> 
+    <input type="button" id="topic_alter" value="专题修改" class="submit_button"></input> 
+    <input type="button" id="topic_delete" value="删除专题" class="submit_button"></input> 
+    </div>
+
+{% endblock %}

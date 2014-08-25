@@ -1,0 +1,151 @@
+android的系统架构
+http://www.oschina.net/question/12_13318
+
+android开发必须深入学习的10个应用
+http://my.oschina.net/zxfxingkong/blog/55604
+
+android学习资料
+http://tiannanyi.blog.163.com/blog/static/187359344201342863849881/
+
+两本书:
+    Android系统原理及开发要点详解：偏向原理和开发方法，不适合直接上手编程
+
+    深入浅出Google Android
+
+android技术内幕，系统卷
+http://my.oschina.net/468730630/blog/211742
+
+androguard的安装和使用
+http://www.cnblogs.com/zhaoshuai1215/p/3438192.html
+
+___________________________________________________________
+
+
+20140508_10-11
+android和ios的后台推送原理
+http://www.zhihu.com/question/20667886
+    iOS 系统的推送（APNS，即 Apple Push Notification
+    Service）依托一个或几个系统常驻进程运作，是全局的（接管所有应用的消息推送），所以可看作是独立于应用之外，而且是设备和苹果服务器之间的通讯，而非应用的提供商服务器。你的例子里面，腾讯
+    QQ
+    的服务器（Provider）会给苹果公司对应的服务器（APNs）发出通知，然后再中转传送到你的设备（Devices）之上。当你接收到通知，打开应用，才开始从腾讯服务器接收数据，跟你之前看到通知里内容一样，但却是经由两个不同的通道而来。
+
+    而
+    Android，就不同，更像是传统桌面电脑系统做法。每个需要后台推送的应用有各自的单独后台进程，才能和各自的服务器通讯，交换数据。另外其实
+    Android 也有类似 APNS 的 GCM（Google Cloud
+    Message），属于开发者可选，非强制。（更多请看本回答评论区里面 的补充）
+
+    所以你大概看出来区别，iOS
+    的消息推送机制面世之时是一种全新的解决方案（堪称平台中的平台），应用本身不能有常驻的后台进程，系统的开销少，内存使用更少，电量也更少（把更多的运算和资源开销放在云端，非设备端）。而
+    Android 的特点，虽然开销大，优点是更稳定快速，但不明显。
+
+    iOS 的推送：就是 Apple 官方的 APNs （Apple Push Notification service）。
+    Android 的推送：Google 官方的是 GCM (Google Cloud Messaging）。
+
+            本质上，APNs 与 GCM 是类似的技术实现原理：即系统层有一个常驻的 TCP
+            长连接，一直保持的长连接，即使手机休眠的时候也在保持的长连接。
+
+            这里对于大部分人来说，最不理解的就是，休眠时候都保持在那里的 TCP
+            长连接，不会耗电很厉害么？
+            答案是：不会。这是手机的设计来做到的。TCP长连接有个心跳的时间，在国外可以很长比如30分钟，在国内则因为网络环境复杂一般10分钟。客户端发起的心跳，会短暂地消耗手机电能，但在这个心跳间隔期间，则消耗电能是很少的。当在心跳期间服务器端有推送信息过来时，客户端可以收到并做处理。
+            这里有篇文章以 Android
+            为例做原理解释：http://blog.jpush.cn/index.php/jpush_wireless_push_principle/
+
+            再说 APNs 的设计成功处。
+
+            iOS
+            为了真正地为用户体验负责，不允许应用在后台活动。有了这个限制，但是对于终端设备，应用又是有必要“通知”到达用户的，随时与用户主动沟通起来的（典型的如聊天应用）。
+
+            这就是 APNs 的逻辑所在：iOS
+            自己做个长驻后台保持连接。所有应用，有必要（申请）并且被允许（用户可以改设置）的话，可以通过
+            APNs 中转到达用户。
+
+            这样就完善了！
+
+    有可能很多人没有真正地体会到 iOS 不允许后台应用的好处。我是 Android
+    开发人员，Android 手机上一般只保留几个常用的应用，不常用就卸载。但是我的
+    iPhone / iPad 上则是，除非空间不足，一般不会删除应用。
+    Android 就像
+    Windows，你要真的很费心去维护：有软件在干背后干坏事么？设备又给拖慢了，要清理。要考虑杀毒了。。。
+
+    Android 因为后台可以长驻，尤其是国内的 Android 的手机上
+    Google自家的推送服务 GCM
+    处于基本不可用的状态。所以，各App各显神通。聊天类应用的话，大多数直接借用
+    XMPP
+    规范里的一些成果。少量如微信有IM底子的，自己开发协议。这些在实现原理上与
+    APNs / GCM
+    没有本质的区别，但有一定的技术门槛。而大多数普遍应用，要使用推送的话，则使用轮询的方式简单实现。
+
+    其实，国外如 Urban Airship 自己实现了 Android
+    上的第三方提供的推送平台。近期国内如极光推送也实现了第三方的推送平台（技术与微信、GCM、APNs类似）。理论上，如果一个
+    Android 设备上多款应用都使用极光推送这种第三方推送平台的话，也可以如 APNs
+    一样达到节省电量、流量消耗的效果。 
+
+    基本对android应用的后台原理有点了解，知道大概方向，和工作的原理。
+
+20140508_11-12
+看了android系统原理及开发要点详解的一，二章。了解系统的
+
+20140508-14-16
+ubuntu下安装安卓的模拟器(解决)
+    在adb目录下执行./adb shell　出现error: device not found
+     问题描述：在CMD命令行，输入adb
+     shell，想要进入设备linux控制台的时候，报：error: device not
+     found，但我的模拟器明明是启动的。输入adb devices，显示设备列表为空。
+     解决办法：
+        sudo ./adb kill-server
+        sudo ./adb start-server
+        然后出现error: device unauthorized. Please check the confirmation dialog on
+    your device.
+        打开手机，授权。
+
+    启动模拟器
+    http://hi.baidu.com/lonml/item/99c89be229d60815585dd8c6
+    http://blog.163.com/zhaolin53636848@126/blog/static/49086668201211210853358/http://www.blogjava.net/anchor110/articles/335866.html
+
+运用adb进入安卓手机各个文件夹查看
+
+__________________________________________________________________________________________________________________-
+
+
+20140509_10-11
+开启ubuntu ssh 服务
+http://www.cnblogs.com/nodot/archive/2011/06/10/2077595.html
+sudo apt-get install openssh-client
+sudo apt-get install openssh-server
+启动ssh服务
+service ssh start
+ssh-server配置文件/etc/ssh/sshd-config
+
+http://blog.sina.com.cn/s/blog_a257238b01015dyl.html
+scp xiangxiaowei@192.168.50.122:/home/xiangxiaowei/share/*.apk /home/android/ubuntu_apk/.
+http://blog.csdn.net/Xbalien29/article/details/21885297
+
+讲之前下载好的apk　copy到androguard中，开始工作
+
+20140509_11-15
+研究androguard的类库APK
+.apk安装包实质上为.zip压缩包把后缀名改为了apk
+安卓apk包中的内容：http://zhidao.baidu.com/question/582766701210282125.html
+
+输出package,versionCode:
+   /home/android/tools/androguard/androguard/core/bytecodes/apk.py 中class APK:192
+
+20140509_15-20
+要找到各个权限运行的函数调用过程
+研究androgexf.py
+主要是ganalysis
+https://www.virustotal.com/en/file/a56427e4ea8d46463263e4564fed0b2fe6b42bed7601c2bf952475b578b3eba9/analysis/#item-detail
+http://zhidao.baidu.com/question/582766701210282125.html
+http://blog.csdn.net/Xbalien29/article/details/21885297
+
+20140511_10-12
+python的psyco模块可以加快python运行速度。
+http://tech.it168.com/o/2008-01-18/200801180035043.shtml
+找到权限相关的api及其调用
+
+20140511_13-17
+ubuntu下使用dex2jar
+调出生成具体的文件
+
+ubuntu下常用python类库的安装(m2crypto密码库)
+http://kymcuc.blog.163.com/blog/static/2019421142014316112453385/
