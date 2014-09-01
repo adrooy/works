@@ -28,8 +28,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-DATE = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-TIME = float(time.time())
+market_log = logging.getLogger('market')
 
 
 @csrf_exempt
@@ -37,8 +36,25 @@ TIME = float(time.time())
 def release(request):
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+    os.system('python /root/operation/step_09_gen_mapping_tables_for_service/09_8_gen_category_to_game_result.py')
     os.system("wget -O - 'http://127.0.0.1:8080/gamecommunity/instruction!clear.action?name=table'")
     result = '发布完成'
+    market_log.debug('%s%s 发布数据' % (user.last_name, user.first_name))
+    response.write(result)
+    return response
+
+@csrf_exempt
+@login_required
+def update(request):
+    response=HttpResponse()  
+    response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+    os.system("sh /root/operation/cmd/cmd_sync_small_crack.sh")
+    result = '同步完成'
+    market_log.debug('%s%s 同步数据' % (user.last_name, user.first_name))
     response.write(result)
     return response
 
@@ -88,6 +104,8 @@ def edit(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     topic_id = request.POST.get('id', '')
     name = request.POST.get('name', '')
@@ -99,6 +117,9 @@ def edit(request):
     if not name or not short_desc or not pic_url:
         response.write('请输入专题信息!!!')
         return response
+
+    DATE = str(datetime.datetime.now().strftime('%Y-%m-%d'))
+    TIME = float(time.time())
 
     topic_date = TIME
 
@@ -129,6 +150,7 @@ def edit(request):
         for topic in topics:
             topic_id = topic.id
         result = '%s专题已添加!!!' % str(topic_id)
+        market_log.debug('%s%s 新增专题:%s' % (user.last_name, user.first_name, str(topic_id)))
     else:
         order_num = 1
         topics = TopicInfo.objects.all().order_by('order_num')
@@ -146,7 +168,7 @@ def edit(request):
         for topic in topics:
             topic_id = topic.id
         result = '%s专题已添加!!!' % str(topic_id)
-
+        market_log.debug('%s%s 新增专题:%s' % (user.last_name, user.first_name, str(topic_id)))
     response.write(topic_id)
     return response
 
@@ -156,10 +178,13 @@ def isenabled(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     id = request.POST.get('topic_id')
 
     TopicInfo.objects.filter(id=id).update(enabled=1)
+    market_log.debug('%s%s 启用专题:%s' % (user.last_name, user.first_name, str(id)))
 
     result = '%s 已启用!!!' % str(id)
     response.write(result)
@@ -171,10 +196,13 @@ def notenabled(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     id = request.POST.get('topic_id')
 
     TopicInfo.objects.filter(id=id).update(enabled=0)
+    market_log.debug('%s%s 禁用专题:%s' % (user.last_name, user.first_name, str(id)))
 
     result = '%s 已禁用!!!' % str(id)
     response.write(result)
@@ -259,10 +287,13 @@ def delete(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     topic_id = request.POST.get('topic_id')
 
     TopicInfo.objects.get(id=topic_id).delete()
+    market_log.debug('%s%s 删除专题:%s' % (user.last_name, user.first_name, str(topic_id)))
 
     order_num = 1
     topics = TopicInfo.objects.all().order_by('order_num')
@@ -314,6 +345,8 @@ def addGame(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     new_game_id = request.POST.get('game_id')
     game_id_index = request.POST.get('game_id_index')
@@ -342,6 +375,7 @@ def addGame(request):
             game_name = game.game_name
             games = TopicGame(game_id=game_id,topic_id=topic_id,game_name=game_name,order_num=order_num_index)
             games.save()
+            market_log.debug('%s%s 新增专题%s的游戏列表:%s' % (user.last_name, user.first_name, str(topic_id), game_id))
             result = '%s已添加到%s!!! %s' % (game_name, str(topic_id), str(order_num_index))
         else:
             order_num = 1
@@ -357,6 +391,7 @@ def addGame(request):
             game_name = game.game_name
             games = TopicGame(game_id=game_id,topic_id=topic_id,game_name=game_name,order_num=1)
             games.save()
+            market_log.debug('%s%s 新增专题%s的游戏列表:%s' % (user.last_name, user.first_name, str(topic_id), game_id))
             result = '%s已添加到%s!!!' % (game_name, str(topic_id))
    
     response.write(result)
@@ -368,19 +403,22 @@ def delGame(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     game_id = request.POST.get('game_id')
     topic_id = request.POST.get('topic_id')
 
     TopicGame.objects.get(game_id=game_id, topic_id=topic_id).delete()
-
+    market_log.debug('%s%s 删除专题%s的游戏列表:%s' % (user.last_name, user.first_name, str(topic_id), game_id))
+ 
     order_num = 1
     games = TopicGame.objects.filter(topic_id=topic_id).order_by('order_num')
     for game in games:
         game_id = game.game_id
         TopicGame.objects.filter(game_id=game_id,topic_id=topic_id).update(order_num=order_num)
         order_num += 1
-    
+ 
     result = '%s下的%s游戏已删除！！！' % (str(topic_id), str(game_id))
     response.write(result)
     return response

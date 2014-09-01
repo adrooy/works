@@ -1,0 +1,62 @@
+DEBUG market 2014-08-29 15:53:36 ./market/topic.py topic 44 测试 发布数据
+DEBUG market 2014-08-29 15:54:57 ./market/recommend.py recommend 541 测试 删除banner:18
+DEBUG market 2014-08-29 15:57:10 ./market/recommend.py recommend 423 测试 新增banner:47
+DEBUG market 2014-08-29 15:57:19 ./market/recommend.py recommend 547 测试 删除banner:19
+DEBUG market 2014-08-29 15:58:38 ./market/recommend.py recommend 100 测试 新增推荐列表的游戏:32f34a29
+DEBUG market 2014-08-29 15:58:48 ./market/recommend.py recommend 124 测试 删除推荐列表的游戏:32f34a29
+DEBUG market 2014-08-29 15:58:58 ./market/topic.py topic 44 测试 发布数据
+DEBUG market 2014-08-29 15:59:10 ./market/topic.py topic 171 测试 新增专题:59
+DEBUG market 2014-08-29 15:59:18 ./market/topic.py topic 205 测试 禁用专题:59
+DEBUG market 2014-08-29 15:59:28 ./market/topic.py topic 187 测试 启用专题:59
+DEBUG market 2014-08-29 15:59:36 ./market/topic.py topic 296 测试 删除专题:59
+DEBUG market 2014-08-29 15:59:53 ./market/topic.py topic 394 测试 新增专题47的游戏列表:32f34a29
+DEBUG market 2014-08-29 16:00:07 ./market/topic.py topic 413 测试 删除专题47的游戏列表:32f34a29
+DEBUG market 2014-08-29 16:00:22 ./market/category.py category 91 测试 新增1分类下的游戏:d262bed5
+DEBUG market 2014-08-29 16:00:30 ./market/category.py category 110 测试 删除1分类下的游戏:d262bed5
+DEBUG market 2014-08-29 16:00:37 ./market/category.py category 91 测试 新增7002分类下的游戏:d262bed5
+DEBUG market 2014-08-29 16:00:42 ./market/category.py category 110 测试 删除7002分类下的游戏:d262bed5
+DEBUG market 2014-08-29 16:00:52 ./market/hotsearch.py hotsearch 52 测试 新增热门词:飞车
+DEBUG market 2014-08-29 16:01:03 ./market/hotsearch.py hotsearch 67 测试 删除热门词:飞车
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 237 测试 修改702c926f的display_name:Traffic Racer(Google官方版)
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 240 测试 修改702c926f的download_num:50000000
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 245 测试 修改702c926f的color_label:2
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 248 测试 修改702c926f的screen_shot_urls:http://ggfile.qiniudn.com/4d7aa84b89f05ea79f8d4b7fa666cbe9
+http://ggfile.qiniudn.com/7d519ff5f04a64ebc03a10d6968b368b
+http://ggfile.qiniudn.com/f30bca52dcbbeafff2e78dc18d12b9a0
+http://ggfile.qiniudn.com/213b87ef808ea5aa94e35095b9c52972
+http://ggfile.qiniudn.com/120443250f804da9ca4d30cb12656c0f
+http://ggfile.qiniudn.com/3d846ba59a9249336a0d295d84b85a55
+http://ggfile.qiniudn.com/c3b59287e8c5ba2cc4fdb079eb955083
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 251 测试 修改702c926f的icon_urls:http://ggfile.qiniudn.com/036f765e1f3d43bfd1db69a09cc803fb?imageView/1/w/180/h/180
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 254 测试 修改702c926f的short_desc:《公路赛车Traffic Racer》是一款竞速类游戏，并且是无止境的竞速
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 257 测试 修改702c926f的detail_desc:《公路赛车Traffic Racer》是一款竞速类游戏，并且是无止境的竞速
+
+Traffic Racer is a milestone in the genre of endless arcade racing. Drive your car through highway traffic, earn cash, upgrade your car and buy new ones. Try to be one of the fastest drivers in the global leaderboards. Endless racing is now redefined!
+KEY FEATURES
+- Stunning 3D graphics
+- Smooth and realistic car handling
+- 21 different cars to choose from
+- 4 detailed environments: suburb, desert, snowy and city night
+- 4 game modes: Endless, Two-Way, Time Trial and Free Ride
+- Rich types of NPC traffic including trucks, buses and SUVs.
+- Basic customization through paint and wheels
+- Online Leaderboards and Achievements
+GAMEPLAY
+- Tilt or Touch to steer
+- Touch gas button to accelerate
+- Touch brake button to slow down
+TIPS
+- The faster you drive the more scores you get
+- When driving over 100 kmh, overtake cars closely to get bonus scores and cash
+- Driving in opposite direction in two-way mode gives extra score and cash
+Traffic Racer will be updated constantly. Please rate and give your feedback for further improvement of the game.
+FOLLOW US
+* <a href="https://www.google.com/url?q=http://facebook.com/trafficracergame&amp;sa=D&amp;usg=AFQjCNG_NUmpVva1a5qb9D46TwC0UHYMBg" target="_blank">http://facebook.com/trafficracergame</a>
+* <a href="https://www.google.com/url?q=http://twitter.com/TrafficRacer&amp;sa=D&amp;usg=AFQjCNGRKwjcN9vAt7KqX0TxrynDFWMhcw" target="_blank">http://twitter.com/TrafficRacer</a>
+* <a href="https://www.google.com/url?q=https://plus.google.com/115863800042796476976/&amp;sa=D&amp;usg=AFQjCNFA_Z8v5fVA-PbjoUE3u-Ohe5cHjg" target="_blank">https://plus.google.com/115863800042796476976/</a>
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 260 测试 修改702c926f的star_num:87
+DEBUG market 2014-08-29 16:01:36 ./game/views.py views 263 测试 修改702c926f的game_language:多国语言
+DEBUG market 2014-08-29 16:03:37 ./game/views.py views 255 测试 修改702c926f的信息
+DEBUG market 2014-08-29 16:16:58 ./market/topic.py topic 57 向晓玮 同步数据
+DEBUG market 2014-08-29 16:19:33 ./market/topic.py topic 57 测试 同步数据
+DEBUG market 2014-09-01 15:47:31 ./market/topic.py topic 57 测试 同步数据

@@ -14,11 +14,15 @@ from django.db.models.query import QuerySet
 from django.core.serializers import serialize
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User 
 
 from django.db import connection
 
 import os
+import json
+import logging
 
+market_log = logging.getLogger('market')
 
 class DjangoJSONEncoder(JSONEncoder):
 
@@ -30,15 +34,25 @@ class DjangoJSONEncoder(JSONEncoder):
 @csrf_exempt
 @login_required
 def search(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+#    is_superuser = user.is_superuser
+
     search_game_name = request.GET.get('search_game_name')
-    games = GameLabelInfo.objects.filter(game_name__contains=search_game_name).order_by('-download_counts')[:20]
-    #a= os.system('/opt/lucence/bin/searchgames2.sh 飞车 20')
-    #search_game_name = request.GET.get('search_game_name')
-    #a = ['01877eec', '314e8bd5', '68f580e0']
-    #games = []
-    #for game_id in a:
-    #    game = GameLabelInfo.objects.get(game_id=game_id)
-    #    games.append(game)
+    #games = GameLabelInfo.objects.filter(game_name__contains=search_game_name).order_by('-download_counts')[:20]
+    search_shell = '/opt/lucence/bin/searchgames2.sh %s 20' % search_game_name
+    try:
+        search_result = json.loads(os.popen(search_shell).readlines()[0].strip())   
+    except:
+        search_result = []
+
+    games = []
+    number = 1
+    for game_id in search_result:
+        game = GameLabelInfo.objects.get(game_id=game_id)
+        game.index = number 
+        games.append(game)
+        number += 1
     feedback, page_range, per_page = lbe_pagination(request, games)
     count = len(games)
     count_page = count / 25
@@ -48,7 +62,8 @@ def search(request):
         'page_range': page_range,
         'per_page': per_page,
         'count': count,
-        'count_page': count_page
+        'count_page': count_page+1,
+        'user': user
     }, context_instance=RequestContext(request))
 
 @csrf_exempt
@@ -57,12 +72,15 @@ def addScreen(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     game_id = request.POST.get('game_id')
     screen_shot_url = request.POST.get('screen_shot_url')
     info = GameLabelInfo.objects.get(game_id=game_id)
     screen_shot_urls = '%s\n%s' % (info.screen_shot_urls, screen_shot_url)
     info = GameLabelInfo.objects.filter(game_id=game_id).update(screen_shot_urls=screen_shot_urls)
+    market_log.debug('%s%s 增加%s截图:%s' % (user.last_name, user.first_name, game_id, screen_shot_url))
     result = 'yes'
     response.write(result)
     return response
@@ -70,6 +88,8 @@ def addScreen(request):
 @csrf_exempt
 @login_required
 def detail(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     game_id = request.GET.get('game_id')
     channels = []
@@ -94,17 +114,25 @@ def detail(request):
         'color_labels': color_labels,
         'screen_shot_urls': screen_shot_urls,
         'channels': channels,
+        'user': user,
         'pkg': pkgs[0]
     }, context_instance=RequestContext(request))
 
 @csrf_exempt
 @login_required
 def index(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+
     source = request.GET.get('source_id') if request.GET.get('source_id')  else 3
     games = GameLabelInfo.objects.filter(source=source).order_by('-download_counts')
     # print games.query
-    feedback, page_range, per_page = lbe_pagination(request, games)
     count = len(games)
+    number = 1
+    for game in games:
+        game.index = number 
+        number += 1
+    feedback, page_range, per_page = lbe_pagination(request, games)
     count_page = count / 25
     # print count, page_range, per_page
     return render_to_response('game/show.html', {
@@ -112,7 +140,8 @@ def index(request):
         'page_range': page_range,
         'per_page': per_page,
         'count': count,
-        'count_page': count_page,
+        'count_page': count_page+1,
+        'user': user,
         'source': int(source)
     }, context_instance=RequestContext(request))
 
@@ -186,6 +215,8 @@ def label_info_change(request):
 
     error = ""
     info = ""
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
 
     if request.method == "POST" and request.is_ajax():
         game_id = request.POST.get('game_id')
@@ -207,8 +238,7 @@ def label_info_change(request):
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(download_counts=download_num)
                 if subscript and subscript != 'None':
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(subscript=subscript)
-                if color_label and color_label != 'None':
-                    info = GameLabelInfo.objects.filter(game_id=game_id).update(color_label=color_label)
+                info = GameLabelInfo.objects.filter(game_id=game_id).update(color_label=color_label)
                 if screen_shot_urls and screen_shot_urls != 'None':
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(screen_shot_urls=screen_shot_urls)
                 if icon_urls and icon_urls != 'None':
@@ -222,6 +252,8 @@ def label_info_change(request):
                 if game_language and game_language != 'None':
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(game_language=game_language)
                 info = GameLabelInfo.objects.filter(game_id=game_id).update(is_changed=True)
+                market_log.debug('%s%s 修改%s的信息' % (user.last_name, user.first_name, game_id))
+ 
               #  info = GameLabelInfo.objects.filter(game_id=game_id).update(
               #      display_name=display_name,
               #      download_counts=download_num,

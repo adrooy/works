@@ -2,8 +2,10 @@
 
 {% block title %}游戏搜索结果{% endblock %}
 
-{% block content %}
+{% block user %}{{user.last_name}}{{user.first_name}}{% endblock %}
 
+{% block content %}
+     
     <aside class="side">
 
         <!-- Main content -->
@@ -22,6 +24,7 @@
                 <div class="table-responsive">
                     <!-- THE MESSAGES -->
                     <table class="table table-bordered">
+                        <th>序号</th>
                         <th>游戏名</th>
                         <th>游戏ID</th>
                         <th>ICON</th>
@@ -31,6 +34,7 @@
                         <th>语言</th>
                         {% for list in feedback %}
                             <tr>
+                                <td style="width: 1%">{{list.index}}</td>
                                 <td style="width: 5%"><a href="/iplay_mgmt/game/detail/?game_id={{ list.game_id }}">{{ list.game_name }}</a></td>
                                 <td style="width: 5%">{{ list.game_id }}</td>
                                 <td style="width: 15%"><img style="width:75px;height:75px;" src="{{ list.icon_url }}"></td>

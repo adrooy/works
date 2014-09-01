@@ -92,25 +92,25 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'admin',
-        'USER': 'root',
-        'PASSWORD': '111111',
-        'HOST': '192.168.1.45',
+        'USER': 'forum',
+        'PASSWORD': 'VQq*d@GY4F7J6]MP',
+        'HOST': '192.168.0.1',
         'PORT': '3306'
     },
     'market': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'forum',
-        'USER': 'root',
-        'PASSWORD': '111111',
-        'HOST': '192.168.1.45',
+        'USER': 'forum',
+        'PASSWORD': 'VQq*d@GY4F7J6]MP',
+        'HOST': '192.168.0.1',
         'PORT': '3306'
     },
     'game': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'forum',
-        'USER': 'root',
-        'PASSWORD': '111111',
-        'HOST': '192.168.1.45',
+        'USER': 'forum',
+        'PASSWORD': 'VQq*d@GY4F7J6]MP',
+        'HOST': '192.168.0.1',
         'PORT': '3306'
     }
 }

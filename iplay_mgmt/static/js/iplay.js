@@ -441,13 +441,143 @@ $("#game_detail").click(function(){
         alert("请选择游戏！！！");
     }
 });
+//_____________________________________________________
+//同步论坛数据，发布分类，推荐，专题等
 $("#release").click(function(){
     var descJson = {};
     if(confirm('确认发布吗？')){
         $.post('/iplay_mgmt/market/release/', descJson, function(result){
             alert('发布已完成！');
+            window.location.reload();       
         });
     }else{
         alert('取消发布！');
+    }
+});
+$("#update").click(function(){
+    var descJson = {};
+    if(confirm('确认同步论坛数据吗？')){
+        $.post('/iplay_mgmt/market/update/', descJson, function(result){
+            alert(result);
+            window.location.reload();       
+        });
+    }else{
+        alert('取消同步！');
+    }
+});
+
+//________________________________________________________
+//分类
+$("#cats").change(function(){
+    var cat_id = $("#cats").val();
+    var desc_cat_id = $("#desc_cats").val();
+    window.location.href = '/iplay_mgmt/market/category/?cat_id='+cat_id;
+});
+$("#desc_cats").change(function(){
+    var cat_id = $("#cats").val();
+    var desc_cat_id = $("#desc_cats").val();
+    window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+});
+$("#cat_game_add").click(function(){
+    var game_id = prompt('请输入添加的游戏ID');
+    var manual_num = prompt('请输入添加的游戏序号');
+    var cat_id = $("#cats").val();
+    var desc_cat_id = $("#desc_cats").val();
+    var descJson = {}
+    descJson['game_id'] = game_id;
+    descJson['manual_num'] = manual_num;
+    descJson['cat_id'] = cat_id;
+    descJson['desc_cat_id'] = desc_cat_id;
+    $.post('/iplay_mgmt/market/category_addGame/', descJson, function(result){
+        window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+    });
+});
+$("#cat_game_delete").click(function(){
+    var game_id = $(".highlight#game").attr("value");
+    var cat_id = $("#cats").val();
+    var desc_cat_id = $("#desc_cats").val();
+    var descJson = {}
+    descJson['game_id'] = game_id;
+    descJson['cat_id'] = cat_id;
+    descJson['desc_cat_id'] = desc_cat_id;
+    if(game_id){
+        if(confirm('确认删除吗？')){
+            $.post('/iplay_mgmt/market/category_delGame/', descJson, function(result){
+                window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+            });
+        }else{
+            alert('取消删除！');
+        }
+    }else{
+        alert("请选择游戏！！！");
+    }
+});
+$("#cat_game_edit").click(function(){
+    var game_id = $(".highlight#game").attr("value");
+    var manual_num = prompt('请输入要修改的游戏序号');
+    var cat_id = $("#cats").val();
+    var desc_cat_id = $("#desc_cats").val();
+    var descJson = {}
+    descJson['game_id'] = game_id;
+    descJson['manual_num'] = manual_num;
+    descJson['cat_id'] = cat_id;
+    descJson['desc_cat_id'] = desc_cat_id;
+    $.post('/iplay_mgmt/market/category_editGame/', descJson, function(result){
+        window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+    });
+});
+//_____________________________________________________________
+//
+//热门词
+$("#hotsearch").change(function(){
+    var word = $("#hotsearch").val();
+    window.location.href = '/iplay_mgmt/market/hotsearch/?word='+word;
+});
+$("#hotsearch_add").click(function(){
+    var word = prompt('请输入要新增的热门词');
+    var order_num = prompt('请输入要新增的热门词序号');
+    var descJson = {}
+    descJson['word'] = word;
+    descJson['order_num'] = order_num;
+    $.post('/iplay_mgmt/market/hotsearch_add/', descJson, function(result){
+        window.location.href = '/iplay_mgmt/market/hotsearch/';
+    });
+});
+$("#hotsearch_del").click(function(){
+    var word = $(".highlight#word").attr("value");
+    var descJson = {}
+    descJson['word'] = word;
+    if(word){
+        if(confirm('确认删除吗？')){
+            $.post('/iplay_mgmt/market/hotsearch_del/', descJson, function(result){
+                window.location.href = '/iplay_mgmt/market/hotsearch/';
+            });
+        }else{
+            alert('取消删除');
+        }
+    }else{
+        alert('请选择热门词');
+    }
+});
+$("#hotsearch_edit").click(function(){
+    var word = $(".highlight#word").attr("value");
+    if(word){
+        var order_num = prompt('请输入要新增的热门词序号');
+        var descJson = {}
+        descJson['word'] = word;
+        descJson['order_num'] = order_num;
+        $.post('/iplay_mgmt/market/hotsearch_edit/', descJson, function(result){
+            window.location.href = '/iplay_mgmt/market/hotsearch/';
+        });
+    }else{
+        alert('请选择热门词');
+    }
+});
+$("#hotsearch_search").click(function(){
+    var word = $(".highlight#word").attr("value");
+    if(word){
+        window.location.href = '/iplay_mgmt/market/hotsearch_search/?word='+word;
+    }else{
+        alert('请选择热门词');
     }
 });

@@ -1,49 +1,24 @@
 {% extends "game/header.html" %}
 
-{% block title %}游戏信息列表{% endblock %}
+{% block title %}热门词游戏列表{% endblock %}
 
 {% block user %}{{user.last_name}}{{user.first_name}}{% endblock %}
 
 {% block content %}
 
-            <div style="float:left;margin-left:5%;margin-top:2.5%;">
-            <span style="font-size:20px;">游戏来源</span>
-            <select id="source" style="width:200px">
-                {% ifequal source 1 %}
-                <option value="1" selected="selected">其他渠道</option>
-                <option value="2">论坛</option>
-                <option value="3">GooglePlay</option>
-                {% endifequal %}
-                {% ifequal source 2 %}
-                <option value="1">其他渠道</option>
-                <option value="2" selected="selected">论坛</option>
-                <option value="3">GooglePlay</option>
-                {% endifequal %}
-                {% ifequal source 3 %}
-                <option value="1">其他渠道</option>
-                <option value="2">论坛</option>
-                <option value="3" selected="selected">GooglePlay</option>
-                {% endifequal %}
-            </select>
-            </div>
-            <div style="float:right;margin-right:5%;margin-top:2.5%;">
-            <input type="text" id="search_game_name" autocomplete="off" name="q" value="" class="search_text left" style="width:150px;vertical-align:middle;"/>
-            <input type="button" id="search_game" value="在所有游戏中搜索" class="search_sub right" style="left:140px;top:90px;vertical-align:middle;"/>
-            </div>
+<div style="height:2%;font-size:25px;margin-top:2%">
+<p id="index" style="visibility:hidden" value="{{index}}"></p>
+<p>{{word}}下游戏列表</p>
+</div>
+<hr>
 
     <aside class="side">
 
         <!-- Main content -->
 
         <section class="content">
-            <div class="row">
-                <!--分页-->
-                <div class="col-xs-6">
-                  {% include "game/pagination.html" %}
-                </div>
-            </div>
 
-            {% if feedback %}
+            {% if games %}
             <div class="col-md-2">
                 <!-- TABLE BEGIN -->
                 <div class="table-responsive">
@@ -57,12 +32,12 @@
                         <th>类型</th>
                         <th>评分</th>
                         <th>语言</th>
-                        {% for list in feedback %}
+                        {% for list in games %}
                             <tr>
                                 <td style="width: 1%">{{list.index}}</td>
                                 <td style="width: 5%"><a href="/iplay_mgmt/game/detail/?game_id={{ list.game_id }}">{{ list.game_name }}</a></td>
                                 <td style="width: 5%">{{ list.game_id }}</td>
-                                <td style="width: 5%"><img style="width:75px;height:75px;" src="{{ list.icon_url }}"></td>
+                                <td style="width: 15%"><img style="width:75px;height:75px;" src="{{ list.icon_url }}"></td>
                                 <td style="width: 5%">{{ list.download_counts }}</td>
                                 <td style="width: 5%">{{ list.game_types }}</td>
                                 <td style="width: 5%">{{ list.star_num }}</td>
@@ -86,10 +61,6 @@
 
 {% block extrajs %}
 <script type="text/javascript">
-$("#source").change(function(){
-    var source_id = $("#source").val();
-    window.location.href = '/iplay_mgmt/game/?source_id='+source_id;
-});
 $("#search_game").click(function(){
     var search_game_name  = $("#search_game_name").attr("value");
     if(search_game_name){

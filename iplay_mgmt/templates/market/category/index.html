@@ -1,0 +1,109 @@
+{% extends "market/header.html" %}
+{% block title %}分类游戏列表{% endblock %}
+{% block user %}{{user.last_name}}{{user.first_name}}{% endblock %}
+{% block content %}
+
+<div style="float:left;margin-left:5%;margin-top:2.5%;">
+    <span style="font-size:20px;">一级分类</span>
+    <select id="cats" style="width:200px">
+    {% for cat in cats %}
+        {% ifequal cat.id cat_id %}
+        <option value="{{ cat.id }}" selected="selected">{{ cat.display_name }}</option>
+        {% else %}
+        <option value="{{ cat.id }}">{{ cat.display_name }}</option>
+        {% endifequal %}
+    {% endfor %}
+    </select>
+</div>
+<div style="float:left;margin-left:5%;margin-top:2.5%;">
+    <span style="font-size:20px;">二级分类</span>
+    <select id="desc_cats" style="width:200px">
+    {% if desc_cat_id %}
+    <option value="{{ cat_id }}">所有分类</option> 
+    {% else %}
+    <option value="{{ cat_id }}" selected="selected">所有分类</option> 
+    {% endif %}
+    {% for desc_cat in desc_cats %}
+        {% ifequal desc_cat.parent_id cat_id %}
+            {% ifequal desc_cat.id desc_cat_id %}
+            <option value="{{ desc_cat.id }}" selected="selected">{{ desc_cat.display_name }}</option>
+            {% else %}
+            <option value="{{ desc_cat.id }}">{{ desc_cat.display_name }}</option>
+            {% endifequal %}
+        {% endifequal %}
+    {% endfor %}
+    </select>
+</div>
+
+<div style="height:2%;font-size:25px;margin-top:5%">
+<p id="index" style="visibility:hidden" value="{{index}}"></p>
+<p>人工排序列表</p>
+</div>
+<hr>
+
+<div style="width:100%;height:27%;overflow:scroll;align:center;">
+    <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+        <thead>
+            <tr>
+                <th width="20%">游戏名</th>
+                <th width="20%">序号</th>
+                <th width="20%">游戏ID</th>
+                <th width="20%">游戏状态</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games4peo %}
+            {% ifequal game.game_id game_id %}
+            <tr id="game" value="{{ game.game_id }}" class="highlight">
+            {% else %}
+            <tr id="game" value="{{ game.game_id }}">
+            {% endifequal %}
+                <td colspan="1">{{ game.game_name }}</td>
+                <td colspan="1">{{ game.manual_num }}</td>
+                <td colspan="1">{{ game.game_id }}</td>
+                <td colspan="1">{{ game.enabled }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div style="height:5%;margin-bottom:2%;margin-top:2%">
+<input type="button" id="cat_game_add" value="增加游戏" class="submit_button"></input> 
+<input type="button" id="cat_game_delete" value="删除游戏" class="submit_button"></input> 
+<input type="button" id="cat_game_edit" value="编辑游戏" class="submit_button"></input> 
+<input type="button" id="game_detail" value="查看游戏详情" class="submit_button"></input> 
+</div>
+<hr>
+ 
+<div style="height:2%;font-size:25px;margin-top:3%">
+<p id="index" style="visibility:hidden" value="{{index}}"></p>
+<p>自然排序列表</p>
+</div>
+<hr>
+
+<div style="width:100%;height:27%;overflow:scroll;align:center;">
+    <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+        <thead>
+            <tr>
+                <th width="20%">游戏名</th>
+                <th width="20%">序号</th>
+                <th width="20%">游戏ID</th>
+                <th width="20%">游戏状态</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games4sys %}
+            <tr>
+                <td colspan="1">{{ game.game_name }}</td>
+                <td colspan="1">{{ game.order_by_dl_cnt }}</td>
+                <td colspan="1">{{ game.game_id }}</td>
+                <td colspan="1">{{ game.enabled }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

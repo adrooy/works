@@ -27,10 +27,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-
-DATE = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-TIME = float(time.time())
-
+market_log = logging.getLogger('market')
 
 @csrf_exempt
 @login_required
@@ -60,7 +57,9 @@ def addGame(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
-
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
     manual_num = request.POST.get('manual_num')
     new_game_id = request.POST.get('game_id')
     game_id_index = request.POST.get('game_id_index')
@@ -98,6 +97,7 @@ def addGame(request):
             game_name = game.game_name
             games = RecGame(game_id=game_id,game_name=game_name,order_num=1,manual_num=manual_num)
             games.save()
+            market_log.debug('%s%s 新增推荐列表的游戏:%s' % (user.last_name, user.first_name, str(game_id)))
            
             order_num = 0
             games = RecGame.objects.all().order_by('manual_num')
@@ -116,9 +116,12 @@ def delGame(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
-
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
     game_id = request.POST.get('game_id')
     RecGame.objects.get(game_id=game_id).delete()
+    market_log.debug('%s%s 删除推荐列表的游戏:%s' % (user.last_name, user.first_name, str(game_id)))
 
     order_num = 1
     games = RecGame.objects.all().order_by('order_num')
@@ -244,7 +247,9 @@ def addBanner(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
-
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
     banner_id_index = request.GET.get('banner_id')
     if banner_id_index == 'undefined':
         banner_id_index = ''
@@ -285,6 +290,7 @@ def addBanner(request):
                 banner = RecBanner(game_id=game_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
                 banner.save()
                 result = '%s已添加到%s!!!' % (name, str(order_num_index))
+                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
             except:
                 try:
                     topic = TopicInfo.objects.get(id=new_id)
@@ -293,6 +299,7 @@ def addBanner(request):
                     banner = RecBanner(topic_id=topic_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
                     banner.save()
                     result = '%s已添加到%s!!!' % (name, str(order_num_index))
+                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
                 except:
                     result = 'No'
         else:
@@ -309,6 +316,7 @@ def addBanner(request):
                 banner = RecBanner(game_id=game_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
                 banner.save()
                 result = '%s已添加到%s!!!' % (name, str(1))
+                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
             except:
                 try:
                     topic = TopicInfo.objects.get(id=new_id)
@@ -317,6 +325,7 @@ def addBanner(request):
                     banner = RecBanner(topic_id=topic_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
                     banner.save()
                     result = '%s已添加到%s!!!' % (name, str([topic_id,name,order_num,pic_url]))
+                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
                 except:
                     result = 'No'
 
@@ -340,7 +349,9 @@ def editBanner(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
-
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
     banner_id = request.POST.get('banner_id')
     name = request.POST.get('name')
     game_id = request.POST.get('game_id')
@@ -372,6 +383,7 @@ def editBanner(request):
                 banner = RecBanner(game_id=game_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
                 banner.save()
                 result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
+                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
             except:
                 try:
                     topic = TopicInfo.objects.get(id=topic_id)
@@ -381,6 +393,7 @@ def editBanner(request):
                     banner.save()
                     result = banner.id
                     result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
+                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
                 except:
                     result = 'No'
     else:
@@ -398,6 +411,7 @@ def editBanner(request):
                 banner.save()
                 result = banner.id
                 result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
+                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
             except:
                 try:
                     topic = TopicInfo.objects.get(id=topic_id)
@@ -406,6 +420,7 @@ def editBanner(request):
                     banner = RecBanner(topic_id=topic_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
                     banner.save()
                     result = '%s %s %s 更新' % (str(name), str([banner_id]), str(topic_id))
+                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
                 except:
                     result = 'No'
     response.write(result)
@@ -524,9 +539,12 @@ def delBanner(request):
 
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
-
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
     banner_id = request.POST.get('banner_id')
     RecBanner.objects.get(id=banner_id).delete()
+    market_log.debug('%s%s 删除banner:%s' % (user.last_name, user.first_name, str(banner_id)))
 
     order_num = 1
     banners = RecBanner.objects.all().order_by('order_num')

@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'feedback_mgmt.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    #url(r'^iplay_mgmt/admin/', include(admin.site.urls)),
+    url(r'^iplay_mgmt/admin/', include(admin.site.urls)),
     url(r'^', include('market.urls')),
     url(r'^', include('game.urls')),
     url(r'^', include('accounts.urls')),
@@ -21,7 +21,7 @@ urlpatterns = patterns('',
 
 if settings.DEBUG is False:
     urlpatterns += patterns('',
-        url(r'^/static/(?P<path>.*)$', 'django.views.static.serve', {
+        url(r'^/iplay_mgmt/static/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.STATIC_ROOT,
         }),
     )
