@@ -13,6 +13,7 @@ class TopicInfo(models.Model):
     topic_date =  models.IntegerField('专题发布时间', max_length=11)
     order_num = models.IntegerField('topic的排列序号', max_length=11)
     enabled = models.IntegerField('有效', max_length=11)
+    unrelease_date = models.IntegerField('专题下线时间', max_length=11)
 
     class Meta:
         db_table = 'iplay_topic_info'
@@ -66,6 +67,9 @@ class RecGame(models.Model):
     game_name = models.CharField('游戏名称', max_length=200)
     order_num = models.IntegerField('该游戏在推荐页中的位置', max_length=11)
     manual_num = models.IntegerField('该游戏的真实序号', max_length=11)
+    enabled = models.IntegerField('有效', max_length=11)
+    release_date = models.IntegerField('发布时间', max_length=11)
+    unrelease_date = models.IntegerField('下线时间', max_length=11)
 
     class Meta:
         db_table = 'iplay_recomend_game'
@@ -79,6 +83,8 @@ class RecBanner(models.Model):
     pic_url = models.CharField('图片地址', max_length=1000) 
     order_num = models.IntegerField('该banner在推荐页中的位置', max_length=11) 
     enabled = models.IntegerField('有效', max_length=11)
+    release_date = models.IntegerField('发布时间', max_length=11)
+    unrelease_date = models.IntegerField('下线时间', max_length=11)
 
     class Meta:
         db_table = 'iplay_recomend_banner_info'
@@ -90,6 +96,9 @@ class CatGame(models.Model):
     category_id = models.IntegerField('分类ID', max_length=11)
     order_num = models.IntegerField('该游戏在推荐页中的位置', max_length=11)
     manual_num = models.IntegerField('该游戏的真实序号', max_length=11)
+    enabled = models.IntegerField('有效', max_length=11)
+    release_date = models.IntegerField('发布时间', max_length=11)
+    unrelease_date = models.IntegerField('下线时间', max_length=11)
 
     class Meta:
         db_table = 'iplay_category_game_order_adjust'

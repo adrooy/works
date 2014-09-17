@@ -1,13 +1,35 @@
-<li class="dropdown-submenu"><a href="#"><i class="icon-chevron-right"></i>游戏数据</a>
-    <ul class="dropdown-menu">
-        <li><a tabindex="-1" href="/iplay_mgmt/game/">游戏数据搜索页</a></li>
-    </ul>
-</li>
-<li class="dropdown-submenu"><a href="#"><i class="icon-chevron-right"></i>市场</a>
-    <ul class="dropdown-menu">
-        <li><a tabindex="-1" href="/iplay_mgmt/market/recommend/">推荐页</a></li>
-        <li><a tabindex="-1" href="/iplay_mgmt/market/topic/">专题页</a></li>
-        <li><a tabindex="-1" href="/iplay_mgmt/market/category/">分类页</a></li>
-        <li><a tabindex="-1" href="/iplay_mgmt/market/hotsearch/">热门词</a></li>
-    </ul>
-</li>
+{% ifequal html '/iplay_mgmt/game/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/game/"><i class="icon-chevron-right"></i>游戏数据搜索页</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/game/"><i class="icon-chevron-right"></i>游戏数据搜索页</a>
+{% endifequal %}
+
+{% ifequal html '/iplay_mgmt/game/plugin/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/game/plugin/"><i class="icon-chevron-right"></i>插件数据搜索页</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/game/plugin/"><i class="icon-chevron-right"></i>插件数据搜索页</a>
+{% endifequal %}
+
+{% ifequal html '/iplay_mgmt/market/recommend/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/market/recommend/"><i class="icon-chevron-right"></i>市场推荐页</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/market/recommend/"><i class="icon-chevron-right"></i>市场推荐页</a>
+{% endifequal %}
+
+{% ifequal html '/iplay_mgmt/market/topic/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/market/topic/"><i class="icon-chevron-right"></i>市场专题页</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/market/topic/"><i class="icon-chevron-right"></i>市场专题页</a>
+{% endifequal %}
+
+{% ifequal html '/iplay_mgmt/market/category/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/market/category/"><i class="icon-chevron-right"></i>市场分类页</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/market/category/"><i class="icon-chevron-right"></i>市场分类页</a>
+{% endifequal %}
+
+{% ifequal html '/iplay_mgmt/market/hotsearch/' %}
+<li class="dropdown-submenu"><a style="background:#0081c2;color:#ffffff" href="/iplay_mgmt/market/hotsearch/"><i class="icon-chevron-right"></i>市场热门词</a>
+{% else %}
+<li class="dropdown-submenu"><a href="/iplay_mgmt/market/hotsearch/"><i class="icon-chevron-right"></i>市场热门词</a>
+{% endifequal %}

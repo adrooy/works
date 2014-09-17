@@ -34,6 +34,7 @@ market_log = logging.getLogger('market')
 def index(request):
     words = HotSearch.objects.all().order_by('order_num')
     return render_to_response('market/hotsearch/index.html', {
+            'html': '/iplay_mgmt/market/hotsearch/',
             'words': words
         }, context_instance=RequestContext(request))
 

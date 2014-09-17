@@ -9,16 +9,18 @@
     </div>
     <hr>
     <div style="width:100%;height:70%;overflow:scroll;align:center;margin-top:2%">
-        <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
+        <table border="1" id="senfe" cellspacing="0" width="90%" align="center">
             <thead>
                 <tr>
-                    <th width="10%">专题名</th>
-                    <th width="2%">是否有效</th>
+                    <th width="6%">专题名</th>
+                    <th width="4%">发布状态</th>
                     <th width="2%">排列序号</th>
                     <th width="10%">专题简单描述</th>
-                    <th width="44%">专题详细描述</th>
+                    <th width="40%">专题详细描述</th>
                     <th width="10%">专题图片</th>
                     <th width="2%">专题ID</th>
+                    <th width="10%">发布时间</th>
+                    <th width="10%">下线时间</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,22 +31,26 @@
                 <tr id="topic" value="{{ topic.id }}">
                 {% endifequal %}
                     {% if not topic.enabled %}
-                    <td colspan="1"><font color="#DDDDDD">{{ topic.name }}</font></td>
-                    <td colspan="1"><font color="#DDDDDD">无效</font></td>
+                    <td colspan="1"><a href="/iplay_mgmt/market/topic_alter/?topic_id={{ topic.id }}"><font color="#DDDDDD">{{ topic.name }}</font></a></td>
+                    <td colspan="1"><font color="#DDDDDD">待发布</font></td>
                     <td colspan="1"><font color="#DDDDDD">{{ topic.order_num }}</font></td>
                     <td colspan="1"><font color="#DDDDDD">{{ topic.short_desc }}</font></td>
                     <td colspan="1"><font color="#DDDDDD">{{ topic.detail_desc }}</font></td>
                     <td colspan="1"><img src="{{ topic.pic_url }}"></td>
                     <td colspan="1"><font color="#DDDDDD">{{ topic.id }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.topic_date }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ topic.unrelease_date }}</font></td>
                     {% endif %}
                     {% if topic.enabled %}
-                    <td colspan="1">{{ topic.name }}</td>
-                    <td colspan="1">有效</td>
+                    <td colspan="1"><a href="/iplay_mgmt/market/topic_alter/?topic_id={{ topic.id }}">{{ topic.name }}</a></td>
+                    <td colspan="1">已发布</td>
                     <td colspan="1">{{ topic.order_num }}</td>
                     <td colspan="1">{{ topic.short_desc }}</td>
                     <td colspan="1">{{ topic.detail_desc }}</td>
                     <td colspan="1"><img src="{{ topic.pic_url }}"></td>
                     <td colspan="1">{{ topic.id }}</td>
+                    <td colspan="1">{{ topic.topic_date }}</td>
+                    <td colspan="1">{{ topic.unrelease_date }}</td>
                     {% endif %}
                 </tr>
                 {% endfor %}
@@ -55,13 +61,13 @@
 
     <div style="height:5%;margin-bottom:2%;margin-top:2%">
     <input type="button" id="topic_add" value="新增专题" class="submit_button"></input> 
-    <input type="button" id="topic_notenabled" value="禁用专题" class="submit_button"></input> 
-    <input type="button" id="topic_isenabled" value="启用专题" class="submit_button"></input> 
+    <input type="button" id="topic_delete" value="删除专题" class="submit_button"></input> 
+    <input type="button" id="topic_isenabled" value="发布专题" class="submit_button"></input> 
+    <input type="button" id="topic_notenabled" value="下线专题" class="submit_button"></input> 
     <input type="button" id="topic_up" value="专题位置上移" class="submit_button"></input> 
     <input type="button" id="topic_down" value="专题位置下移" class="submit_button"></input> 
     <input type="button" id="topic_move" value="移动到指定位置" class="submit_button"></input> 
     <input type="button" id="topic_alter" value="专题修改" class="submit_button"></input> 
-    <input type="button" id="topic_delete" value="删除专题" class="submit_button"></input> 
     </div>
 
 {% endblock %}

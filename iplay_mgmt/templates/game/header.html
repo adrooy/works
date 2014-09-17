@@ -38,8 +38,9 @@
           <ul id="nav-list" class="nav nav-list bs-docs-sidenav">
             {% include "game/menu.html" %}
           </ul>
-          <input type="button" id="release" value="发布" class="nav nav-list bs-docs-sidenav" style="width:100%;color:#0099ff;"></input> 
-          <input type="button" id="update" value="同步论坛数据" class="nav nav-list bs-docs-sidenav" style="width:100%;color:#0099ff;"></input> 
+          <input type="button" id="release" value="发布" class="nav nav-list bs-docs-sidenav" style="float:left;width:70%;color:#0081c2;margin-left:0px"></input> 
+          <input type="button" id="update" value="同步论坛数据" class="nav nav-list bs-docs-sidenav" style="float:left;width:70%;color:#0081c2;margin-left:0px"></input> 
+          <input type="button" id="check" value="检查失效的游戏和专题" class="nav nav-list bs-docs-sidenav" style="float:left;width:70%;color:#0081c2;margin-left:0px"></input> 
         </div>
       </div>
       <div style="padding-left:196px;">
@@ -74,6 +75,14 @@ $("#update").click(function(){
         });
     }else{
         alert('取消同步！');
+    }
+});
+$("#check").click(function(){
+    var descJson = {};
+    if(confirm('确认检查失效游戏和专题吗？')){
+        window.location.href = '/iplay_mgmt/market/check/';
+    }else{
+        alert('取消检查！');
     }
 });
     </script>

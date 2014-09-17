@@ -27,6 +27,10 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+DIR = os.getcwd()
+sys.path.append(DIR)
+from utils import getTimeStamp, getDate
+
 market_log = logging.getLogger('market')
 
 @csrf_exempt
@@ -36,15 +40,17 @@ def index(request):
     bannerid = int(request.GET.get('banner_id')) if 'banner_id' in request.GET else 0
     games = RecGame.objects.all().order_by('order_num')
     banners = RecBanner.objects.all().order_by('order_num')
-    try:
-        for game in games:
+    for banner in banners:
+        banner.release_date = getDate(banner.release_date)
+        banner.unrelease_date = getDate(banner.unrelease_date)
+    for game in games:
             game_id = game.game_id
             gamelabel = GameLabelInfo.objects.get(game_id=game_id)
-            #enabled = gamelabel.enabled
-            game.enabled = gamelabel.enabled
-    except:
-        gamelabel = {}
+            game.game_enabled = gamelabel.enabled
+            game.release_date = getDate(game.release_date)
+            game.unrelease_date = getDate(game.unrelease_date)
     return render_to_response('market/recommend/index.html', {
+            'html': '/iplay_mgmt/market/recommend/',
             'game_id': gameid,
             'banner_id': bannerid,
             'games': games,
@@ -60,53 +66,85 @@ def addGame(request):
     username = request.session.get('username')
     user = User.objects.get(username=username)
  
+    game_id_index = request.GET.get('game_id')
+    if game_id_index == 'undefined':
+        game_id_index = ''
+
+    DATE = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    game = {'release_date': DATE}
+ 
+    return render_to_response('market/recommend/game_edit.html', {
+            'game': game,
+            'game_id_index': game_id_index
+        }, context_instance=RequestContext(request))
+
+@login_required
+def altGame(request):
+    game_id = request.GET.get('game_id')
+    game = RecGame.objects.get(game_id=game_id)
+    game.release_date = getDate(game.release_date)
+    game.unrelease_date = getDate(game.unrelease_date)
+    return render_to_response('market/recommend/game_edit.html', {
+            'game': game,
+            'game_id':game_id
+        }, context_instance=RequestContext(request))
+
+@csrf_exempt
+@login_required
+def editGame(request):
+    response=HttpResponse()  
+    response['Content-Type'] = 'text/string'
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+ 
+    game_id = request.POST.get('game_id')
     manual_num = request.POST.get('manual_num')
-    new_game_id = request.POST.get('game_id')
     game_id_index = request.POST.get('game_id_index')
+    release_date = request.POST.get('release_date')
+    unrelease_date = request.POST.get('unrelease_date')
+
+    release_date = getTimeStamp(release_date) if release_date else 0
+    unrelease_date = getTimeStamp(unrelease_date) if unrelease_date else 0
 
     try:
-        game = RecGame.objects.get(game_id=new_game_id)
+        game = RecGame.objects.get(game_id=game_id)
         game_name = game.game_name
-        result = '%s 已在推荐游戏列表内！！' % game_name
+        RecGame.objects.filter(game_id=game_id).update(manual_num=manual_num,release_date=release_date,unrelease_date=unrelease_date)
     except:
-        '''
-        if game_id_index:
-            order_num = 1
-            game = RecGame.objects.get(game_id=game_id_index)
-            order_num_index = game.order_num
+        game = GameLabelInfo.objects.get(game_id=game_id)
+        game_name = game.game_name
+        games = RecGame(game_id=game_id,game_name=game_name,manual_num=manual_num,release_date=release_date,unrelease_date=unrelease_date,enabled=0)
+        games.save()
+    response.write(str(game_id))
+    return response
 
-            games = RecGame.objects.all().order_by('order_num')
-            for game in games:
-                game_id = game.game_id
-                if game_id == game_id_index:
-                    order_num += 1
-                RecGame.objects.filter(game_id=game_id).update(order_num=order_num)
-                order_num += 1
+@csrf_exempt
+@login_required
+def isenabledGame(request):
 
-            game_id = request.POST.get('game_id')
-            game = GameLabelInfo.objects.get(game_id=game_id)
-            game_name = game.game_name
-            games = RecGame(game_id=game_id,game_name=game_name,order_num=order_num_index,manual_num=manual_num)
-            games.save()
-            result = '%s已添加到%s!!!' % (game_name, str(order_num_index))
-        else:
-        '''
-        if 1==1:
-            game_id = request.POST.get('game_id')
-            game = GameLabelInfo.objects.get(game_id=game_id)
-            game_name = game.game_name
-            games = RecGame(game_id=game_id,game_name=game_name,order_num=1,manual_num=manual_num)
-            games.save()
-            market_log.debug('%s%s 新增推荐列表的游戏:%s' % (user.last_name, user.first_name, str(game_id)))
-           
-            order_num = 0
-            games = RecGame.objects.all().order_by('manual_num')
-            for game in games:
-                order_num += 1
-                game_id = game.game_id
-                RecGame.objects.filter(game_id=game_id).update(order_num=order_num)
-            result = '%s已添加到!!!' % game_name
+    response=HttpResponse()  
+    response['Content-Type'] = 'text/string'
 
+    game_id = request.POST.get('game_id')
+
+    RecGame.objects.filter(game_id=game_id).update(enabled=1)
+
+    result = '%s 已启用!!!' % str(game_id)
+    response.write(result)
+    return response
+
+@csrf_exempt
+@login_required
+def notenabledGame(request):
+
+    response=HttpResponse()  
+    response['Content-Type'] = 'text/string'
+
+    game_id = request.POST.get('game_id')
+
+    RecGame.objects.filter(game_id=game_id).update(enabled=0)
+
+    result = '%s 已禁用!!!' % str(game_id)
     response.write(result)
     return response
 
@@ -253,91 +291,21 @@ def addBanner(request):
     banner_id_index = request.GET.get('banner_id')
     if banner_id_index == 'undefined':
         banner_id_index = ''
+
+    DATE = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    banner = {'release_date': DATE}
+ 
     return render_to_response('market/recommend/edit.html', {
+            'banner': banner,
             'banner_id_index': banner_id_index
         }, context_instance=RequestContext(request))
 
-    new_id = request.POST.get('new_id')
-    id_index = request.POST.get('id_index')
-    pic_url = request.POST.get('pic_url')
-
-    try:
-        try:
-            banner = RecBanner.objects.get(game_id=new_id)
-            name = banner.name
-            result = '游戏%s已在推荐banner列表内！！' % name
-        except:
-            banner = RecBanner.objects.get(topic_id=new_id)
-            name = banner.name
-            result = '专题%s已在推荐banner列表内！！' % name
-    except:
-        if id_index:
-            order_num = 1
-            banner = RecBanner.objects.get(id=id_index)
-            order_num_index = banner.order_num
-
-            banners = RecBanner.objects.all().order_by('order_num')
-            for banner in banners:
-                banner_id = banner.id
-                if int(banner_id) == int(id_index):
-                    order_num += 1
-                RecBanner.objects.filter(id=banner_id).update(order_num=order_num)
-                order_num += 1
-            try:
-                game = GameLabelInfo.objects.get(game_id=new_id)
-                game_id = new_id
-                name = game.game_name
-                banner = RecBanner(game_id=game_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
-                banner.save()
-                result = '%s已添加到%s!!!' % (name, str(order_num_index))
-                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
-            except:
-                try:
-                    topic = TopicInfo.objects.get(id=new_id)
-                    topic_id = new_id
-                    name = topic.name
-                    banner = RecBanner(topic_id=topic_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
-                    banner.save()
-                    result = '%s已添加到%s!!!' % (name, str(order_num_index))
-                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
-                except:
-                    result = 'No'
-        else:
-            order_num = 1
-            banners = RecBanner.objects.all().order_by('order_num')
-            for banner in banners:
-                order_num += 1
-                banner_id = banner.id
-                RecBanner.objects.filter(id=banner_id).update(order_num=order_num)
-            try:
-                game = GameLabelInfo.objects.get(game_id=new_id)
-                game_id = new_id
-                name = game.game_name
-                banner = RecBanner(game_id=game_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
-                banner.save()
-                result = '%s已添加到%s!!!' % (name, str(1))
-                market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
-            except:
-                try:
-                    topic = TopicInfo.objects.get(id=new_id)
-                    topic_id = new_id
-                    name = topic.name
-                    banner = RecBanner(topic_id=topic_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
-                    banner.save()
-                    result = '%s已添加到%s!!!' % (name, str([topic_id,name,order_num,pic_url]))
-                    market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))
-                except:
-                    result = 'No'
-
-    response.write(result)
-    return response
-
-@csrf_exempt
 @login_required
 def alterBanner(request):
     banner_id = request.GET.get('banner_id')
-    
     banner = RecBanner.objects.get(id=banner_id) if banner_id else {}
+    banner.release_date = getDate(banner.release_date)
+    banner.unrelease_date = getDate(banner.unrelease_date)
     return render_to_response('market/recommend/edit.html', {
             'banner': banner,
             'banner_id':banner_id
@@ -346,7 +314,6 @@ def alterBanner(request):
 @csrf_exempt
 @login_required
 def editBanner(request):
-
     response=HttpResponse()  
     response['Content-Type'] = 'text/string'
     username = request.session.get('username')
@@ -358,11 +325,17 @@ def editBanner(request):
     topic_id = request.POST.get('topic_id')
     pic_url = request.POST.get('pic_url')
     banner_id_index = request.POST.get('banner_id_index')
+    release_date = request.POST.get('release_date')
+    unrelease_date = request.POST.get('unrelease_date')
+
+    release_date = getTimeStamp(release_date) if release_date else 0
+    unrelease_date = getTimeStamp(unrelease_date) if unrelease_date else 0
+
     if banner_id:
         if str(topic_id) != 'None':
-            RecBanner.objects.filter(id=banner_id).update(name=name,topic_id=topic_id,pic_url=pic_url)
+            RecBanner.objects.filter(id=banner_id).update(name=name,topic_id=topic_id,pic_url=pic_url,release_date=release_date,unrelease_date=unrelease_date)
         else:
-            RecBanner.objects.filter(id=banner_id).update(name=name,game_id=game_id,pic_url=pic_url)
+            RecBanner.objects.filter(id=banner_id).update(name=name,game_id=game_id,pic_url=pic_url,release_date=release_date,unrelease_date=unrelease_date)
         result = '更新'
     elif banner_id_index:
             order_num = 1
@@ -380,7 +353,7 @@ def editBanner(request):
                 game = GameLabelInfo.objects.get(game_id=game_id)
                 if not name:
                     name = game.game_name
-                banner = RecBanner(game_id=game_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
+                banner = RecBanner(game_id=game_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=0,release_date=release_date,unrelease_date=unrelease_date)
                 banner.save()
                 result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
                 market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(game_id)))
@@ -389,7 +362,7 @@ def editBanner(request):
                     topic = TopicInfo.objects.get(id=topic_id)
                     if not name:
                         name = topic.name
-                    banner = RecBanner(topic_id=topic_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=1)
+                    banner = RecBanner(topic_id=topic_id,name=name,order_num=order_num_index,pic_url=pic_url,enabled=0,release_date=release_date,unrelease_date=unrelease_date)
                     banner.save()
                     result = banner.id
                     result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
@@ -407,7 +380,7 @@ def editBanner(request):
                 game = GameLabelInfo.objects.get(game_id=game_id)
                 if not name:
                     name = game.game_name
-                banner = RecBanner(game_id=game_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
+                banner = RecBanner(game_id=game_id,name=name,order_num=1,pic_url=pic_url,enabled=0,release_date=release_date,unrelease_date=unrelease_date)
                 banner.save()
                 result = banner.id
                 result = '%s %s %s 更新' % (str(banner_id_index), str([banner_id]), str(topic_id))
@@ -417,7 +390,7 @@ def editBanner(request):
                     topic = TopicInfo.objects.get(id=topic_id)
                     if not name:
                         name = topic.name
-                    banner = RecBanner(topic_id=topic_id,name=name,order_num=1,pic_url=pic_url,enabled=1)
+                    banner = RecBanner(topic_id=topic_id,name=name,order_num=1,pic_url=pic_url,enabled=0,release_date=release_date,unrelease_date=unrelease_date)
                     banner.save()
                     result = '%s %s %s 更新' % (str(name), str([banner_id]), str(topic_id))
                     market_log.debug('%s%s 新增banner:%s' % (user.last_name, user.first_name, str(topic_id)))

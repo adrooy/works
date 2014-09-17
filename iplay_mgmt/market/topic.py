@@ -27,6 +27,9 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+DIR = os.getcwd()
+sys.path.append(DIR)
+from utils import getTimeStamp, getDate
 
 market_log = logging.getLogger('market')
 
@@ -60,11 +63,22 @@ def update(request):
 
 @csrf_exempt
 @login_required
+def check(request):
+    os.system("python /opt/www/iplay_mgmt/shell/check_data.py > /opt/www/iplay_mgmt/shell/log")
+    return render_to_response('market/check.html', {
+        }, context_instance=RequestContext(request))
+
+@csrf_exempt
+@login_required
 def index(request):
     topic_id = int(request.GET.get('topic_id')) if 'topic_id' in request.GET else 0
  
     topics = TopicInfo.objects.all().order_by('order_num')
+    for topic in topics:
+        topic.topic_date = getDate(topic.topic_date)
+        topic.unrelease_date = getDate(topic.unrelease_date)
     return render_to_response('market/topic/index.html', {
+            'html': '/iplay_mgmt/market/topic/',
             'topic_id': topic_id,
             'topics': topics
         }, context_instance=RequestContext(request))
@@ -75,7 +89,10 @@ def add(request):
     topic_id_index = request.GET.get('topic_id')
     if topic_id_index == 'undefined':
         topic_id_index = ''
+    DATE = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    topic = {'topic_date': DATE}
     return render_to_response('market/topic/edit.html', {
+            'topic': topic,
             'topic_id_index': topic_id_index
         }, context_instance=RequestContext(request))
 
@@ -87,6 +104,9 @@ def alter(request):
     
     games = TopicGame.objects.filter(topic_id=topic_id).order_by('order_num')
     topic = TopicInfo.objects.get(id=topic_id)
+    topic.topic_date = getDate(topic.topic_date)
+    topic.unrelease_date = getDate(topic.unrelease_date)
+ 
     for game in games:
         game_id = game.game_id
         gamelabel = GameLabelInfo.objects.get(game_id=game_id)
@@ -113,21 +133,21 @@ def edit(request):
     detail_desc = request.POST.get('detail_desc', '')
     pic_url = request.POST.get('pic_url', '')
     topic_id_index = request.POST.get('topic_id_index', '')
+    topic_date = request.POST.get('topic_date')
+    unrelease_date = request.POST.get('unrelease_date')
 
     if not name or not short_desc or not pic_url:
         response.write('请输入专题信息!!!')
         return response
 
-    DATE = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-    TIME = float(time.time())
-
-    topic_date = TIME
+    topic_date = getTimeStamp(topic_date) if topic_date else 0
+    unrelease_date = getTimeStamp(unrelease_date) if unrelease_date else 0
 
     if topic_id:
         "专题存在　更新信息"
         TopicInfo.objects.filter(id=topic_id).update(name=name,
                 short_desc=short_desc, detail_desc=detail_desc,
-                pic_url=pic_url)
+                pic_url=pic_url, topic_date=topic_date, unrelease_date=unrelease_date)
     elif topic_id_index:
         order_num = 1
         topic = TopicInfo.objects.get(id=topic_id_index)
@@ -143,7 +163,7 @@ def edit(request):
 
         topic = TopicInfo(name=name, short_desc=short_desc,
                 detail_desc=detail_desc, pic_url=pic_url,
-                topic_date=topic_date, order_num=order_num_index, enabled=1)
+                topic_date=topic_date, order_num=order_num_index, enabled=0, unrelease_date=unrelease_date)
         topic.save()
 
         topics = TopicInfo.objects.all().order_by('id')
@@ -161,13 +181,12 @@ def edit(request):
 
         topic = TopicInfo(name=name, short_desc=short_desc,
                 detail_desc=detail_desc, pic_url=pic_url,
-                topic_date=topic_date, order_num=1, enabled=1)
+                topic_date=topic_date, order_num=1, enabled=0, unrelease_date=unrelease_date)
         topic.save()
 
         topics = TopicInfo.objects.all().order_by('id')
         for topic in topics:
             topic_id = topic.id
-        result = '%s专题已添加!!!' % str(topic_id)
         market_log.debug('%s%s 新增专题:%s' % (user.last_name, user.first_name, str(topic_id)))
     response.write(topic_id)
     return response

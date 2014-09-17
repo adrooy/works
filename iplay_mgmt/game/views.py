@@ -7,7 +7,7 @@ __author__ = 'limingdong'
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from models import GameLabelInfo, GamePkgInfo
+from models import GameLabelInfo, GamePkgInfo, GameResourceInfo, ResourceMatchResult, ResourceMatchCondition
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from json import dumps, loads, JSONEncoder
 from django.db.models.query import QuerySet
@@ -30,6 +30,103 @@ class DjangoJSONEncoder(JSONEncoder):
         if isinstance(obj, QuerySet):
             return loads(serialize('json', obj))
         return JSONEncoder.default(self, obj)
+
+@csrf_exempt
+@login_required
+def plugin(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+    games = GameResourceInfo.objects.all().order_by("id")
+    number = 1
+    for game in games:
+        game.index = number 
+        number += 1
+    feedback, page_range, per_page = lbe_pagination(request, games)
+    count = len(games)
+    count_page = count / 25
+    # print count, page_range, per_page
+    return render_to_response('game/plugin.html', {
+        'html': '/iplay_mgmt/game/plugin/',
+        'feedback': feedback,
+        'page_range': page_range,
+        'per_page': per_page,
+        'count': count,
+        'count_page': count_page+1,
+        'user': user
+    }, context_instance=RequestContext(request))
+
+@csrf_exempt
+@login_required
+def plugin_detail(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+
+    plugin_id = int(request.GET.get('plugin_id'))
+    plugin = GameResourceInfo.objects.get(id=plugin_id)
+    plugs = ResourceMatchCondition.objects.filter(resource_id=plugin_id)
+    pkg_name = plugin.pkg_name
+    plugins = GameResourceInfo.objects.filter(pkg_name=pkg_name)
+    gamess = ResourceMatchResult.objects.filter(resource_id=plugin_id)
+    games = []
+    for game in gamess:
+        game.game_id = GamePkgInfo.objects.get(apk_id=game.apk_id).game_id
+        game.pkg_name = GamePkgInfo.objects.get(apk_id=game.apk_id).pkg_name
+        game.signature_md5 = GamePkgInfo.objects.get(apk_id=game.apk_id).signature_md5
+        game.ver_code = GamePkgInfo.objects.get(apk_id=game.apk_id).ver_code
+        if GamePkgInfo.objects.get(apk_id=game.apk_id).is_max_version == 1:
+            games.append(game)
+    return render_to_response('game/plugin_detail.html', {
+        'games': games,
+        'plugins': plugins,
+        'plugs': plugs,
+        'plugin': plugin
+    }, context_instance=RequestContext(request))
+
+@csrf_exempt
+@login_required
+def plugin_search(request):
+    username = request.session.get('username')
+    user = User.objects.get(username=username)
+
+    plugin_info = request.GET.get('search_plugin_info')
+
+    search_result = []
+    if not search_result:
+        try:
+            search_result = GameResourceInfo.objects.filter(pkg_name__contains=plugin_info).order_by('id')
+        except:
+            search_result = []
+    if not search_result:
+        try:
+            search_result = GameResourceInfo.objects.filter(tid=plugin_info).order_by('id')
+        except:
+            search_result = []
+    if not search_result:
+        try:
+            search_result = GameResourceInfo.objects.filter(id=plugin_info).order_by('id')
+        except:
+            search_result = []
+
+    number = 1
+    games = []
+    for plugin in search_result:
+    #    game = GameLabelInfo.objects.get(game_id=game_id)
+        plugin.index = number 
+        games.append(plugin)
+        number += 1
+    feedback, page_range, per_page = lbe_pagination(request, games)
+    count = len(games)
+    count_page = count / 25
+    # print count, page_range, per_page
+    return render_to_response('game/plugin_search.html', {
+        'plugin_info': plugin_info,
+        'feedback': feedback,
+        'page_range': page_range,
+        'per_page': per_page,
+        'count': count,
+        'count_page': count_page+1,
+        'user': user
+    }, context_instance=RequestContext(request))
 
 @csrf_exempt
 @login_required
@@ -92,12 +189,25 @@ def detail(request):
     user = User.objects.get(username=username)
 
     game_id = request.GET.get('game_id')
+    apk_id = request.GET.get('apk_id')
     channels = []
+    plugin_channels = []
     info = GameLabelInfo.objects.get(game_id=game_id)
-    pkgs = GamePkgInfo.objects.filter(game_id=game_id)
+    pkgs = GamePkgInfo.objects.filter(game_id=game_id,enabled=1,is_max_version=1)
     for pkg in pkgs:
-        channels.append(pkg.market_channel)
-    channels = list(set(channels))
+        if pkg.is_plugin_required == 1:
+            plugin_channels.append({'apk_id': pkg.apk_id, 'channel': pkg.market_channel})
+            pkg.required_plugin_ids = pkg.required_plugin_ids.split('\n')
+        else:
+            channels.append({'apk_id': pkg.apk_id, 'channel': pkg.market_channel})
+    if apk_id:
+        pkg = GamePkgInfo.objects.get(apk_id=apk_id)
+        if pkg.is_plugin_required == 1:
+            pkg.required_plugin_ids = pkg.required_plugin_ids.split('\n')
+    else:
+        pkg = pkgs[0]
+    #channels = list(set(channels))
+    #plugin_channels = list(set(plugin_channels))
     color_labels = info.color_label.strip().split('\n') if info.color_label else []
     #screen_shot_urls = info.screen_shot_urls.replace('http://ggfile.qiniudn.com/', '').strip().split('\n') if info.screen_shot_urls else []
     screen_shot_urls = []
@@ -109,13 +219,16 @@ def detail(request):
             a['num'] = num
             num += 1
             screen_shot_urls.append(a)
+    info.origin_types = info.origin_types if info.origin_types else ''
+    info.origin_type_list = info.origin_types.split('\n') if info.origin_types else []
     return render_to_response('game/detail.html', {
         'info': info,
         'color_labels': color_labels,
         'screen_shot_urls': screen_shot_urls,
         'channels': channels,
+        'plugin_channels': plugin_channels,
         'user': user,
-        'pkg': pkgs[0]
+        'pkg': pkg
     }, context_instance=RequestContext(request))
 
 @csrf_exempt
@@ -125,8 +238,37 @@ def index(request):
     user = User.objects.get(username=username)
 
     source = request.GET.get('source_id') if request.GET.get('source_id')  else 3
-    games = GameLabelInfo.objects.filter(source=source).order_by('-download_counts')
-    # print games.query
+    enabled = int(request.GET.get('enabled')) if request.GET.get('enabled') else 1
+    if enabled:
+        if int(source) == 1:
+            #games = GameLabelInfo.objects.filter(source=source,origin_types='其他').order_by('-download_counts')
+            games = set()
+            pkgs = GamePkgInfo.objects.filter(is_plugin_required=1)
+            for pkg in pkgs:
+                try:
+                    game_id = pkg.game_id
+                    game = GameLabelInfo.objects.get(game_id=game_id,source=source,enabled=1)
+                    games.add(game)
+                except:
+                    pass
+            games = list(games)
+        else:
+            games = GameLabelInfo.objects.filter(source=source,enabled=1).order_by('-download_counts')
+    else:
+        if int(source) == 1:
+            games = set()
+            pkgs = GamePkgInfo.objects.filter(is_plugin_required=1)
+            for pkg in pkgs:
+                try:
+                    game_id = pkg.game_id
+                    game = GameLabelInfo.objects.get(game_id=game_id,source=source)
+                    games.add(game)
+                except:
+                    pass
+            games = list(games)
+            #games = pkgs
+        else:
+            games = GameLabelInfo.objects.filter(source=source).order_by('-download_counts')
     count = len(games)
     number = 1
     for game in games:
@@ -134,14 +276,17 @@ def index(request):
         number += 1
     feedback, page_range, per_page = lbe_pagination(request, games)
     count_page = count / 25
+     
     # print count, page_range, per_page
     return render_to_response('game/show.html', {
+        'html': '/iplay_mgmt/game/',
         'feedback': feedback,
         'page_range': page_range,
         'per_page': per_page,
         'count': count,
         'count_page': count_page+1,
         'user': user,
+        'enabled': enabled,
         'source': int(source)
     }, context_instance=RequestContext(request))
 
@@ -195,14 +340,16 @@ def game_info(request):
 
     if request.method == "POST" and request.is_ajax():
         g_id = request.POST.get('g_id')
-        ch = request.POST.get('channel')
+        apk_id = request.POST.get('apk_id')
         try:
-            if g_id and ch:
+            if g_id and apk_id:
                 infos = GamePkgInfo.objects.filter(
                     game_id=g_id,
-                    market_channel=ch
+                    enabled=1,
+                    apk_id=apk_id
                 )
-
+                #for info in infos:
+                #    info.required_plugin_ids = info.required_plugin_ids.split('\n') if info.required_plugin_ids else []
         except GamePkgInfo.DoesNotExist:
             error = "不存在"
     else:
@@ -230,6 +377,15 @@ def label_info_change(request):
         screen_shot_urls = request.POST.get('screen')
         short_desc = request.POST.get('short_desc')
         detail_desc = request.POST.get('desc')
+        label_type = request.POST.get('types')
+        label_category = request.POST.get('categorys')
+        types = set()
+        for type in label_type.split('\n'):
+            types.add(type)
+        for type in label_category.split('\n'):
+            types.add(type)
+        origin_types = '\n'.join(list(types))
+        game_alias = request.POST.get('game_alias')
         try:
             if game_id:
                 if display_name and display_name != 'None':
@@ -239,6 +395,8 @@ def label_info_change(request):
                 if subscript and subscript != 'None':
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(subscript=subscript)
                 info = GameLabelInfo.objects.filter(game_id=game_id).update(color_label=color_label)
+                info = GameLabelInfo.objects.filter(game_id=game_id).update(origin_types=origin_types)
+                info = GameLabelInfo.objects.filter(game_id=game_id).update(game_alias=game_alias)
                 if screen_shot_urls and screen_shot_urls != 'None':
                     info = GameLabelInfo.objects.filter(game_id=game_id).update(screen_shot_urls=screen_shot_urls)
                 if icon_urls and icon_urls != 'None':
@@ -272,6 +430,7 @@ def label_info_change(request):
             error = "不存在"
     else:
         error = "请求错误"
+   
 
     return json_return(request, error, info)
 

@@ -2,7 +2,7 @@
 <div class="pagination">
     <ul>
         {% if feedback.has_previous %}
-            <li class="prev"><a href="?pn={{ feedback.previous_page_number }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}&search_plugin_info={{plugin_info}}">←上一页</a></li>
+            <li class="prev"><a href="?pn={{ feedback.previous_page_number }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}">←上一页</a></li>
         {% else %}
             <li class="prev disabled"><a>←上一页</a></li>
         {% endif %}
@@ -11,12 +11,12 @@
             {% ifequal p feedback.number %}
                 <li class="active"><a>{{ p }}</a></li>
             {% else %}
-                <li><a href="?pn={{ p }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}&search_plugin_info={{plugin_info}}">{{ p }}</a></li>
+                <li><a href="?pn={{ p }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}">{{ p }}</a></li>
             {% endifequal %}
         {% endfor %}
 
         {% if feedback.has_next %}
-            <li class="next"><a href="?pn={{ feedback.next_page_number }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}&search_plugin_info={{plugin_info}}">下一页→</a></li>
+            <li class="next"><a href="?pn={{ feedback.next_page_number }}&pr={{ per_page }}&source_id={{ source }}&enabled={{ enabled }}">下一页→</a></li>
         {% else %}
             <li class="next disabled"><a>下一页→ </a></li>
         {% endif %}

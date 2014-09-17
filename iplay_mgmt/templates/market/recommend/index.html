@@ -12,13 +12,15 @@
             <thead>
                 <tr>
                     <th width="10%">banner名</th>
-                    <th width="10%">是否有效</th>
+                    <th width="10%">发布状态</th>
                     <th width="10%">类型</th>
                     <th width="10%">排列序号</th>
                     <th width="10%">游戏ID</th>
                     <th width="10%">专题ID</th>
                     <th width="10%">banner图片</th>
                     <th width="10%">bannerID</th>
+                    <th width="10%">发布时间</th>
+                    <th width="10%">下线时间</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,12 +31,14 @@
                     <tr id="banner" value="{{ banner.id }}">
                     {% endifequal %}
                     {% if not banner.enabled %}
-                        <td colspan="1"><font color="#DDDDDD">{{ banner.name }}</font></td>
-                        <td colspan="1"><font color="#DDDDDD">无效</font></td>
                         {% if banner.game_id %}
+                        <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ banner.game_id }}"><font color="#DDDDDD">{{ banner.name }}</font></a></td>
+                        <td colspan="1"><font color="#DDDDDD">待发布</font></td>
                         <td colspan="1"><font color="#DDDDDD">游戏</font></td>
                         {% endif %}
                         {% if banner.topic_id %}
+                        <td colspan="1"><a href="/iplay_mgmt/market/topic_alter/?topic_id={{ banner.topic_id }}"><font color="#DDDDDD">{{ banner.name }}</font></a></td>
+                        <td colspan="1"><font color="#DDDDDD">待发布</font></td>
                         <td colspan="1"><font color="#DDDDDD">专题</font></td>
                         {% endif %}
                         <td colspan="1"><font color="#DDDDDD">{{ banner.order_num }}</font></td>
@@ -42,14 +46,18 @@
                         <td colspan="1"><font color="#DDDDDD">{{ banner.topic_id }}</font></td>
                         <td colspan="1"><img src="{{ banner.pic_url }}"></td>
                         <td colspan="1"><font color="#DDDDDD">{{ banner.id }}</font></td>
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.release_date }}</font></td>
+                        <td colspan="1"><font color="#DDDDDD">{{ banner.unrelease_date }}</font></td>
                     {% endif %}
                     {% if banner.enabled %}
-                        <td colspan="1">{{ banner.name }}</font></td>
-                        <td colspan="1">有效</font></td>
                         {% if banner.game_id %}
+                        <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ banner.game_id }}">{{ banner.name }}</a></font></td>
+                        <td colspan="1">已发布</font></td>
                         <td colspan="1">游戏</font></td>
                         {% endif %}
                         {% if banner.topic_id %}
+                        <td colspan="1"><a href="/iplay_mgmt/market/topic_alter/?topic_id={{ banner.topic_id }}">{{ banner.name }}</a></font></td>
+                        <td colspan="1">已发布</font></td>
                         <td colspan="1">专题</font></td>
                         {% endif %}
                         <td colspan="1">{{ banner.order_num }}</font></td>
@@ -57,6 +65,8 @@
                         <td colspan="1">{{ banner.topic_id }}</font></td>
                         <td colspan="1"><img src="{{ banner.pic_url }}"></td>
                         <td colspan="1">{{ banner.id }}</font></td>
+                        <td colspan="1">{{ banner.release_date }}</font></td>
+                        <td colspan="1">{{ banner.unrelease_date }}</font></td>
                     {% endif %}
                     </tr>
                 {% endfor %}
@@ -67,8 +77,8 @@
     <div style="height:5%;margin-bottom:2%;margin-top:2%">
     <input type="button" id="banner_add" value="新增banner" class="submit_button"></input> 
     <input type="button" id="banner_delete" value="删除banner" class="submit_button"></input> 
-    <input type="button" id="banner_isenabled" value="启用banner" class="submit_button"></input> 
-    <input type="button" id="banner_notenabled" value="禁用banner" class="submit_button"></input> 
+    <input type="button" id="banner_isenabled" value="发布banner" class="submit_button"></input> 
+    <input type="button" id="banner_notenabled" value="下线banner" class="submit_button"></input> 
     <input type="button" id="banner_up" value="banner位置上移" class="submit_button"></input> 
     <input type="button" id="banner_down" value="banner位置下移" class="submit_button"></input> 
     <input type="button" id="banner_move" value="移动到指定位置" class="submit_button"></input> 
@@ -82,14 +92,30 @@
     </div>
     <hr>
 
-    <div style="width:100%;height:27%;overflow:scroll;align:center;">
+    <div style="height:5%;margin-bottom:2%;margin-top:2%">
+    <input type="button" id="recgame_add" value="增加游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_delete" value="删除游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_isenabled" value="发布游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_notenabled" value="下线游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_up" value="游戏位置上移" class="submit_button"></input> 
+    <input type="button" id="recgame_down" value="游戏位置下移" class="submit_button"></input> 
+    <!--input type="button" id="recgame_move" value="移动到指定位置" class="submit_button"></input> 
+    <input type="button" id="game_detail" value="查看游戏详情" class="submit_button"></input--> 
+    <input type="button" id="recgame_alter" value="编辑列表下游戏信息" class="submit_button"></input> 
+    </div>
+    <hr> 
+
+    <div style="width:100%;height:60%;overflow:scroll;align:center;">
         <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
             <thead>
                 <tr>
-                    <th width="20%">游戏名</th>
-                    <th width="20%">序号</th>
-                    <th width="20%">游戏ID</th>
-                    <th width="20%">游戏状态</th>
+                    <th width="10%">游戏名</th>
+                    <th width="10%">发布状态</th>
+                    <th width="10%">序号</th>
+                    <th width="10%">游戏ID</th>
+                    <th width="10%">游戏状态</th>
+                    <th width="10%">发布时间</th>
+                    <th width="10%">下线时间</th>
                 </tr>
             </thead>
             <tbody>
@@ -99,10 +125,24 @@
                 {% else %}
                 <tr id="game" value="{{ game.game_id }}">
                 {% endifequal %}
-                    <td colspan="1">{{ game.game_name }}</td>
+                    {% if not game.enabled %}
+                    <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ game.game_id }}"><font color="#DDDDDD">{{ game.game_name }}</font></a></td>
+                    <td colspan="1"><font color="#DDDDDD">未发布</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ game.manual_num }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ game.game_id }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ game.game_enabled }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ game.release_date }}</font></td>
+                    <td colspan="1"><font color="#DDDDDD">{{ game.unrelease_date }}</font></td>
+                    {% endif %}
+                    {% if game.enabled %}
+                    <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ game.game_id }}">{{ game.game_name }}</a></td>
+                    <td colspan="1">已发布</td>
                     <td colspan="1">{{ game.manual_num }}</td>
                     <td colspan="1">{{ game.game_id }}</td>
-                    <td colspan="1">{{ game.enabled }}</td>
+                    <td colspan="1">{{ game.game_enabled }}</td>
+                    <td colspan="1">{{ game.release_date }}</td>
+                    <td colspan="1">{{ game.unrelease_date }}</td>
+                    {% endif %}
                 </tr>
                 {% endfor %}
             </tbody>
@@ -110,12 +150,13 @@
     </div>
 
     <div style="height:5%;margin-bottom:2%;margin-top:2%">
-    <input type="button" id="recgame_add" value="增加游戏" class="submit_button"></input> 
+    <!--input type="button" id="recgame_add" value="增加游戏" class="submit_button"></input> 
     <input type="button" id="recgame_delete" value="删除游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_isenabled" value="发布游戏" class="submit_button"></input> 
+    <input type="button" id="recgame_notenabled" value="下线游戏" class="submit_button"></input> 
     <input type="button" id="recgame_up" value="游戏位置上移" class="submit_button"></input> 
     <input type="button" id="recgame_down" value="游戏位置下移" class="submit_button"></input> 
-    <input type="button" id="recgame_move" value="移动到指定位置" class="submit_button"></input> 
-    <input type="button" id="game_detail" value="查看游戏详情" class="submit_button"></input> 
+    <input type="button" id="recgame_alter" value="编辑列表下游戏信息" class="submit_button"></input--> 
     </div>
  
 {% endblock %}

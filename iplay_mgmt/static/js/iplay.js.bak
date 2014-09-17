@@ -106,8 +106,6 @@ $("#topic_edit").click(function(){
     var topic_date = $("#topic_date").val();
     var unrelease_date = $("#unrelease_date").val();
     var descJson = {}
-    var release_time = (new Date(topic_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    var unrelease_time = (new Date(unrelease_date.replace(new RegExp('-','gm'),'/'))).getTime();
     descJson['id'] = id;
     descJson['name'] = name;
     descJson['short_desc'] = short_desc;
@@ -116,13 +114,10 @@ $("#topic_edit").click(function(){
     descJson['topic_id_index'] = topic_id_index;
     descJson['topic_date'] = topic_date;
     descJson['unrelease_date'] = unrelease_date;
-    if (!unrelease_date || unrelease_time > release_time){ 
-        $.post('/iplay_mgmt/market/topic_edit/', descJson, function(topic_id){
-            window.location.href = '/iplay_mgmt/market/topic_alter/?topic_id='+topic_id;
-        });
-    }else{
-        alert('请确认发布和上线时间！！！');
-    }
+    //alert(JSON.stringify(descJson));
+    $.post('/iplay_mgmt/market/topic_edit/', descJson, function(topic_id){
+        window.location.href = '/iplay_mgmt/market/topic_alter/?topic_id='+topic_id;
+    });
 });
 $("#topic_delete").click(function(){
     var topic_id = $(".highlight#topic").attr("value");
@@ -226,16 +221,21 @@ $("#game_down").click(function(){
     }
 });
 $("#recgame_add").click(function(){
-    var game_id = $(".highlight#game").attr("value");
-    window.location.href = '/iplay_mgmt/market/recommend_addGame/?game_id='+game_id;
-});
-$("#recgame_alter").click(function(){
-    var game_id = $(".highlight#game").attr("value");
-    if(game_id){
-        window.location.href = '/iplay_mgmt/market/recommend_altGame/?game_id='+game_id;
-    }else{
-        alert("请选择游戏！！！");
-    }
+        var game_id = prompt('请输入添加的游戏ID');
+        var manual_num = prompt('请输入添加的游戏序号');
+        var release_date = prompt('请输入发布时间:');
+        var unrelease_date = prompt('请输入下线时间(可以不输入):')
+        var game_id_index = $(".highlight#game").attr("value");
+        var descJson = {}
+        descJson['game_id'] = game_id;
+        descJson['game_id_index'] = game_id_index;
+        descJson['manual_num'] = manual_num;
+        descJson['release_date'] = release_date;
+        descJson['unrelease_date'] = unrelease_date;
+        $.post('/iplay_mgmt/market/recommend_addGame/', descJson, function(result){
+            alert(result);
+            window.location.href = '/iplay_mgmt/market/recommend/';
+        });
 });
 $("#recgame_delete").click(function(){
     var game_id = $(".highlight#game").attr("value");
@@ -278,23 +278,18 @@ $("#recgame_notenabled").click(function(){
     }
 });
 $("#recgame_edit").click(function(){
-    var game_id = $("#game_id").val();
-    var manual_num = $("#manual_num").val();
-    var release_date = $("#release_date").val();
-    var unrelease_date = $("#unrelease_date").val();
+    var game_id = $(".highlight#game").attr("value");
     var descJson = {}
     descJson['game_id'] = game_id;
-    descJson['manual_num'] = manual_num;
-    descJson['release_date'] = release_date;
-    descJson['unrelease_date'] = unrelease_date;
-    var release_time = (new Date(release_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    var unrelease_time = (new Date(unrelease_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    if (!unrelease_date || unrelease_time > release_time){ 
-        $.post('/iplay_mgmt/market/recommend_editGame/', descJson, function(result){
-            window.location.href = '/iplay_mgmt/market/recommend/';
-        });
+    if(game_id){
+//prompt('请输入要编辑的热门词序号');
+        descJson['']
+        alert(game_id);
+ //       $.post('/iplay_mgmt/market/recommend_notenabledGame/', descJson, function(result){
+  //          window.location.href = '/iplay_mgmt/market/recommend/';
+//        });
     }else{
-        alert("请确认发布时间和下线时间！！！");
+        alert("请选择游戏！！！");
     }
 });
 $("#recgame_move").click(function(){
@@ -343,6 +338,25 @@ $("#recgame_down").click(function(){
         alert("请选择游戏！！！");
     }
 });
+/*
+$("#banner_add").click(function(){
+        var new_id = prompt('请输入添加的游戏或者专题ID');
+        var pic_url = prompt('请输入图片地址');
+        var id_index = $(".highlight#banner").attr("value");
+        var descJson = {}
+        descJson['new_id'] = new_id;
+        descJson['id_index'] = id_index;
+        descJson['pic_url'] = pic_url;    
+        //alert(JSON.stringify(descJson));
+        $.post('/iplay_mgmt/market/recommend_addBanner/', descJson, function(result){
+            if(result=='No'){
+                alert('请输入正确的游戏或者专题ID！！！');
+            }else{
+                window.location.href = '/iplay_mgmt/market/recommend/';
+            }
+        });
+});
+*/
 $("#banner_add").click(function(){
     var banner_id = $(".highlight#banner").attr("value");
     window.location.href = '/iplay_mgmt/market/recommend_addBanner/?banner_id='+banner_id;
@@ -374,20 +388,14 @@ $("#banner_edit").click(function(){
     descJson['release_date'] = release_date;
     descJson['unrelease_date'] = unrelease_date;
     //alert(JSON.stringify(descJson));
-    var release_time = (new Date(release_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    var unrelease_time = (new Date(unrelease_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    if (!unrelease_date || unrelease_time > release_time){ 
-        $.post('/iplay_mgmt/market/recommend_editBanner/', descJson, function(result){
-            if(result=='No'){
-                alert('请输入正确的游戏或者专题ID！！！');
-            }else{
-                alert(result);
-                window.location.href = '/iplay_mgmt/market/recommend/';
-            }
-        });
-     }else{
-         alert('请确认发布时间和下线时间！！！');
-     }
+    $.post('/iplay_mgmt/market/recommend_editBanner/', descJson, function(result){
+        if(result=='No'){
+            alert('请输入正确的游戏或者专题ID！！！');
+        }else{
+            alert(result);
+            window.location.href = '/iplay_mgmt/market/recommend/';
+        }
+    });
 });
 $("#banner_move").click(function(){
     var banner_id = $(".highlight#banner").attr("value");
@@ -507,14 +515,7 @@ $("#update").click(function(){
         alert('取消同步！');
     }
 });
-$("#check").click(function(){
-    var descJson = {};
-    if(confirm('确认检查失效游戏和专题吗？')){
-        window.location.href = '/iplay_mgmt/market/check/';
-    }else{
-        alert('取消检查！');
-    }
-});
+
 //________________________________________________________
 //分类
 $("#cats").change(function(){
@@ -528,43 +529,18 @@ $("#desc_cats").change(function(){
     window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
 });
 $("#cat_game_add").click(function(){
+    var game_id = prompt('请输入添加的游戏ID');
+    var manual_num = prompt('请输入添加的游戏序号');
     var cat_id = $("#cats").val();
-    var desc_cat_id = $("#desc_cats").val();
-    window.location.href = '/iplay_mgmt/market/category_addGame/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
-});
-$("#cat_game_alter").click(function(){
-    var game_id = $(".highlight#game").attr("value");
-    var cat_id = $("#cats").val();
-    var desc_cat_id = $("#desc_cats").val();
-    if(game_id){
-        window.location.href = '/iplay_mgmt/market/category_alterGame/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id+'&game_id='+game_id;
-    }else{
-        alert("请选择游戏！！！");
-    }
-});
-$("#cat_game_edit").click(function(){
-    var game_id = $("#game_id").val();
-    var manual_num = $("#manual_num").val();
-    var release_date = $("#release_date").val();
-    var unrelease_date = $("#unrelease_date").val();
-    var cat_id = $("#cat_id").val();
     var desc_cat_id = $("#desc_cats").val();
     var descJson = {}
     descJson['game_id'] = game_id;
     descJson['manual_num'] = manual_num;
-    descJson['release_date'] = release_date;
-    descJson['unrelease_date'] = unrelease_date;
     descJson['cat_id'] = cat_id;
     descJson['desc_cat_id'] = desc_cat_id;
-    var release_time = (new Date(release_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    var unrelease_time = (new Date(unrelease_date.replace(new RegExp('-','gm'),'/'))).getTime();
-    if (!unrelease_date || unrelease_time > release_time){ 
-        $.post('/iplay_mgmt/market/category_editGame/', descJson, function(result){
-            window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
-        });
-    }else{
-        alert('请确认发布时间和下线时间！！！');
-    }
+    $.post('/iplay_mgmt/market/category_addGame/', descJson, function(result){
+        window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+    });
 });
 $("#cat_game_delete").click(function(){
     var game_id = $(".highlight#game").attr("value");
@@ -586,37 +562,19 @@ $("#cat_game_delete").click(function(){
         alert("请选择游戏！！！");
     }
 });
-$("#cat_game_isenabled").click(function(){
+$("#cat_game_edit").click(function(){
     var game_id = $(".highlight#game").attr("value");
+    var manual_num = prompt('请输入要修改的游戏序号');
     var cat_id = $("#cats").val();
     var desc_cat_id = $("#desc_cats").val();
     var descJson = {}
     descJson['game_id'] = game_id;
+    descJson['manual_num'] = manual_num;
     descJson['cat_id'] = cat_id;
     descJson['desc_cat_id'] = desc_cat_id;
-    if(game_id){
-        $.post('/iplay_mgmt/market/category_isenabledGame/', descJson, function(result){
-            window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
-        });
-    }else{
-        alert("请选择游戏！！！");
-    }
-});
-$("#cat_game_notenabled").click(function(){
-    var game_id = $(".highlight#game").attr("value");
-    var cat_id = $("#cats").val();
-    var desc_cat_id = $("#desc_cats").val();
-    var descJson = {}
-    descJson['game_id'] = game_id;
-    descJson['cat_id'] = cat_id;
-    descJson['desc_cat_id'] = desc_cat_id;
-    if(game_id){
-        $.post('/iplay_mgmt/market/category_notenabledGame/', descJson, function(result){
-            window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
-        });
-    }else{
-        alert("请选择游戏！！！");
-    }
+    $.post('/iplay_mgmt/market/category_editGame/', descJson, function(result){
+        window.location.href = '/iplay_mgmt/market/category/?desc_cat_id='+desc_cat_id+'&cat_id='+cat_id;
+    });
 });
 //_____________________________________________________________
 //

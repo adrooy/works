@@ -1,0 +1,43 @@
+
+    {% extends 'market/header.html' %}    
+    {% block title %}{% endblock %}
+    {% block user %}{{ user.last_name }}{{ user.first_name }}{% endblock %}
+    {% block content %}
+
+    <div style='height:2%;font-size:25px;margin-top:5%;'>
+    <p>失效的游戏和专题</p>
+    </div>
+    <hr>
+            
+    <div style='margin-left:10%'>
+        <table border='1' cellspacing='0' width='80%'> 
+            <thead>  
+                <tr>
+                    <th width='20%'>游戏ID</th>
+                    <th width='20%'>游戏名</th>
+                    <th width='20%'>排列序号</th>
+                    <th width='20%'>类别</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+ 
+            </tbody>
+        </table>
+        <table border='1' cellspacing='0' width='80%'> 
+            <thead>  
+                <tr>
+                    <th width='20%'>专题ID</th>
+                    <th width='20%'>专题名</th>
+                    <th width='20%'>排列序号</th>
+                    <th width='20%'>类别</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    </div>
+    
+    {% endblock %}
+            

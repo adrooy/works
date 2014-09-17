@@ -28,20 +28,26 @@
                         <th>游戏名</th>
                         <th>游戏ID</th>
                         <th>ICON</th>
-                        <th>下载量</th>
+                        <th>角标</th>
+                        <th>彩标</th>
                         <th>类型</th>
+                        <th>下载量</th>
                         <th>评分</th>
                         <th>语言</th>
+                        <th>状态</th>
                         {% for list in feedback %}
                             <tr>
                                 <td style="width: 1%">{{list.index}}</td>
                                 <td style="width: 5%"><a href="/iplay_mgmt/game/detail/?game_id={{ list.game_id }}">{{ list.game_name }}</a></td>
                                 <td style="width: 5%">{{ list.game_id }}</td>
                                 <td style="width: 5%"><img style="width:75px;height:75px;" src="{{ list.icon_url }}"></td>
+                                <td style="width: 5%">{% ifequal list.subscript '0' %}无{% endifequal %}{% ifequal list.subscript '1' %}首发{% endifequal %}{% ifequal list.subscript '2' %}推荐{% endifequal %}{% ifequal list.subscript '3' %}热门{% endifequal %}</td>
+                                <td style="width: 5%">{% for color_label in list.color_label %}{% ifequal color_label '1' %}免内购 {% endifequal %}{% ifequal color_label '2' %}破解 {% endifequal %}{% ifequal color_label '3' %}插件 {% endifequal %}{% ifequal color_label '4' %}存档 {% endifequal %}{% ifequal color_label '5' %}免google {% endifequal %}{% ifequal color_label '6' %}免ROOT游戏 {% endifequal %}{% endfor %}</td>
+                                <td style="width: 5%">{{ list.origin_types }}</td>
                                 <td style="width: 5%">{{ list.download_counts }}</td>
-                                <td style="width: 5%">{{ list.game_types }}</td>
                                 <td style="width: 5%">{{ list.star_num }}</td>
                                 <td style="width: 5%">{{ list.game_language }}</td>
+                                <td style="width: 5%">{{ list.enabled }}</td>
                             </tr>
                         {% endfor %}
                     </table>

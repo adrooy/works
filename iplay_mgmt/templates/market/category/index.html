@@ -45,10 +45,13 @@
     <table border="1" id="senfe" cellspacing="0" width="80%" align="center">
         <thead>
             <tr>
-                <th width="20%">游戏名</th>
-                <th width="20%">序号</th>
-                <th width="20%">游戏ID</th>
-                <th width="20%">游戏状态</th>
+                <th width="10%">游戏名</th>
+                <th width="10%">发布状态</th>
+                <th width="10%">序号</th>
+                <th width="10%">游戏ID</th>
+                <th width="10%">游戏状态</th>
+                <th width="10%">发布时间</th>
+                <th width="10%">下线时间</th>
             </tr>
         </thead>
         <tbody>
@@ -58,10 +61,24 @@
             {% else %}
             <tr id="game" value="{{ game.game_id }}">
             {% endifequal %}
-                <td colspan="1">{{ game.game_name }}</td>
+                {% if not game.enabled %}
+                <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ game.game_id }}"><font color="#DDDDDD">{{ game.game_name }}</font></a></td>
+                <td colspan="1"><font color="#DDDDDD">未发布</font></td>
+                <td colspan="1"><font color="#DDDDDD">{{ game.manual_num }}</font></td>
+                <td colspan="1"><font color="#DDDDDD">{{ game.game_id }}</font></td>
+                <td colspan="1"><font color="#DDDDDD">{{ game.game_enabled }}</font></td>
+                <td colspan="1"><font color="#DDDDDD">{{ game.release_date }}</font></td>
+                <td colspan="1"><font color="#DDDDDD">{{ game.unrelease_date }}</font></td>
+                {% endif %}
+                {% if game.enabled %}
+                <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ game.game_id }}">{{ game.game_name }}</a></td>
+                <td colspan="1">已发布</td>
                 <td colspan="1">{{ game.manual_num }}</td>
                 <td colspan="1">{{ game.game_id }}</td>
-                <td colspan="1">{{ game.enabled }}</td>
+                <td colspan="1">{{ game.game_enabled }}</td>
+                <td colspan="1">{{ game.release_date }}</td>
+                <td colspan="1">{{ game.unrelease_date }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
@@ -71,14 +88,15 @@
 <div style="height:5%;margin-bottom:2%;margin-top:2%">
 <input type="button" id="cat_game_add" value="增加游戏" class="submit_button"></input> 
 <input type="button" id="cat_game_delete" value="删除游戏" class="submit_button"></input> 
-<input type="button" id="cat_game_edit" value="编辑游戏" class="submit_button"></input> 
-<input type="button" id="game_detail" value="查看游戏详情" class="submit_button"></input> 
+<input type="button" id="cat_game_isenabled" value="发布游戏" class="submit_button"></input> 
+<input type="button" id="cat_game_notenabled" value="下线游戏" class="submit_button"></input> 
+<input type="button" id="cat_game_alter" value="编辑分类列表下游戏信息" class="submit_button"></input> 
 </div>
 <hr>
  
 <div style="height:2%;font-size:25px;margin-top:3%">
 <p id="index" style="visibility:hidden" value="{{index}}"></p>
-<p>自然排序列表</p>
+<p>自然排序列表(共{{'2'}}个游戏)</p>
 </div>
 <hr>
 
@@ -95,7 +113,7 @@
         <tbody>
         {% for game in games4sys %}
             <tr>
-                <td colspan="1">{{ game.game_name }}</td>
+                <td colspan="1"><a href="/iplay_mgmt/game/detail/?game_id={{ game.game_id }}">{{ game.game_name }}</a></td>
                 <td colspan="1">{{ game.order_by_dl_cnt }}</td>
                 <td colspan="1">{{ game.game_id }}</td>
                 <td colspan="1">{{ game.enabled }}</td>
