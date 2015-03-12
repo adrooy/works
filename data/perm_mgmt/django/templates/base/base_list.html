@@ -1,0 +1,313 @@
+{% extends "base/base.html" %}
+{% load leftmenu %}
+{% load feedback_extras %}
+
+{% block title %}收件箱{% endblock %}
+{% block extracss %}
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link href="/static/css/iCheck/minimal/blue.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block content %}
+    <!-- Right side column. Contains the navbar and content of the page -->
+
+    <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>收件箱-<small>{{ ymd }}</small></h1><br/>
+            LBE版本选择:
+            <select class="btn-sm btn-default" onchange="lbe_version_choose(this.options[this.options.selectedIndex].value)">
+                <option>请选择...</option>
+                {% lbe_version lv %}
+            </select>
+
+            {% if count %}
+                总条数：{{ count }}
+            {% endif %}
+
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}"><i class="fa fa-dashboard"></i>首页</a></li>
+                <li class="active">收件箱</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <h2 class="navbar-nav">
+
+                {% block nav %}
+                {% endblock %}
+
+            </h2>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            {% block nav_tabs %}
+            {% endblock %}
+
+        </section>
+        <!-- /.content -->
+
+    </aside><!-- /.right-side -->
+
+    <!-- COMPOSE MESSAGE MODAL -->
+    <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-envelope-o"></i>回复框</h4>
+                </div>
+                <form id="reply-form" action="{% url 'reply' %}" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">回复语模板</span>
+                                <select class="form-control" onchange="reply_template_choose(this.options[this.options.selectedIndex].value)">
+                                    <option>请选择...</option>
+
+                                    {% lbe_reply_template %}
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="content" id="content" class="form-control" placeholder="回复语内容"
+                                      style="height: 120px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label id="msg"></label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer clearfix">
+                        <input name="message_ids" type="hidden" id="message_ids"/>
+                        <input name="ymd" type="hidden" value="{{ ymd }}" id="ymd"/>
+                        <input name="flag" type="hidden" value="{{ tab }}" id="flag"/>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i>取消
+                        </button>
+                        <button type="submit" class="btn btn-primary pull-left"><i class="fa fa-envelope"></i>确定
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+{% block extrajs %}
+    <!-- iCheck -->
+    <script src="/static/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
+    <!-- Page script -->
+    <script type="text/javascript">
+        $(function () {
+            //未checkbox（radio inputs）添加iCheck
+            $('input[type="checkbox"]').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass: 'iradio_minimal-blue'
+            });
+
+            //没有选中状态
+            $("#check-all").on('ifUnchecked', function (event) {
+                //Uncheck all checkboxes
+                $("input[type='checkbox']", ".table-mailbox").iCheck("uncheck");
+            });
+            //选中状态
+            $("#check-all").on('ifChecked', function (event) {
+                //Check all checkboxes
+                $("input[type='checkbox']", ".table-mailbox").iCheck("check");
+            });
+
+            // 输入框的状态变为 checked，记录id值
+            $('input').on('ifChecked', function (event) {
+                // console.log(event.type + ' callback' + $(this).val());
+                var id = ',' + $(this).val(); // 使用逗号加id的方法去判断，防止一个数字的在多位数匹配到
+                var ids = $("#message_ids").val();
+                if (ids.indexOf(id) >= 0 || isNaN($(this).val())) { // 如果id值存在或者不为数字，不继续存入
+                    return;
+                }
+                if (ids.length > 0) {
+                    ids += id;
+                } else {
+                    ids = id;
+                }
+                $("#message_ids").val(ids);
+            });
+
+            // checked 状态被移除，移除id值
+            $('input').on('ifUnchecked', function (event) {
+                // console.log(event.type + ' callback' + $(this).val());
+                var id = ',' + $(this).val();
+                var ids = $("#message_ids").val();
+                if (ids.indexOf(id) >= 0) { // 如果id值存在，移除
+                    ids = ids.replace(id, '');
+                }
+                $("#message_ids").val(ids);
+            });
+
+        });
+
+
+        // 选择每页显示记录条数
+        function pre_page_choose(pre_page) {
+            // console.log(pre_page)
+            var url = window.location.href;
+            url = url.split("?")[0] + "?pr=" + pre_page;
+            var lv = '{{ lv }}';
+            if(lv == 'None') {
+                window.location = url;
+
+            } else {
+                window.location = url + "&lv=" +lv;
+            }
+        }
+
+
+        // 回复语模板选择
+        function reply_template_choose(content) {
+            $("#content").val(content);
+        }
+
+
+        // 标记为已读
+        // flag: session,register,unregistered
+        function mark_read(flag) {
+            var ids = "";
+            $("[name='ckb']").each(function() {
+                ids += "," + $(this).val();
+            });
+            if(ids.length >0) {
+                window.location = '/mark/read/?ids=' + ids + '&ymd={{ ymd }}&flag=' + flag;
+            }
+        }
+
+
+        //为记录添加标签
+        function mark_label(label_id, flag) {
+            var ids = $("#message_ids").val();
+            if (ids.length <= 0) {
+                alert("请选择一行");
+            } else {
+                window.location = '/mark/label/?ids=' + ids + "&label_id=" +label_id + '&ymd={{ ymd }}&flag=' + flag;
+            }
+        }
+
+
+        // 快捷回复
+        function reply_quickly(content) {
+            var message_ids=$("#message_ids").val();
+            if (message_ids.length <= 0) {
+                alert("请选择一行");
+            } else if(content.length <= 0) {
+                alert("回复语不能为空");
+            } else if(content.length >= 1000) {
+                alert("回复语太长");
+            } else {
+                $.ajax({
+                    type: 'post',
+                    url: '/reply/',
+                    data: {message_ids: message_ids, content: content, ymd:{{ ymd }}, flag:'{{ tab }}', csrfmiddlewaretoken:'{{ csrf_token }}'},
+                    dataType: 'json'})
+                .done(function(data){
+                    if(data.status) {
+                        if(data.status == '400') {
+                            alert(data.error);
+                        } else if(data.status == '200') {
+                            alert(data.success);
+                            window.location = data.referer;
+                        }
+                    }
+                })
+                .fail(function() {
+                    alert("请求出错");
+                });
+            }
+        }
+
+
+        // 回复
+        function reply(mid) {
+            // console.log(mid);
+            $("#message_ids").val(mid);
+        }
+
+        var frm = $('#reply-form');
+        frm.submit(function () {
+            var message_ids=$("#message_ids").val();
+            var content=$("#content").val();
+            if (message_ids.length <= 0) {
+                $("#msg").html("请选择一行");
+            } else if(content.length <= 0) {
+                $("#msg").html("回复语不能为空");
+            } else if(content.length >= 1000) {
+                $("#msg").html("回复语太长");
+            } else {
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: frm.attr('action'),
+                    data: frm.serialize(),
+                    dataType: 'json'})
+                .done(function(data){
+                    if(data.status) {
+                        if(data.status == '400') {
+                            $("#msg").html(data.error);
+                        } else if(data.status == '200') {
+                            $("#msg").html(data.success);
+                            window.location = data.referer;
+                        }
+                    }
+                })
+                .fail(function() {
+                    $("#msg").html("请求出错");
+                });
+            }
+            return false;
+        });
+
+
+        // 回复历史
+        function reply_history(uid) {
+            $.ajax({
+                type: 'post',
+                url: '{% url 'reply_history' %}',
+                data: {uid: uid, csrfmiddlewaretoken:'{{ csrf_token }}'},
+                dataType: 'json'})
+            .done(function(data){
+                if(data.error) {
+                    $("#chat-box").html(data.error);
+                } else {
+                    $("#chat-box").html(data.msg_history);
+                }
+            })
+            .fail(function() {
+                $("#chat-box").html("请求出错");
+            });
+
+        }
+
+
+{#        var cookie_name='LBE_VERSION';#}
+{#        //lbe版本选择，使用cookie存储选择的版本#}
+{#        function lbe_version_choose(version) {#}
+{#            var url = window.location.pathname;#}
+{#            if(version == "请选择...") {#}
+{#                $.removeCookie(cookie_name, {path: '/'});#}
+{#                window.location = url;#}
+{#            } else {#}
+{#                $.cookie(cookie_name, version, {expires: 1, path: '/'});#}
+{#                window.location = url + "?lv=" +version;#}
+{#            }#}
+{#        }#}
+
+        //下载附件
+        function download_file(id) {
+            window.location = '{% url 'download' %}' + "?id=" +id;
+        }
+
+    </script>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+{% block title %}标签和回复管理{% endblock %}
+{% block content %}
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                500 Error Page
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}"><i class="fa fa-dashboard"></i>首页</a></li>
+                <li class="active">500 error</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="error-page">
+                <h2 class="headline">500</h2>
+                <div class="error-content">
+                    <h3><i class="fa fa-warning text-yellow"></i> Oops! Something went wrong.</h3>
+                    <p>
+                        We will work on fixing that right away.
+                        Meanwhile, you may <a href='{% url 'index' %}'>return to Home</a>
+                    </p>
+                </div>
+            </div><!-- /.error-page -->
+
+        </section><!-- /.content -->
+    </aside><!-- /.right-side -->
+
+    {% block model %}
+    {% endblock %}
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
+
+
+

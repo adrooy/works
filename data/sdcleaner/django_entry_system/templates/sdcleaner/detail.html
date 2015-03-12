@@ -1,0 +1,90 @@
+{% extends "base/base.html" %}
+{% block title %}首页{% endblock %}
+{% block content %}
+
+{{ user.last_name }}{{ user.first_name }}
+<a href="/accounts/logout/">注销</a> 
+
+    <select id="page" style="visibility:hidden">
+    <option value="{{ page }}" selected="selected">{{ page }}</option>
+    </select>
+    <select id="assign_time" style="visibility:hidden">
+    <option value="{{ assign_time }}" selected="selected">{{ assign_time }}</option>
+    </select>
+    <input id="apk_id" value="{{ apk_id }}" style="display:none;"/>
+<!--
+    <select id="package_name" style="visibility:hidden">
+    <option value="{{ perms.package_name }}" selected="selected">{{ perms.package_name }}</option>
+    </select>
+-->
+
+<div id="user_app">
+{% if is_superuser %}
+    <span class="il_block w_left align_right t_bold">Assign To: </span>
+    <span>{{ assign_to }}</span>
+{% endif %}
+    <input id="assign_to" value="{{ assign_to }}" style="display:none;" />
+    <span class="il_block w_left align_right t_bold">App: </span>
+    <span>{{ title }}</span>
+    <span class="il_block w_200 align_right t_bold">Package Name: </span>
+    <span>{{ package_name }}</span>
+	<button style="height:25px;width:100px" id="download">下载Apk文件</button>
+</div>
+<p></p>
+<!--
+<div id="user_app">
+    <span class="il_block w_left align_right"></span>
+	<button style="height:25px;width:100px" id="download">下载Apk文件</button>
+    <span class="il_block w_left align_right"></span>
+	<button style="height:25px;width:100px" id="check">检测新版本</button>
+</div>
+-->
+<div id="input_title">
+	<span class="il_block w_300 align_center t_bold ml_4">目录</span>
+        <span class="il_block w_100 align_left t_bold ">概要</span>
+        <span class="il_block w_300 align_left t_bold ">描述</span>
+        <span class="il_block w_300 align_left t_bold ">清理提示</span>
+        <span class="il_block w_200 align_left t_bold ">子目录</span>
+        <span class="il_block w_50 align_left t_bold ">层级</span>
+        <span class="il_block w_50 align_left t_bold ">删除</span>
+</div>
+<div id="input_area"> 
+{% for path_info in path_infos %}
+	<div id="file_path_{{forloop.counter0}}" class="pt_5" zz="existed">
+	<input type="text" class="il_block w_300 align_left ml_4" zz="file_path" value="{{path_info.file_path}}"/>
+	<input type="text" class="il_block w_100 align_left " zz="item_name" value="{{path_info.item_name}}"/>
+	<textarea rows="1" class="il_block w_300 align_left " zz="desc">{{path_info.desc}}</textarea>
+	<textarea rows="1" class="il_block w_300 align_left " zz="alert_info">{{path_info.alert_info}}</textarea>
+	<input type="text" class="il_block w_200 align_left " zz="sub_path" value="{{path_info.sub_path}}"/>
+	<input type="text" class="il_block w_50 align_left " zz="sl" value="{{path_info.sl}}"/>
+	<input type="checkbox" class="il_block align_left " zz="delete">
+	<input style="display:none;" zz="path_info_id" value="{{path_info.id}}">
+	</div>
+{% endfor %}
+</div>
+<p></p>
+<input type="button" id="add_record" class="ml_4" value="添加目录"></input> 
+<p></p>
+<span class="il_block align_right ml_4">comments</span>
+<input type="text" id="comments" class="il_block w_center align_left" value="{{ comments }}"/>
+<p></p>
+{% if is_finished %}
+<input type="radio" name="is_finished" checked value="1" class="ml_4">已完成</input><input type="radio" name="is_finished" value="0">未完成</input>
+{% else %}
+<input type="radio" name="is_finished" value="1" class="ml_4">已完成</input><input type="radio" name="is_finished" checked value="0">未完成</input>
+{% endif %}
+
+<hr>
+<div id="op_btn">
+{% if is_superuser %}
+<input type="button" id="save_approved" value="通过" class="submit_button"></input> 
+<input type="button" id="save_notapproved" value="不通过" class="submit_button"></input> 
+<input type="button" id="save_pending" value="待定" class="submit_button"></input> 
+<input type="button" id="return" value="返回" class="submit_button"></input> 
+{% else %}
+<input type="button" id="save_record" value="保存" class="submit_button"></input> 
+<input type="button" id="return" value="返回" class="submit_button"></input> 
+{% endif %}
+</div>
+ 
+{% endblock %}

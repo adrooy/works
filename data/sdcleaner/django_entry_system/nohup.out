@@ -1,0 +1,228 @@
+[uWSGI] getting INI configuration from /opt/www/zzdev/django_uwsgi.ini
+open("./python_plugin.so"): No such file or directory [core/utils.c line 3648]
+!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!
+*** Starting uWSGI 2.0.4 (64bit) on [Wed Aug 27 17:21:41 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 28 May 2014 20:00:42
+os: Linux-2.6.32-71.el6.x86_64 #1 SMP Fri May 20 03:51:51 BST 2011
+nodename: bogon
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /opt/www/zzdev
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+setgid() to 27
+setuid() to 27
+your processes number limit is 1024
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9190; fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xca9650
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xca9650 pid: 19743 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19743)
+spawned uWSGI worker 1 (pid: 19747, cores: 1)
+Wed Aug 27 17:27:03 2014 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from /opt/www/zzdev/django_uwsgi.ini
+open("./python_plugin.so"): No such file or directory [core/utils.c line 3648]
+!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!
+*** Starting uWSGI 2.0.4 (64bit) on [Thu Aug 28 17:47:11 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 28 May 2014 20:00:42
+os: Linux-2.6.32-71.el6.x86_64 #1 SMP Fri May 20 03:51:51 BST 2011
+nodename: bogon
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /opt/www/zzdev
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+setgid() to 27
+setuid() to 27
+your processes number limit is 1024
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9190; fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x13f4650
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13f4650 pid: 27947 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27947)
+spawned uWSGI worker 1 (pid: 27951, cores: 1)
+Thu Aug 28 17:51:18 2014 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from /opt/www/zzdev/django_uwsgi.ini
+open("./python_plugin.so"): No such file or directory [core/utils.c line 3648]
+!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!
+*** Starting uWSGI 2.0.4 (64bit) on [Thu Aug 28 18:02:21 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 28 May 2014 20:00:42
+os: Linux-2.6.32-71.el6.x86_64 #1 SMP Fri May 20 03:51:51 BST 2011
+nodename: bogon
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /opt/www/zzdev
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+setgid() to 27
+setuid() to 27
+your processes number limit is 1024
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9190; fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1513820
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1513820 pid: 28086 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28086)
+spawned uWSGI worker 1 (pid: 28090, cores: 1)
+Thu Aug 28 18:03:29 2014 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from /opt/www/zzdev/django_uwsgi.ini
+open("./python_plugin.so"): No such file or directory [core/utils.c line 3648]
+!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!
+*** Starting uWSGI 2.0.4 (64bit) on [Thu Aug 28 18:03:30 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 28 May 2014 20:00:42
+os: Linux-2.6.32-71.el6.x86_64 #1 SMP Fri May 20 03:51:51 BST 2011
+nodename: bogon
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /opt/www/zzdev
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+setgid() to 27
+setuid() to 27
+your processes number limit is 1024
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9190; fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1de5820
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1de5820 pid: 28120 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28120)
+spawned uWSGI worker 1 (pid: 28124, cores: 1)
+Thu Aug 28 18:07:08 2014 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from /opt/www/zzdev/django_uwsgi.ini
+open("./python_plugin.so"): No such file or directory [core/utils.c line 3648]
+!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!
+*** Starting uWSGI 2.0.4 (64bit) on [Thu Aug 28 18:07:08 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 28 May 2014 20:00:42
+os: Linux-2.6.32-71.el6.x86_64 #1 SMP Fri May 20 03:51:51 BST 2011
+nodename: bogon
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /opt/www/zzdev
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+setgid() to 27
+setuid() to 27
+your processes number limit is 1024
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8180; fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1020820
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1020820 pid: 28163 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28163)
+spawned uWSGI worker 1 (pid: 28167, cores: 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/django/core/handlers/wsgi.py", line 187, in __call__
+    self.load_middleware()
+  File "/usr/lib/python2.6/site-packages/django/core/handlers/base.py", line 46, in load_middleware
+    for middleware_path in settings.MIDDLEWARE_CLASSES:
+  File "/usr/lib/python2.6/site-packages/django/conf/__init__.py", line 54, in __getattr__
+    self._setup(name)
+  File "/usr/lib/python2.6/site-packages/django/conf/__init__.py", line 50, in _setup
+    self._configure_logging()
+  File "/usr/lib/python2.6/site-packages/django/conf/__init__.py", line 80, in _configure_logging
+    logging_config_func(self.LOGGING)
+  File "/usr/lib/python2.6/site-packages/django/utils/dictconfig.py", line 555, in dictConfig
+    dictConfigClass(config).configure()
+  File "/usr/lib/python2.6/site-packages/django/utils/dictconfig.py", line 354, in configure
+    '%r: %s' % (name, e))
+ValueError: Unable to configure handler 'custom_log_file': [Errno 13] Permission denied: '/opt/www/zzdev/logs/django.log'
+[pid: 28167|app: 0|req: 1/1] 192.168.1.43 () {38 vars in 648 bytes} [Thu Aug 28 18:07:13 2014] GET / => generated 0 bytes in 55 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+[pid: 28167|app: 0|req: 2/2] 192.168.1.43 () {38 vars in 599 bytes} [Thu Aug 28 18:07:14 2014] GET /favicon.ico => generated 3823 bytes in 95 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 3/3] 192.168.1.43 () {40 vars in 679 bytes} [Thu Aug 28 18:07:15 2014] GET / => generated 3790 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 4/4] 192.168.1.65 () {38 vars in 712 bytes} [Thu Aug 28 18:07:16 2014] GET / => generated 3790 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 5/5] 192.168.1.65 () {38 vars in 728 bytes} [Thu Aug 28 18:07:25 2014] GET /sdclener => generated 3814 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 6/6] 192.168.1.43 () {38 vars in 666 bytes} [Thu Aug 28 18:07:26 2014] GET /sdcleaner => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 7/7] 192.168.1.43 () {38 vars in 668 bytes} [Thu Aug 28 18:07:26 2014] GET /sdcleaner/ => generated 0 bytes in 9 msecs (HTTP/1.1 302) 4 headers in 174 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 8/8] 192.168.1.43 () {38 vars in 711 bytes} [Thu Aug 28 18:07:27 2014] GET /accounts/login/?next=/sdcleaner/ => generated 2048 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 9/9] 192.168.1.22 () {40 vars in 877 bytes} [Thu Aug 28 18:07:52 2014] GET /sdcleaner => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 10/10] 192.168.1.22 () {38 vars in 848 bytes} [Thu Aug 28 18:07:52 2014] GET /sdcleaner/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 4 headers in 174 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 11/11] 192.168.1.22 () {38 vars in 891 bytes} [Thu Aug 28 18:07:52 2014] GET /accounts/login/?next=/sdcleaner/ => generated 2048 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 12/12] 192.168.1.22 () {44 vars in 1048 bytes} [Thu Aug 28 18:07:55 2014] POST /accounts/login/ => generated 2048 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 13/13] 192.168.1.22 () {44 vars in 1031 bytes} [Thu Aug 28 18:08:00 2014] POST /accounts/login/ => generated 0 bytes in 53 msecs (HTTP/1.1 302) 6 headers in 405 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 14/14] 192.168.1.22 () {40 vars in 904 bytes} [Thu Aug 28 18:08:00 2014] GET /sdcleaner/ => generated 4650 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 15/15] 192.168.1.65 () {38 vars in 730 bytes} [Thu Aug 28 18:08:08 2014] GET /sdcleaner => generated 0 bytes in 3 msecs (HTTP/1.1 301) 3 headers in 150 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 16/16] 192.168.1.65 () {38 vars in 732 bytes} [Thu Aug 28 18:08:08 2014] GET /sdcleaner/ => generated 0 bytes in 7 msecs (HTTP/1.1 302) 5 headers in 305 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 17/17] 192.168.1.65 () {38 vars in 775 bytes} [Thu Aug 28 18:08:08 2014] GET /accounts/login/?next=/sdcleaner/ => generated 2048 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 18/18] 192.168.1.43 () {50 vars in 995 bytes} [Thu Aug 28 18:08:14 2014] POST /accounts/login/ => generated 0 bytes in 61 msecs (HTTP/1.1 302) 6 headers in 405 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 19/19] 192.168.1.43 () {44 vars in 873 bytes} [Thu Aug 28 18:08:14 2014] GET /sdcleaner/ => generated 4650 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 20/20] 192.168.1.43 () {42 vars in 1119 bytes} [Thu Aug 28 18:08:32 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Google%20Play&&page=1&assign_time=2014-08-28&package_name=com.android.vending&apk_id=1; => generated 4241 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 21/21] 192.168.1.43 () {42 vars in 1229 bytes} [Thu Aug 28 18:08:36 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Superuser:%E8%B6%85%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86&&page=1&assign_time=2014-08-28&package_name=com.noshufou.android.su&apk_id=2; => generated 5577 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 22/22] 192.168.1.43 () {50 vars in 1189 bytes} [Thu Aug 28 18:08:52 2014] POST /sdcleaner/save/ => generated 10 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 89 bytes (2 switches on core 0)
+[pid: 28167|app: 0|req: 23/23] 192.168.1.43 () {42 vars in 1188 bytes} [Thu Aug 28 18:08:57 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 41 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 24/24] 192.168.1.43 () {42 vars in 1457 bytes} [Thu Aug 28 18:09:03 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=%E7%8C%8E%E8%B1%B9%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%88%E5%8E%9F%E9%87%91%E5%B1%B1%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%89&&page=1&assign_time=2014-08-28&package_name=com.cleanmaster.mguard_cn&apk_id=3; => generated 4963 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 25/25] 192.168.1.43 () {42 vars in 1201 bytes} [Thu Aug 28 18:09:09 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Google%20Play&&page=1&assign_time=2014-08-28&package_name=com.android.vending&apk_id=1; => generated 4241 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 26/26] 192.168.1.43 () {42 vars in 1133 bytes} [Thu Aug 28 18:09:13 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 27/27] 192.168.1.43 () {42 vars in 1457 bytes} [Thu Aug 28 18:09:23 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=%E7%8C%8E%E8%B1%B9%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%88%E5%8E%9F%E9%87%91%E5%B1%B1%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%89&&page=1&assign_time=2014-08-28&package_name=com.cleanmaster.mguard_cn&apk_id=3; => generated 4963 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 28/28] 192.168.1.43 () {42 vars in 1261 bytes} [Thu Aug 28 18:09:24 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 43 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 29/29] 192.168.1.43 () {42 vars in 1201 bytes} [Thu Aug 28 18:09:25 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Google%20Play&&page=1&assign_time=2014-08-28&package_name=com.android.vending&apk_id=1; => generated 4241 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 30/30] 192.168.1.43 () {50 vars in 1134 bytes} [Thu Aug 28 18:09:45 2014] POST /sdcleaner/save/ => generated 10 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 89 bytes (2 switches on core 0)
+[pid: 28167|app: 0|req: 31/31] 192.168.1.43 () {42 vars in 1133 bytes} [Thu Aug 28 18:09:47 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 32/32] 192.168.1.43 () {42 vars in 1201 bytes} [Thu Aug 28 18:09:49 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Google%20Play&&page=1&assign_time=2014-08-28&package_name=com.android.vending&apk_id=1; => generated 4903 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 33/33] 192.168.1.43 () {50 vars in 1134 bytes} [Thu Aug 28 18:09:56 2014] POST /sdcleaner/save/ => generated 10 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 89 bytes (2 switches on core 0)
+[pid: 28167|app: 0|req: 34/34] 192.168.1.43 () {42 vars in 1133 bytes} [Thu Aug 28 18:09:58 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 35/35] 192.168.1.43 () {42 vars in 1201 bytes} [Thu Aug 28 18:10:00 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Google%20Play&&page=1&assign_time=2014-08-28&package_name=com.android.vending&apk_id=1; => generated 5558 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 36/36] 192.168.1.43 () {42 vars in 1133 bytes} [Thu Aug 28 18:10:01 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 37/37] 192.168.1.22 () {42 vars in 935 bytes} [Thu Aug 28 18:10:32 2014] GET /sdcleaner/ => generated 4650 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 38/38] 192.168.1.22 () {40 vars in 1454 bytes} [Thu Aug 28 18:10:33 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=%E7%8C%8E%E8%B1%B9%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%88%E5%8E%9F%E9%87%91%E5%B1%B1%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%89&&page=1&assign_time=2014-08-28&package_name=com.cleanmaster.mguard_cn&apk_id=3; => generated 4976 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 39/39] 192.168.1.22 () {40 vars in 1340 bytes} [Thu Aug 28 18:10:36 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 40/40] 192.168.1.22 () {40 vars in 1390 bytes} [Thu Aug 28 18:10:37 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Superuser:%E8%B6%85%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86&&page=1&assign_time=2014-08-28&package_name=com.noshufou.android.su&apk_id=2; => generated 6271 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 41/41] 192.168.1.22 () {40 vars in 1267 bytes} [Thu Aug 28 18:10:41 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 42/42] 192.168.1.22 () {40 vars in 1390 bytes} [Thu Aug 28 18:10:46 2014] GET /sdcleaner/selected/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&title=Superuser:%E8%B6%85%E7%BA%A7%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86&&page=1&assign_time=2014-08-28&package_name=com.noshufou.android.su&apk_id=2; => generated 6271 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 28167|app: 0|req: 43/43] 192.168.1.22 () {40 vars in 1267 bytes} [Thu Aug 28 18:10:54 2014] GET /sdcleaner/page/?assign_to=%E6%B5%8B%E8%AF%95%E7%94%A8%E6%88%B7&page=1&assign_time=2014-08-28 => generated 4650 bytes in 45 msecs (HTTP/1.1 200) 4 headers in 233 bytes (1 switches on core 0)

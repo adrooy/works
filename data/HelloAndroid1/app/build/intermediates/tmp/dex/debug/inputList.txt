@@ -1,0 +1,4 @@
+/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/classes/debug
+/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/pre-dexed/debug/ppincrupdate-48336905e52b6c528411ac5057401dab647d7862.jar
+/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/pre-dexed/debug/classes-3b07d2832780867ae26c12865bd071f9e30c635b.jar
+/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-cba5b4e9d81da0d957935481e9e361bc41386ffc.jar

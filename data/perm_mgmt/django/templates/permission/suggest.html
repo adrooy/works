@@ -1,0 +1,218 @@
+{% extends "base/base.html" %}
+{% block title %}首页{% endblock %}
+{% block content %}
+
+{{ user.last_name }}{{ user.first_name }}
+<a href="/accounts/logout/">注销</a> 
+
+    <select id="page" style="visibility:hidden">
+    <option value="{{ page }}" selected="selected">{{ page }}</option>
+    </select>
+    <select id="assign_time" style="visibility:hidden">
+    <option value="{{ assign_time }}" selected="selected">{{ assign_time }}</option>
+    </select>
+    <select id="package_name" style="visibility:hidden">
+    <option value="{{ perms.package_name }}" selected="selected">{{ perms.package_name }}</option>
+    </select>
+
+<div id="user_app">
+    <span class="il_block w_left align_right">Op</span>
+    <select id="assign_to">
+    <option value="{{ assign_to }}" selected="selected">{{ assign_to }}</option>
+    </select>
+    <span class="il_block w_left align_right">App</span>
+    <select id="title">
+    <option value="{{ title }}" selected="selected">{{ title }}</option>
+    </select>
+    <span class="il_block w_left align_right">Version</span>
+    <select id="version">
+    <option value="{{ version }}" selected="selected">{{ version }}</option>
+    </select>
+</div>
+<p></p>
+<div id="user_app">
+    <span class="il_block w_left align_right"></span>
+	<button style="height:25px;width:100px" id="download">下载Apk文件</button>
+    <span class="il_block w_left align_right"></span>
+	<button style="height:25px;width:100px" id="check">检测新版本</button>
+</div>
+ 
+{% if perms %}
+<div id="input_title">
+	<span class="il_block w_left align_right t_bold">权限</span>
+	<span class="il_block w_center align_center t_bold">描述</span>
+	<span class="align_left t_bold">推荐</span>
+<div>
+<div id="input">
+<div>
+{% ifnotequal perms.perm_sendsms_suggest '-' %}
+    <span class="il_block w_left align_right">发送短信</span>
+    <input type="text" id="perm_sendsms_description" value="{{ perms.perm_sendsms_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_sendsms_suggest" {% ifequal perms.perm_sendsms_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_sendsms_suggest" {% ifequal perms.perm_sendsms_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_sendsms_suggest" {% ifequal perms.perm_sendsms_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_callphone_suggest '-' %}
+    <span class="il_block w_left align_right">电话</span>
+    <input type="text" id="perm_callphone_description" value="{{ perms.perm_callphone_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_callphone_suggest" {% ifequal perms.perm_callphone_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_callphone_suggest" {% ifequal perms.perm_callphone_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_callphone_suggest" {% ifequal perms.perm_callphone_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_smsdb_suggest '-' %}
+    <span class="il_block w_left align_right">短信记录</span>
+    <input type="text" id="perm_smsdb_description" value="{{ perms.perm_smsdb_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_smsdb_suggest" {% ifequal perms.perm_smsdb_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_smsdb_suggest" {% ifequal perms.perm_smsdb_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_smsdb_suggest" {% ifequal perms.perm_smsdb_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_contact_suggest '-' %}
+    <span class="il_block w_left align_right">联系人记录</span>
+    <input type="text" id="perm_contact_description" value="{{ perms.perm_contact_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_contact_suggest" {% ifequal perms.perm_contact_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_contact_suggest" {% ifequal perms.perm_contact_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_contact_suggest" {% ifequal perms.perm_contact_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_calllog_suggest '-' %}
+    <span class="il_block w_left align_right">通话记录</span>
+    <input type="text" id="perm_calllog_description" value="{{ perms.perm_calllog_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_calllog_suggest" {% ifequal perms.perm_calllog_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_calllog_suggest" {% ifequal perms.perm_calllog_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_calllog_suggest" {% ifequal perms.perm_calllog_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_location_suggest '-' %}
+    <span class="il_block w_left align_right">定位</span>
+    <input type="text" id="perm_location_description" value="{{ perms.perm_location_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_location_suggest" {% ifequal perms.perm_location_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_location_suggest" {% ifequal perms.perm_location_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_location_suggest" {% ifequal perms.perm_location_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_phoneinfo_suggest '-' %}
+    <span class="il_block w_left align_right">手机识别码</span>
+    <input type="text" id="perm_phoneinfo_description" value="{{ perms.perm_phoneinfo_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_phoneinfo_suggest" {% ifequal perms.perm_phoneinfo_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_phoneinfo_suggest" {% ifequal perms.perm_phoneinfo_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_phoneinfo_suggest" {% ifequal perms.perm_phoneinfo_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_netdefault_suggest '-' %}
+    <span class="il_block w_left align_right">通过2G/3G联网</span>
+    <input type="text" id="perm_netdefault_description" value="{{ perms.perm_netdefault_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_netdefault_suggest" {% ifequal perms.perm_netdefault_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_netdefault_suggest" {% ifequal perms.perm_netdefault_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_netdefault_suggest" {% ifequal perms.perm_netdefault_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_netwifi_suggest '-' %}
+    <span class="il_block w_left align_right">通过wifi联网</span>
+    <input type="text" id="perm_netwifi_description" value="{{ perms.perm_netwifi_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_netwifi_suggest" {% ifequal perms.perm_netwifi_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_netwifi_suggest" {% ifequal perms.perm_netwifi_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_netwifi_suggest" {% ifequal perms.perm_netwifi_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_root_suggest '-' %}
+    <span class="il_block w_left align_right">root权限</span>
+    <input type="text" id="perm_root_description" value="{{ perms.perm_root_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_root_suggest" {% ifequal perms.perm_root_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_root_suggest" {% ifequal perms.perm_root_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_root_suggest" {% ifequal perms.perm_root_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_callstate_suggest '-' %}
+    <span class="il_block w_left align_right">通话状态</span>
+    <input type="text" id="perm_callstate_description" value="{{ perms.perm_callstate_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_callstate_suggest" {% ifequal perms.perm_callstate_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_callstate_suggest" {% ifequal perms.perm_callstate_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_callstate_suggest" {% ifequal perms.perm_callstate_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_callmonitor_suggest '-' %}
+    <span class="il_block w_left align_right">通话监听</span>
+    <input type="text" id="perm_callmonitor_description" value="{{ perms.perm_callmonitor_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_callmonitor_suggest" {% ifequal perms.perm_callmonitor_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_callmonitor_suggest" {% ifequal perms.perm_callmonitor_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_callmonitor_suggest" {% ifequal perms.perm_callmonitor_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_recorder_suggest '-' %}
+    <span class="il_block w_left align_right">拍照和录像</span>
+    <input type="text" id="perm_recorder_description" value="{{ perms.perm_recorder_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_recorder_suggest" {% ifequal perms.perm_recorder_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_recorder_suggest" {% ifequal perms.perm_recorder_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_recorder_suggest" {% ifequal perms.perm_recorder_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_settings_suggest '-' %}
+    <span class="il_block w_left align_right">系统设置</span>
+    <input type="text" id="perm_settings_description" value="{{ perms.perm_settings_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_settings_suggest" {% ifequal perms.perm_settings_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_settings_suggest" {% ifequal perms.perm_settings_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_settings_suggest" {% ifequal perms.perm_settings_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_installpackage_suggest '-' %}
+    <span class="il_block w_left align_right">安装app</span>
+    <input type="text" id="perm_installpackage_description" value="{{ perms.perm_installpackage_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_installpackage_suggest" {% ifequal perms.perm_installpackage_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_installpackage_suggest" {% ifequal perms.perm_installpackage_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_installpackage_suggest" {% ifequal perms.perm_installpackage_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_audiorecorder_suggest '-' %}
+    <span class="il_block w_left align_right">录音</span>
+    <input type="text" id="perm_audiorecorder_description" value="{{ perms.perm_audiorecorder_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_audiorecorder_suggest" {% ifequal perms.perm_audiorecorder_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_audiorecorder_suggest" {% ifequal perms.perm_audiorecorder_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_audiorecorder_suggest" {% ifequal perms.perm_audiorecorder_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_mmsdb_suggest '-' %}
+    <span class="il_block w_left align_right">彩信记录</span>
+    <input type="text" id="perm_mmsdb_description" value="{{ perms.perm_mmsdb_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_mmsdb_suggest" {% ifequal perms.perm_mmsdb_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_mmsdb_suggest" {% ifequal perms.perm_mmsdb_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_mmsdb_suggest" {% ifequal perms.perm_mmsdb_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_sendmms_suggest '-' %}
+    <span class="il_block w_left align_right">发送彩信</span>
+    <input type="text" id="perm_sendmms_description" value="{{ perms.perm_sendmms_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_sendmms_suggest" {% ifequal perms.perm_sendmms_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_sendmms_suggest" {% ifequal perms.perm_sendmms_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_sendmms_suggest" {% ifequal perms.perm_sendmms_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_mobileconnectivity_suggest '-' %}
+    <span class="il_block w_left align_right">开启移动网络</span>
+    <input type="text" id="perm_mobileconnectivity_description" value="{{ perms.perm_mobileconnectivity_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_mobileconnectivity_suggest" {% ifequal perms.perm_mobileconnectivity_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_mobileconnectivity_suggest" {% ifequal perms.perm_mobileconnectivity_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_mobileconnectivity_suggest" {% ifequal perms.perm_mobileconnectivity_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_wificonnectivity_suggest '-' %}
+    <span class="il_block w_left align_right">开启wifi</span>
+    <input type="text" id="perm_wificonnectivity_description" value="{{ perms.perm_wificonnectivity_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_wificonnectivity_suggest" {% ifequal perms.perm_wificonnectivity_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_wificonnectivity_suggest" {% ifequal perms.perm_wificonnectivity_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_wificonnectivity_suggest" {% ifequal perms.perm_wificonnectivity_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_btconnectivity_suggest '-' %}
+    <span class="il_block w_left align_right">开启蓝牙</span>
+    <input type="text" id="perm_btconnectivity_description" value="{{ perms.perm_btconnectivity_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_btconnectivity_suggest" {% ifequal perms.perm_btconnectivity_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_btconnectivity_suggest" {% ifequal perms.perm_btconnectivity_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_btconnectivity_suggest" {% ifequal perms.perm_btconnectivity_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_autostart_suggest '-' %}
+    <span class="il_block w_left align_right">自启</span>
+    <input type="text" id="perm_autostart_description" value="{{ perms.perm_autostart_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_autostart_suggest" {% ifequal perms.perm_autostart_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_autostart_suggest" {% ifequal perms.perm_autostart_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_autostart_suggest" {% ifequal perms.perm_autostart_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_notification_suggest '-' %}
+    <span class="il_block w_left align_right">通知栏</span>
+    <input type="text" id="perm_notification_description" value="{{ perms.perm_notification_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_notification_suggest" {% ifequal perms.perm_notification_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_notification_suggest" {% ifequal perms.perm_notification_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_notification_suggest" {% ifequal perms.perm_notification_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+{% ifnotequal perms.perm_packageinfo_suggest '-' %}
+    <span class="il_block w_left align_right">读取软件信息</span>
+    <input type="text" id="perm_packageinfo_description" value="{{ perms.perm_packageinfo_description }}" class="il_block w_center align_left"></input>
+    <input type="radio" name="perm_packageinfo_suggest" {% ifequal perms.perm_packageinfo_suggest "y" %} {{"checked"}} {% endifequal %} value="y">打开</input><input type="radio" name="perm_packageinfo_suggest" {% ifequal perms.perm_packageinfo_suggest "n" %} {{ "checked" }} {% endifequal %} value="n">关闭</input><input type="radio" name="perm_packageinfo_suggest" {% ifequal perms.perm_packageinfo_suggest "p" %} {{"checked"}} {% endifequal %} value="p">无</input>
+    </div><div>
+{% endifnotequal %}
+
+    <span class="il_block w_left align_right">comments</span>
+    <input type="text" id="comments" value="{{ perms.comments }}" class="il_block w_center align_left"></input>
+    </div><div>
+
+    <span class="il_block w_left align_right">已完成</span>
+    {% if perms.finished %}
+    <input type="radio" name="is_finished" checked value="1">是</input><input type="radio" name="is_finished" value="0">否</input>
+    {% else %}
+    <input type="radio" name="is_finished" value="1">是</input><input type="radio" name="is_finished" checked value="0">否</input>
+    {% endif %}
+    </div>
+</div>
+
+<input type="button" id="save_record" value="保存" class="submit_button"></input> 
+
+<input type="button" id="return" value="返回" class="submit_button"></input> 
+
+{% if is_superuser %}
+<input type="button" id="save_approved" value="通过" class="submit_button"></input> 
+<input type="button" id="save_notapproved" value="不通过" class="submit_button"></input> 
+<input type="button" id="save_pending" value="待定" class="submit_button"></input> 
+{% endif %}
+ 
+{% endif %} 
+ 
+{% endblock %}

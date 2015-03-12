@@ -1,0 +1,7 @@
+message Folder {
+    required string name     = 1;
+    required string fullpath = 2;
+    repeated Folder folders  = 3;
+    repeated string files    = 4;
+}
+

@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+/* CSS Document */
+/************全局样式************ */
+html,body{margin:0;padding:0;}
+ul,ol{list-style:none;}
+ul li{vertical-align:middle;}
+img{ vertical-align:middle;}
+a{text-decoration:none;}
+
+#main{
+	margin:20px 0 0 0;
+}
+
+#sidebar{
+        float: left;
+        position: fixed;
+        padding-bottom:1px;
+        z-index: 9999;
+}
+
+#nav-list{
+	margin: 0px;
+}
+
+/* red */  
+.red {  
+    color: #faddde;  
+    border: solid 1px #980c10;  
+    background: #d81b21;  
+    background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));  
+    background: -moz-linear-gradient(top,  #ed1c24,  #aa1317);  
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');  
+}  
+.red:hover {  
+    background: #b61318;  
+    background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115));  
+    background: -moz-linear-gradient(top,  #c9151b,  #a11115);  
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115');  
+} 
+.red:active {  
+    color: #de898c;  
+    background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));  
+    background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);  
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');  
+}  

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{% block title %}{% endblock %}</title>
+<!-- Bootstrap -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/static/css/global.css" rel="stylesheet" media="screen">
+<link href="/static/css/docs.css" rel="stylesheet" media="screen">
+<link href="/static/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/default.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/iplay.css" rel="stylesheet" type="text/css" />
+</head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class=""><a href="/iplay_mgmt/accounts/logout/">等出</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main" class="container-fluid">
+   	  <div id="sidebar">
+        <div class="sidebar-nav">
+          <ul id="nav-list" class="nav nav-list bs-docs-sidenav">
+            {% include "market/topic/menu.html" %}
+          </ul>
+        </div>
+      </div>
+      <div style="padding-left:196px;">
+        <div class="mini-layout" style="height:750px;">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/static/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/iplay.js"></script>
+  </body>
+</html>

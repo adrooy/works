@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/pre-dexed/debug/classes-3b07d2832780867ae26c12865bd071f9e30c635b.jar" />
+    </item>
+    <item
+        jar="/home/duchunhai/sw/android-sdk-linux/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/home/duchunhai/work/android/projects/HelloAndroid1/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-cba5b4e9d81da0d957935481e9e361bc41386ffc.jar" />
+    </item>
+    <item
+        jar="/home/duchunhai/work/data/HelloAndroid1/app/src/main/java/libs/ppincrupdate.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="236786f4ce8ab38ea0b9bce9077bcf691aa49be8">
+        <dex dex="/home/duchunhai/work/data/HelloAndroid1/app/build/intermediates/pre-dexed/debug/ppincrupdate-48336905e52b6c528411ac5057401dab647d7862.jar" />
+    </item>
+    <item
+        jar="/home/duchunhai/work/android/projects/HelloAndroid1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="/home/duchunhai/work/android/projects/HelloAndroid1/app/build/intermediates/pre-dexed/debug/classes-2ff2e2afd1f31594e3cfed391946241f81ebbcfe.jar" />
+    </item>
+    <item
+        jar="/home/duchunhai/work/android/projects/HelloAndroid1/app/src/main/java/libs/ppincrupdate.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="236786f4ce8ab38ea0b9bce9077bcf691aa49be8">
+        <dex dex="/home/duchunhai/work/android/projects/HelloAndroid1/app/build/intermediates/pre-dexed/debug/ppincrupdate-57970534524213da20986dfa606bf1f8c69521a1.jar" />
+    </item>
+
+</items>

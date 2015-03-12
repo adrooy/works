@@ -1,0 +1,96 @@
+{% extends "base/base.html" %}
+{% block title %}首页{% endblock %}
+{% block content %}
+
+{{ user.last_name }}{{ user.first_name }}
+<a href="/accounts/logout/">注销</a> 
+
+<div id="user_app">
+    <span class="il_block w_left align_right">Op</span>
+	<select id="assign_to">
+        {% for i in assign_tos %}
+            {% ifequal i.assign_to assign_to %}
+            <option value="{{ i.assign_to }}" selected="selected">{{ i.assign_to }}</option>
+            {% else %}
+            <option value="{{ i.assign_to }}">{{ i.assign_to }}</option>
+            {% endifequal %}
+        {% endfor %}
+    </select>
+
+    <span class="il_block w_left align_right">完成状态</span>
+	<select id="finished">
+        {% ifequal finished '1' %}
+            <option value="1" selected="selected">已完成</option>
+            <option value="0">未完成</option>
+        {% else %}
+            <option value="1">已完成</option>
+            <option value="0" selected="selected">未完成</option>
+        {% endifequal %}
+    </select>
+
+    <span class="il_block w_left align_right">分配日期</span>
+	<select id="assign_time">
+        {% for i in assign_times %}
+            {% ifequal i assign_time %}
+            <option value="{{ i }}" selected="selected">{{ i }}</option>
+            {% else %}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endifequal %}
+        {% endfor %}
+    </select>
+
+    {% if is_superuser %}
+    <span class="il_block w_left align_right">通过状态</span>
+	<select id="approved">
+        {% ifequal approved '1' %}
+            <option value="1" selected="selected">已通过</option>
+            <option value="0">未通过</option>
+        {% else %}
+            <option value="1">已通过</option>
+            <option value="0" selected="selected">未通过</option>
+        {% endifequal %}
+    </select>
+    {% endif %}
+
+</div>
+ 
+<div style="margin-left:10%">
+<table border="0" width="80%">
+<tr>
+<td align="left" width="20%">App</td>
+<td align="left" width="20%">Package</td>
+<td align="left" width="20%">Version</td>
+<td align="left" width="20%">Category</td>
+<td align="left" width="20%">分配日期</td>
+</tr>
+{% for b in titles.object_list %}
+<tr>
+<td align="left" width="20%"><a
+href="/permission/selected/?assign_to={{b.assign_to}}&title={{b.title}}&version={{b.version_code}}&page={{titles.number}}&assign_time={{assign_time}};">{{b.title}}</a></td>
+<td align="left" width="20%">{{b.package_name}}</td>
+<td align="left" width="20%">{{b.version_code}}</td>
+<td align="left" width="20%">{{b.category}}</td>
+<td align="left" width="20%">{{b.assign_time|date:"Y-m-d H:i:s"}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p class="page_container">
+{% if titles.has_previous %}
+<a href="?page={{ titles.previous_page_number }}&assign_to={{assign_to}}&finished={{finished}}&approved={{approved}}&assign_time={{assign_time}}" title="Pre">上一页</a>
+{% endif %}
+{% for p in page_range %}
+{% ifequal p titles.number %}
+<span style="font-size:16px;" title="当前页"><b>{{p}}</b></span>        
+{% else %}<a href="?page={{p}}&assign_to={{assign_to}}&finished={{finished}}&approved={{approved}}&assign_time={{assign_time}}" title="第{{p}}页">{{p}}</a>{% endifequal %}
+{% endfor %}     
+{% if titles.has_next %}
+<a href="?page={{ titles.next_page_number }}&assign_to={{assign_to}}&finished={{finished}}&approved={{approved}}&assign_time={{assign_time}}" title="Next">下一页</a>
+ {% endif %}  
+ <b>
+{%if titles.paginator.num_pages%}共 {{ titles.paginator.num_pages}} 页{%endif%}
+</b>
+</p>
+</div>
+
+{% endblock %}

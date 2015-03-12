@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LBE_TEL_MARK</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="create_table">创建表</string>
+    <string name="start">开始</string>
+    <string name="stop">结束</string>
+    <string name="number">0</string> 
+
+</resources>

@@ -1,0 +1,36 @@
+<div class="dataTables_paginate paging_bootstrap">
+    <ul class="pagination">
+        {% if feedback.has_previous %}
+            {% if lv %}
+                <li class="prev"><a href="?pn={{ feedback.previous_page_number }}&pr={{ per_page }}&lv={{ lv }}">←上一页</a></li>
+            {% else %}
+                <li class="prev"><a href="?pn={{ feedback.previous_page_number }}&pr={{ per_page }}">←上一页</a></li>
+            {% endif %}
+        {% else %}
+            <li class="prev disabled"><a>←上一页</a></li>
+        {% endif %}
+
+        {% for p in page_range %}
+            {% ifequal p feedback.number %}
+                <li class="active"><a>{{ p }}</a></li>
+            {% else %}
+                {% if lv %}
+                    <li><a href="?pn={{ p }}&pr={{ per_page }}&lv={{ lv }}">{{ p }}</a></li>
+                {% else %}
+                    <li><a href="?pn={{ p }}&pr={{ per_page }}">{{ p }}</a></li>
+                {% endif %}
+            {% endifequal %}
+        {% endfor %}
+
+        {% if feedback.has_next %}
+            {% if lv %}
+                    <li class="next"><a href="?pn={{ feedback.next_page_number }}&pr={{ per_page }}&lv={{ lv }}">下一页→ </a></li>
+                {% else %}
+                    <li class="next"><a href="?pn={{ feedback.next_page_number }}&pr={{ per_page }}">下一页→ </a></li>
+                {% endif %}
+        {% else %}
+            <li class="next disabled"><a>下一页→ </a></li>
+        {% endif %}
+
+    </ul>
+</div>

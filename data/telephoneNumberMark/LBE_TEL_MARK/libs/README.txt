@@ -1,0 +1,9 @@
+android-support-v4.jar
+commons-codec-1.6.jar
+commons-logging-1.1.3.jar
+crawel-0.0.1-SNAPSHOT
+httpclient-4.3.4.jar
+json-20140107.jar
+jsoup-1.7.3.jar
+log4j-1.2.17.jar
+mechanize-0.11.2.jar
