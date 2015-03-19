@@ -1,0 +1,1804 @@
+2015-02-11 15:20:12,219 DEBUG starting thread (client mode): 0x2630a50L
+2015-02-11 15:20:12,257 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-11 15:20:12,282 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-11 15:20:12,282 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-11 15:20:12,282 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-11 15:20:12,665 DEBUG Switch to new keys ...
+2015-02-11 15:20:12,671 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-11 15:20:12,755 DEBUG userauth is OK
+2015-02-11 15:20:19,598 INFO Authentication (publickey) successful!
+2015-02-11 15:20:19,626 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-11 15:20:19,651 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-11 15:20:19,651 DEBUG Secsh channel 0 opened.
+2015-02-11 15:20:19,694 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-11 15:20:19,731 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-11 15:20:19,732 DEBUG [chan 0] normalize('.')
+2015-02-11 15:20:19,757 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:20:19,781 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:20:19,806 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-11 15:20:19,830 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-11 15:20:19,858 DEBUG [chan 0] close(00000000)
+2015-02-11 15:20:19,922 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:20:19,946 INFO [chan 0] sftp session closed.
+2015-02-11 15:20:19,946 DEBUG [chan 0] EOF sent (0)
+2015-02-11 15:20:19,948 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-11 15:20:19,972 DEBUG [chan 0] EOF received (0)
+2015-02-11 15:20:19,996 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-11 15:20:19,996 DEBUG Secsh channel 1 opened.
+2015-02-11 15:20:20,049 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-11 15:20:20,086 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-11 15:20:20,087 DEBUG [chan 1] normalize('.')
+2015-02-11 15:20:20,111 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:20:20,136 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:20:20,160 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-11 15:20:20,185 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-11 15:20:21,349 DEBUG [chan 1] close(00000000)
+2015-02-11 15:20:21,727 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:20:21,754 INFO [chan 1] sftp session closed.
+2015-02-11 15:20:21,754 DEBUG [chan 1] EOF sent (1)
+2015-02-11 15:20:21,755 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-11 15:20:21,782 DEBUG [chan 1] EOF received (1)
+2015-02-11 15:20:21,806 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-11 15:20:21,806 DEBUG Secsh channel 2 opened.
+2015-02-11 15:20:21,850 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-11 15:20:21,878 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-11 15:20:21,948 DEBUG [chan 2] EOF received (2)
+2015-02-11 15:20:21,949 DEBUG [chan 2] EOF sent (2)
+2015-02-11 15:20:22,172 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-11 15:20:22,277 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-11 15:20:22,277 DEBUG Secsh channel 3 opened.
+2015-02-11 15:20:22,304 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-11 15:20:22,331 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-11 15:20:22,402 DEBUG [chan 3] EOF received (3)
+2015-02-11 15:20:22,403 DEBUG [chan 3] EOF sent (3)
+2015-02-11 15:20:22,434 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-11 15:20:22,498 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-11 15:20:22,498 DEBUG Secsh channel 4 opened.
+2015-02-11 15:20:22,527 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-11 15:20:22,554 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-11 15:20:22,634 DEBUG [chan 4] EOF received (4)
+2015-02-11 15:20:22,634 DEBUG [chan 4] EOF sent (4)
+2015-02-11 15:20:22,659 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-11 15:20:22,728 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-11 15:20:22,728 DEBUG Secsh channel 5 opened.
+2015-02-11 15:20:22,785 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-11 15:20:22,811 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-11 15:20:22,963 DEBUG [chan 5] EOF received (5)
+2015-02-11 15:20:22,963 DEBUG [chan 5] EOF sent (5)
+2015-02-11 15:20:22,983 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-11 15:20:23,053 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-11 15:20:23,053 DEBUG Secsh channel 6 opened.
+2015-02-11 15:20:23,110 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-11 15:20:23,137 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-11 15:20:23,610 DEBUG [chan 6] EOF received (6)
+2015-02-11 15:20:23,611 DEBUG [chan 6] EOF sent (6)
+2015-02-11 15:20:23,613 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-11 15:20:23,700 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-11 15:20:23,700 DEBUG Secsh channel 7 opened.
+2015-02-11 15:20:23,740 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-11 15:20:23,767 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-11 15:20:27,190 DEBUG [chan 7] EOF received (7)
+2015-02-11 15:20:27,198 DEBUG [chan 7] EOF sent (7)
+2015-02-11 15:20:27,299 DEBUG EOF in transport thread
+2015-02-11 15:24:33,762 DEBUG starting thread (client mode): 0x291aa50L
+2015-02-11 15:24:33,799 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-11 15:24:33,823 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-11 15:24:33,824 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-11 15:24:33,824 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-11 15:24:34,229 DEBUG Switch to new keys ...
+2015-02-11 15:24:34,235 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-11 15:24:34,315 DEBUG userauth is OK
+2015-02-11 15:24:34,609 INFO Authentication (publickey) successful!
+2015-02-11 15:24:34,613 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-11 15:24:34,637 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-11 15:24:34,638 DEBUG Secsh channel 0 opened.
+2015-02-11 15:24:34,678 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-11 15:24:34,716 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-11 15:24:34,716 DEBUG [chan 0] normalize('.')
+2015-02-11 15:24:34,741 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:24:34,765 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:24:34,790 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-11 15:24:34,814 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-11 15:24:34,841 DEBUG [chan 0] close(00000000)
+2015-02-11 15:24:34,906 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-11 15:24:34,930 INFO [chan 0] sftp session closed.
+2015-02-11 15:24:34,930 DEBUG [chan 0] EOF sent (0)
+2015-02-11 15:24:34,932 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-11 15:24:34,956 DEBUG [chan 0] EOF received (0)
+2015-02-11 15:24:34,980 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-11 15:24:34,981 DEBUG Secsh channel 1 opened.
+2015-02-11 15:24:35,028 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-11 15:24:35,067 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-11 15:24:35,067 DEBUG [chan 1] normalize('.')
+2015-02-11 15:24:35,092 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:24:35,116 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:24:35,141 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-11 15:24:35,166 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-11 15:24:36,387 DEBUG [chan 1] close(00000000)
+2015-02-11 15:24:36,710 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-11 15:24:36,735 INFO [chan 1] sftp session closed.
+2015-02-11 15:24:36,735 DEBUG [chan 1] EOF sent (1)
+2015-02-11 15:24:36,736 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-11 15:24:36,760 DEBUG [chan 1] EOF received (1)
+2015-02-11 15:24:36,784 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-11 15:24:36,785 DEBUG Secsh channel 2 opened.
+2015-02-11 15:24:36,832 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-11 15:24:36,859 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-11 15:24:36,928 DEBUG [chan 2] EOF received (2)
+2015-02-11 15:24:36,929 DEBUG [chan 2] EOF sent (2)
+2015-02-11 15:24:36,939 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-11 15:24:37,037 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-11 15:24:37,037 DEBUG Secsh channel 3 opened.
+2015-02-11 15:24:37,066 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-11 15:24:37,092 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-11 15:24:37,161 DEBUG [chan 3] EOF received (3)
+2015-02-11 15:24:37,162 DEBUG [chan 3] EOF sent (3)
+2015-02-11 15:24:37,171 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-11 15:24:37,258 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-11 15:24:37,259 DEBUG Secsh channel 4 opened.
+2015-02-11 15:24:37,297 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-11 15:24:37,324 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-11 15:24:37,405 DEBUG [chan 4] EOF received (4)
+2015-02-11 15:24:37,406 DEBUG [chan 4] EOF sent (4)
+2015-02-11 15:24:37,428 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-11 15:24:37,512 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-11 15:24:37,512 DEBUG Secsh channel 5 opened.
+2015-02-11 15:24:37,555 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-11 15:24:37,582 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-11 15:24:37,730 DEBUG [chan 5] EOF received (5)
+2015-02-11 15:24:37,731 DEBUG [chan 5] EOF sent (5)
+2015-02-11 15:24:37,760 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-11 15:24:37,817 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-11 15:24:37,818 DEBUG Secsh channel 6 opened.
+2015-02-11 15:24:37,932 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-11 15:24:37,959 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-11 15:24:38,508 DEBUG [chan 6] EOF received (6)
+2015-02-11 15:24:38,509 DEBUG [chan 6] EOF sent (6)
+2015-02-11 15:24:38,513 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-11 15:24:38,597 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-11 15:24:38,597 DEBUG Secsh channel 7 opened.
+2015-02-11 15:24:38,639 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-11 15:24:38,666 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-11 15:24:41,872 DEBUG [chan 7] EOF received (7)
+2015-02-11 15:24:41,872 DEBUG [chan 7] EOF sent (7)
+2015-02-11 15:24:41,974 DEBUG EOF in transport thread
+2015-02-12 06:00:04,313 DEBUG starting thread (client mode): 0x13c9750L
+2015-02-12 06:00:04,353 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-12 06:00:04,381 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-12 06:00:04,382 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-12 06:00:04,382 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-12 06:00:04,812 DEBUG Switch to new keys ...
+2015-02-12 06:00:04,840 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-12 06:00:04,907 DEBUG userauth is OK
+2015-02-12 06:00:05,317 INFO Authentication (publickey) successful!
+2015-02-12 06:00:05,328 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-12 06:00:05,357 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-12 06:00:05,357 DEBUG Secsh channel 0 opened.
+2015-02-12 06:00:05,400 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-12 06:00:05,436 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-12 06:00:05,437 DEBUG [chan 0] normalize('.')
+2015-02-12 06:00:05,465 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-12 06:00:05,494 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-12 06:00:05,523 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-12 06:00:05,552 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-12 06:00:05,583 DEBUG [chan 0] close(00000000)
+2015-02-12 06:00:05,651 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-12 06:00:05,680 INFO [chan 0] sftp session closed.
+2015-02-12 06:00:05,680 DEBUG [chan 0] EOF sent (0)
+2015-02-12 06:00:05,681 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-12 06:00:05,710 DEBUG [chan 0] EOF received (0)
+2015-02-12 06:00:05,738 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-12 06:00:05,738 DEBUG Secsh channel 1 opened.
+2015-02-12 06:00:05,781 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-12 06:00:05,818 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-12 06:00:05,818 DEBUG [chan 1] normalize('.')
+2015-02-12 06:00:05,847 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-12 06:00:05,876 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-12 06:00:05,904 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-12 06:00:05,933 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-12 06:00:07,220 DEBUG [chan 1] close(00000000)
+2015-02-12 06:00:07,530 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-12 06:00:07,559 INFO [chan 1] sftp session closed.
+2015-02-12 06:00:07,559 DEBUG [chan 1] EOF sent (1)
+2015-02-12 06:00:07,561 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-12 06:00:07,589 DEBUG [chan 1] EOF received (1)
+2015-02-12 06:00:07,617 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-12 06:00:07,618 DEBUG Secsh channel 2 opened.
+2015-02-12 06:00:07,668 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-12 06:00:07,699 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-12 06:00:07,768 DEBUG [chan 2] EOF received (2)
+2015-02-12 06:00:07,768 DEBUG [chan 2] EOF sent (2)
+2015-02-12 06:00:07,779 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-12 06:00:07,864 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-12 06:00:07,864 DEBUG Secsh channel 3 opened.
+2015-02-12 06:00:07,909 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-12 06:00:07,939 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-12 06:00:08,009 DEBUG [chan 3] EOF received (3)
+2015-02-12 06:00:08,010 DEBUG [chan 3] EOF sent (3)
+2015-02-12 06:00:08,019 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-12 06:00:08,106 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-12 06:00:08,106 DEBUG Secsh channel 4 opened.
+2015-02-12 06:00:08,149 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-12 06:00:08,180 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-12 06:00:08,259 DEBUG [chan 4] EOF received (4)
+2015-02-12 06:00:08,260 DEBUG [chan 4] EOF sent (4)
+2015-02-12 06:00:08,285 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-12 06:00:08,355 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-12 06:00:08,355 DEBUG Secsh channel 5 opened.
+2015-02-12 06:00:08,415 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-12 06:00:08,446 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-12 06:00:08,594 DEBUG [chan 5] EOF received (5)
+2015-02-12 06:00:08,594 DEBUG [chan 5] EOF sent (5)
+2015-02-12 06:00:08,619 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-12 06:00:08,695 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-12 06:00:08,695 DEBUG Secsh channel 6 opened.
+2015-02-12 06:00:08,750 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-12 06:00:08,781 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-12 06:00:09,340 DEBUG [chan 6] EOF received (6)
+2015-02-12 06:00:09,340 DEBUG [chan 6] EOF sent (6)
+2015-02-12 06:00:09,366 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-12 06:00:09,441 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-12 06:00:09,441 DEBUG Secsh channel 7 opened.
+2015-02-12 06:00:09,496 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-12 06:00:09,527 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-12 06:00:12,766 DEBUG [chan 7] EOF received (7)
+2015-02-12 06:00:12,767 DEBUG [chan 7] EOF sent (7)
+2015-02-12 06:00:12,869 DEBUG EOF in transport thread
+2015-02-13 06:00:04,830 DEBUG starting thread (client mode): 0x1e10750L
+2015-02-13 06:00:04,866 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-13 06:00:04,890 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-13 06:00:04,891 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-13 06:00:04,891 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-13 06:00:05,157 DEBUG Switch to new keys ...
+2015-02-13 06:00:05,179 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-13 06:00:05,243 DEBUG userauth is OK
+2015-02-13 06:00:05,516 INFO Authentication (publickey) successful!
+2015-02-13 06:00:05,539 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-13 06:00:05,563 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-13 06:00:05,563 DEBUG Secsh channel 0 opened.
+2015-02-13 06:00:05,607 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-13 06:00:05,644 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-13 06:00:05,644 DEBUG [chan 0] normalize('.')
+2015-02-13 06:00:05,668 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-13 06:00:05,693 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-13 06:00:05,717 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-13 06:00:05,741 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-13 06:00:05,768 DEBUG [chan 0] close(00000000)
+2015-02-13 06:00:05,833 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-13 06:00:05,857 INFO [chan 0] sftp session closed.
+2015-02-13 06:00:05,858 DEBUG [chan 0] EOF sent (0)
+2015-02-13 06:00:05,859 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-13 06:00:05,883 DEBUG [chan 0] EOF received (0)
+2015-02-13 06:00:05,906 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-13 06:00:05,906 DEBUG Secsh channel 1 opened.
+2015-02-13 06:00:05,953 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-13 06:00:05,990 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-13 06:00:05,990 DEBUG [chan 1] normalize('.')
+2015-02-13 06:00:06,014 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-13 06:00:06,039 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-13 06:00:06,063 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-13 06:00:06,087 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-13 06:00:07,316 DEBUG [chan 1] close(00000000)
+2015-02-13 06:00:07,633 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-13 06:00:07,657 INFO [chan 1] sftp session closed.
+2015-02-13 06:00:07,658 DEBUG [chan 1] EOF sent (1)
+2015-02-13 06:00:07,659 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-13 06:00:07,683 DEBUG [chan 1] EOF received (1)
+2015-02-13 06:00:07,706 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-13 06:00:07,707 DEBUG Secsh channel 2 opened.
+2015-02-13 06:00:07,753 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-13 06:00:07,779 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-13 06:00:07,849 DEBUG [chan 2] EOF received (2)
+2015-02-13 06:00:07,849 DEBUG [chan 2] EOF sent (2)
+2015-02-13 06:00:07,859 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-13 06:00:07,956 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-13 06:00:07,956 DEBUG Secsh channel 3 opened.
+2015-02-13 06:00:07,984 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-13 06:00:08,010 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-13 06:00:08,079 DEBUG [chan 3] EOF received (3)
+2015-02-13 06:00:08,079 DEBUG [chan 3] EOF sent (3)
+2015-02-13 06:00:08,089 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-13 06:00:08,174 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-13 06:00:08,174 DEBUG Secsh channel 4 opened.
+2015-02-13 06:00:08,214 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-13 06:00:08,240 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-13 06:00:08,321 DEBUG [chan 4] EOF received (4)
+2015-02-13 06:00:08,321 DEBUG [chan 4] EOF sent (4)
+2015-02-13 06:00:08,344 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-13 06:00:08,413 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-13 06:00:08,413 DEBUG Secsh channel 5 opened.
+2015-02-13 06:00:08,438 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-13 06:00:08,464 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-13 06:00:08,618 DEBUG [chan 5] EOF received (5)
+2015-02-13 06:00:08,619 DEBUG [chan 5] EOF sent (5)
+2015-02-13 06:00:08,635 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-13 06:00:08,705 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-13 06:00:08,705 DEBUG Secsh channel 6 opened.
+2015-02-13 06:00:08,761 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-13 06:00:08,787 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-13 06:00:09,369 DEBUG [chan 6] EOF received (6)
+2015-02-13 06:00:09,370 DEBUG [chan 6] EOF sent (6)
+2015-02-13 06:00:09,375 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-13 06:00:09,456 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-13 06:00:09,456 DEBUG Secsh channel 7 opened.
+2015-02-13 06:00:09,502 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-13 06:00:09,528 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-13 06:00:13,034 DEBUG [chan 7] EOF received (7)
+2015-02-13 06:00:13,034 DEBUG [chan 7] EOF sent (7)
+2015-02-13 06:00:13,136 DEBUG EOF in transport thread
+2015-02-14 06:00:04,180 DEBUG starting thread (client mode): 0xe88750L
+2015-02-14 06:00:04,214 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-14 06:00:04,237 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-14 06:00:04,238 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-14 06:00:04,238 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-14 06:00:04,632 DEBUG Switch to new keys ...
+2015-02-14 06:00:04,654 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-14 06:00:04,716 DEBUG userauth is OK
+2015-02-14 06:00:05,128 INFO Authentication (publickey) successful!
+2015-02-14 06:00:05,130 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-14 06:00:05,153 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-14 06:00:05,154 DEBUG Secsh channel 0 opened.
+2015-02-14 06:00:05,197 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-14 06:00:05,235 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-14 06:00:05,235 DEBUG [chan 0] normalize('.')
+2015-02-14 06:00:05,259 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-14 06:00:05,282 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-14 06:00:05,306 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-14 06:00:05,329 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-14 06:00:05,355 DEBUG [chan 0] close(00000000)
+2015-02-14 06:00:05,425 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-14 06:00:05,449 INFO [chan 0] sftp session closed.
+2015-02-14 06:00:05,449 DEBUG [chan 0] EOF sent (0)
+2015-02-14 06:00:05,450 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-14 06:00:05,478 DEBUG [chan 0] EOF received (0)
+2015-02-14 06:00:05,501 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-14 06:00:05,501 DEBUG Secsh channel 1 opened.
+2015-02-14 06:00:05,545 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-14 06:00:05,581 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-14 06:00:05,582 DEBUG [chan 1] normalize('.')
+2015-02-14 06:00:05,605 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-14 06:00:05,629 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-14 06:00:05,653 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-14 06:00:05,677 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-14 06:00:06,890 DEBUG [chan 1] close(00000000)
+2015-02-14 06:00:07,225 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-14 06:00:07,249 INFO [chan 1] sftp session closed.
+2015-02-14 06:00:07,249 DEBUG [chan 1] EOF sent (1)
+2015-02-14 06:00:07,251 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-14 06:00:07,273 DEBUG [chan 1] EOF received (1)
+2015-02-14 06:00:07,296 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-14 06:00:07,296 DEBUG Secsh channel 2 opened.
+2015-02-14 06:00:07,345 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-14 06:00:07,370 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-14 06:00:07,440 DEBUG [chan 2] EOF received (2)
+2015-02-14 06:00:07,440 DEBUG [chan 2] EOF sent (2)
+2015-02-14 06:00:07,450 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-14 06:00:07,533 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-14 06:00:07,534 DEBUG Secsh channel 3 opened.
+2015-02-14 06:00:07,575 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-14 06:00:07,600 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-14 06:00:07,668 DEBUG [chan 3] EOF received (3)
+2015-02-14 06:00:07,668 DEBUG [chan 3] EOF sent (3)
+2015-02-14 06:00:07,676 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-14 06:00:07,757 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-14 06:00:07,757 DEBUG Secsh channel 4 opened.
+2015-02-14 06:00:07,802 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-14 06:00:07,827 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-14 06:00:07,907 DEBUG [chan 4] EOF received (4)
+2015-02-14 06:00:07,907 DEBUG [chan 4] EOF sent (4)
+2015-02-14 06:00:07,930 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-14 06:00:07,996 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-14 06:00:07,997 DEBUG Secsh channel 5 opened.
+2015-02-14 06:00:08,022 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-14 06:00:08,048 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-14 06:00:08,200 DEBUG [chan 5] EOF received (5)
+2015-02-14 06:00:08,201 DEBUG [chan 5] EOF sent (5)
+2015-02-14 06:00:08,220 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-14 06:00:08,285 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-14 06:00:08,285 DEBUG Secsh channel 6 opened.
+2015-02-14 06:00:08,312 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-14 06:00:08,338 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-14 06:00:08,819 DEBUG [chan 6] EOF received (6)
+2015-02-14 06:00:08,819 DEBUG [chan 6] EOF sent (6)
+2015-02-14 06:00:08,829 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-14 06:00:08,904 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-14 06:00:08,905 DEBUG Secsh channel 7 opened.
+2015-02-14 06:00:08,955 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-14 06:00:08,980 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-14 06:00:12,481 DEBUG [chan 7] EOF received (7)
+2015-02-14 06:00:12,482 DEBUG [chan 7] EOF sent (7)
+2015-02-14 06:00:12,584 DEBUG EOF in transport thread
+2015-02-15 06:00:04,114 DEBUG starting thread (client mode): 0x1b02750L
+2015-02-15 06:00:04,149 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-15 06:00:04,173 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-15 06:00:04,173 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-15 06:00:04,173 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-15 06:00:04,416 DEBUG Switch to new keys ...
+2015-02-15 06:00:04,438 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-15 06:00:04,501 DEBUG userauth is OK
+2015-02-15 06:00:06,686 INFO Authentication (publickey) successful!
+2015-02-15 06:00:06,696 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-15 06:00:06,719 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-15 06:00:06,720 DEBUG Secsh channel 0 opened.
+2015-02-15 06:00:06,758 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-15 06:00:06,796 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-15 06:00:06,796 DEBUG [chan 0] normalize('.')
+2015-02-15 06:00:06,822 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-15 06:00:06,846 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-15 06:00:06,874 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-15 06:00:06,901 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-15 06:00:06,928 DEBUG [chan 0] close(00000000)
+2015-02-15 06:00:06,999 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-15 06:00:07,024 INFO [chan 0] sftp session closed.
+2015-02-15 06:00:07,024 DEBUG [chan 0] EOF sent (0)
+2015-02-15 06:00:07,025 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-15 06:00:07,049 DEBUG [chan 0] EOF received (0)
+2015-02-15 06:00:07,072 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-15 06:00:07,072 DEBUG Secsh channel 1 opened.
+2015-02-15 06:00:07,120 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-15 06:00:07,157 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-15 06:00:07,157 DEBUG [chan 1] normalize('.')
+2015-02-15 06:00:07,182 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-15 06:00:07,206 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-15 06:00:07,230 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-15 06:00:07,254 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-15 06:00:08,473 DEBUG [chan 1] close(00000000)
+2015-02-15 06:00:08,834 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-15 06:00:08,858 INFO [chan 1] sftp session closed.
+2015-02-15 06:00:08,859 DEBUG [chan 1] EOF sent (1)
+2015-02-15 06:00:08,860 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-15 06:00:08,883 DEBUG [chan 1] EOF received (1)
+2015-02-15 06:00:08,907 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-15 06:00:08,907 DEBUG Secsh channel 2 opened.
+2015-02-15 06:00:08,961 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-15 06:00:08,987 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-15 06:00:09,057 DEBUG [chan 2] EOF received (2)
+2015-02-15 06:00:09,058 DEBUG [chan 2] EOF sent (2)
+2015-02-15 06:00:09,062 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-15 06:00:09,152 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-15 06:00:09,152 DEBUG Secsh channel 3 opened.
+2015-02-15 06:00:09,189 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-15 06:00:09,215 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-15 06:00:09,282 DEBUG [chan 3] EOF received (3)
+2015-02-15 06:00:09,282 DEBUG [chan 3] EOF sent (3)
+2015-02-15 06:00:09,292 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-15 06:00:09,381 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-15 06:00:09,381 DEBUG Secsh channel 4 opened.
+2015-02-15 06:00:09,418 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-15 06:00:09,443 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-15 06:00:09,532 DEBUG [chan 4] EOF received (4)
+2015-02-15 06:00:09,533 DEBUG [chan 4] EOF sent (4)
+2015-02-15 06:00:09,548 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-15 06:00:09,630 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-15 06:00:09,630 DEBUG Secsh channel 5 opened.
+2015-02-15 06:00:09,675 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-15 06:00:09,705 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-15 06:00:09,852 DEBUG [chan 5] EOF received (5)
+2015-02-15 06:00:09,852 DEBUG [chan 5] EOF sent (5)
+2015-02-15 06:00:09,883 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-15 06:00:09,942 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-15 06:00:09,942 DEBUG Secsh channel 6 opened.
+2015-02-15 06:00:09,981 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-15 06:00:10,007 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-15 06:00:10,543 DEBUG [chan 6] EOF received (6)
+2015-02-15 06:00:10,544 DEBUG [chan 6] EOF sent (6)
+2015-02-15 06:00:10,560 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-15 06:00:10,634 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-15 06:00:10,634 DEBUG Secsh channel 7 opened.
+2015-02-15 06:00:10,662 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-15 06:00:10,688 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-15 06:00:13,981 DEBUG [chan 7] EOF received (7)
+2015-02-15 06:00:13,982 DEBUG [chan 7] EOF sent (7)
+2015-02-15 06:00:14,084 DEBUG EOF in transport thread
+2015-02-16 06:00:05,121 DEBUG starting thread (client mode): 0x22f3750L
+2015-02-16 06:00:05,160 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-16 06:00:05,184 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-16 06:00:05,184 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-16 06:00:05,185 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-16 06:00:05,596 DEBUG Switch to new keys ...
+2015-02-16 06:00:05,617 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-16 06:00:05,681 DEBUG userauth is OK
+2015-02-16 06:00:06,109 INFO Authentication (publickey) successful!
+2015-02-16 06:00:06,113 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-16 06:00:06,138 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-16 06:00:06,138 DEBUG Secsh channel 0 opened.
+2015-02-16 06:00:06,197 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-16 06:00:06,239 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-16 06:00:06,240 DEBUG [chan 0] normalize('.')
+2015-02-16 06:00:06,264 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-16 06:00:06,288 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-16 06:00:06,313 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-16 06:00:06,337 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-16 06:00:06,366 DEBUG [chan 0] close(00000000)
+2015-02-16 06:00:06,437 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-16 06:00:06,461 INFO [chan 0] sftp session closed.
+2015-02-16 06:00:06,462 DEBUG [chan 0] EOF sent (0)
+2015-02-16 06:00:06,463 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-16 06:00:06,486 DEBUG [chan 0] EOF received (0)
+2015-02-16 06:00:06,510 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-16 06:00:06,510 DEBUG Secsh channel 1 opened.
+2015-02-16 06:00:06,564 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-16 06:00:06,599 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-16 06:00:06,600 DEBUG [chan 1] normalize('.')
+2015-02-16 06:00:06,624 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-16 06:00:06,648 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-16 06:00:06,672 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-16 06:00:06,707 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-16 06:00:07,919 DEBUG [chan 1] close(00000000)
+2015-02-16 06:00:08,266 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-16 06:00:08,290 INFO [chan 1] sftp session closed.
+2015-02-16 06:00:08,290 DEBUG [chan 1] EOF sent (1)
+2015-02-16 06:00:08,291 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-16 06:00:08,335 DEBUG [chan 1] EOF received (1)
+2015-02-16 06:00:08,374 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-16 06:00:08,374 DEBUG Secsh channel 2 opened.
+2015-02-16 06:00:08,450 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-16 06:00:08,480 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-16 06:00:08,553 DEBUG [chan 2] EOF received (2)
+2015-02-16 06:00:08,554 DEBUG [chan 2] EOF sent (2)
+2015-02-16 06:00:08,585 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-16 06:00:08,676 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-16 06:00:08,676 DEBUG Secsh channel 3 opened.
+2015-02-16 06:00:08,712 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-16 06:00:08,738 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-16 06:00:08,808 DEBUG [chan 3] EOF received (3)
+2015-02-16 06:00:08,808 DEBUG [chan 3] EOF sent (3)
+2015-02-16 06:00:08,813 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-16 06:00:08,927 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-16 06:00:08,927 DEBUG Secsh channel 4 opened.
+2015-02-16 06:00:08,952 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-16 06:00:08,978 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-16 06:00:09,083 DEBUG [chan 4] EOF received (4)
+2015-02-16 06:00:09,084 DEBUG [chan 4] EOF sent (4)
+2015-02-16 06:00:09,088 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-16 06:00:09,178 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-16 06:00:09,178 DEBUG Secsh channel 5 opened.
+2015-02-16 06:00:09,214 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-16 06:00:09,241 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-16 06:00:09,428 DEBUG [chan 5] EOF received (5)
+2015-02-16 06:00:09,428 DEBUG [chan 5] EOF sent (5)
+2015-02-16 06:00:09,447 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-16 06:00:09,534 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-16 06:00:09,535 DEBUG Secsh channel 6 opened.
+2015-02-16 06:00:09,573 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-16 06:00:09,600 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-16 06:00:10,239 DEBUG [chan 6] EOF received (6)
+2015-02-16 06:00:10,239 DEBUG [chan 6] EOF sent (6)
+2015-02-16 06:00:10,255 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-16 06:00:10,327 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-16 06:00:10,327 DEBUG Secsh channel 7 opened.
+2015-02-16 06:00:10,354 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-16 06:00:10,380 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-16 06:00:13,848 DEBUG [chan 7] EOF received (7)
+2015-02-16 06:00:13,849 DEBUG [chan 7] EOF sent (7)
+2015-02-16 06:00:13,951 DEBUG EOF in transport thread
+2015-02-17 06:00:04,267 DEBUG starting thread (client mode): 0x167b750L
+2015-02-17 06:00:04,302 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-17 06:00:04,326 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-17 06:00:04,327 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-17 06:00:04,327 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-17 06:00:04,755 DEBUG Switch to new keys ...
+2015-02-17 06:00:04,777 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-17 06:00:04,841 DEBUG userauth is OK
+2015-02-17 06:00:05,518 INFO Authentication (publickey) successful!
+2015-02-17 06:00:05,540 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-17 06:00:05,563 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-17 06:00:05,564 DEBUG Secsh channel 0 opened.
+2015-02-17 06:00:05,603 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-17 06:00:05,640 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-17 06:00:05,640 DEBUG [chan 0] normalize('.')
+2015-02-17 06:00:05,665 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-17 06:00:05,689 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-17 06:00:05,713 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-17 06:00:05,737 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-17 06:00:05,774 DEBUG [chan 0] close(00000000)
+2015-02-17 06:00:05,849 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-17 06:00:05,873 INFO [chan 0] sftp session closed.
+2015-02-17 06:00:05,874 DEBUG [chan 0] EOF sent (0)
+2015-02-17 06:00:05,875 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-17 06:00:05,898 DEBUG [chan 0] EOF received (0)
+2015-02-17 06:00:05,922 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-17 06:00:05,922 DEBUG Secsh channel 1 opened.
+2015-02-17 06:00:05,969 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-17 06:00:06,006 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-17 06:00:06,006 DEBUG [chan 1] normalize('.')
+2015-02-17 06:00:06,030 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-17 06:00:06,054 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-17 06:00:06,078 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-17 06:00:06,103 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-17 06:00:07,325 DEBUG [chan 1] close(00000000)
+2015-02-17 06:00:07,661 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-17 06:00:07,685 INFO [chan 1] sftp session closed.
+2015-02-17 06:00:07,685 DEBUG [chan 1] EOF sent (1)
+2015-02-17 06:00:07,686 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-17 06:00:07,710 DEBUG [chan 1] EOF received (1)
+2015-02-17 06:00:07,734 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-17 06:00:07,734 DEBUG Secsh channel 2 opened.
+2015-02-17 06:00:07,787 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-17 06:00:07,814 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-17 06:00:07,880 DEBUG [chan 2] EOF received (2)
+2015-02-17 06:00:07,881 DEBUG [chan 2] EOF sent (2)
+2015-02-17 06:00:07,891 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-17 06:00:07,975 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-17 06:00:07,976 DEBUG Secsh channel 3 opened.
+2015-02-17 06:00:08,018 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-17 06:00:08,044 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-17 06:00:08,113 DEBUG [chan 3] EOF received (3)
+2015-02-17 06:00:08,113 DEBUG [chan 3] EOF sent (3)
+2015-02-17 06:00:08,121 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-17 06:00:08,205 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-17 06:00:08,205 DEBUG Secsh channel 4 opened.
+2015-02-17 06:00:08,247 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-17 06:00:08,273 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-17 06:00:08,354 DEBUG [chan 4] EOF received (4)
+2015-02-17 06:00:08,355 DEBUG [chan 4] EOF sent (4)
+2015-02-17 06:00:08,378 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-17 06:00:08,444 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-17 06:00:08,444 DEBUG Secsh channel 5 opened.
+2015-02-17 06:00:08,477 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-17 06:00:08,503 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-17 06:00:08,652 DEBUG [chan 5] EOF received (5)
+2015-02-17 06:00:08,653 DEBUG [chan 5] EOF sent (5)
+2015-02-17 06:00:08,681 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-17 06:00:08,739 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-17 06:00:08,739 DEBUG Secsh channel 6 opened.
+2015-02-17 06:00:08,896 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-17 06:00:08,922 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-17 06:00:09,320 DEBUG [chan 6] EOF received (6)
+2015-02-17 06:00:09,321 DEBUG [chan 6] EOF sent (6)
+2015-02-17 06:00:09,331 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-17 06:00:09,407 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-17 06:00:09,407 DEBUG Secsh channel 7 opened.
+2015-02-17 06:00:09,458 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-17 06:00:09,485 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-17 06:00:12,991 DEBUG [chan 7] EOF received (7)
+2015-02-17 06:00:12,992 DEBUG [chan 7] EOF sent (7)
+2015-02-17 06:00:13,094 DEBUG EOF in transport thread
+2015-02-18 06:00:04,150 DEBUG starting thread (client mode): 0x2c5f750L
+2015-02-18 06:00:04,191 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-18 06:00:04,219 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-18 06:00:04,220 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-18 06:00:04,220 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-18 06:00:04,661 DEBUG Switch to new keys ...
+2015-02-18 06:00:04,686 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-18 06:00:04,756 DEBUG userauth is OK
+2015-02-18 06:00:05,225 INFO Authentication (publickey) successful!
+2015-02-18 06:00:05,254 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-18 06:00:05,283 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-18 06:00:05,283 DEBUG Secsh channel 0 opened.
+2015-02-18 06:00:05,321 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-18 06:00:05,358 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-18 06:00:05,358 DEBUG [chan 0] normalize('.')
+2015-02-18 06:00:05,387 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-18 06:00:05,416 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-18 06:00:05,445 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-18 06:00:05,474 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-18 06:00:05,505 DEBUG [chan 0] close(00000000)
+2015-02-18 06:00:05,584 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-18 06:00:05,612 INFO [chan 0] sftp session closed.
+2015-02-18 06:00:05,613 DEBUG [chan 0] EOF sent (0)
+2015-02-18 06:00:05,614 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-18 06:00:05,642 DEBUG [chan 0] EOF received (0)
+2015-02-18 06:00:05,670 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-18 06:00:05,671 DEBUG Secsh channel 1 opened.
+2015-02-18 06:00:05,714 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-18 06:00:05,751 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-18 06:00:05,751 DEBUG [chan 1] normalize('.')
+2015-02-18 06:00:05,780 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-18 06:00:05,809 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-18 06:00:05,837 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-18 06:00:05,867 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-18 06:00:07,089 DEBUG [chan 1] close(00000000)
+2015-02-18 06:00:07,433 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-18 06:00:07,462 INFO [chan 1] sftp session closed.
+2015-02-18 06:00:07,462 DEBUG [chan 1] EOF sent (1)
+2015-02-18 06:00:07,463 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-18 06:00:07,492 DEBUG [chan 1] EOF received (1)
+2015-02-18 06:00:07,520 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-18 06:00:07,520 DEBUG Secsh channel 2 opened.
+2015-02-18 06:00:07,568 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-18 06:00:07,599 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-18 06:00:07,669 DEBUG [chan 2] EOF received (2)
+2015-02-18 06:00:07,670 DEBUG [chan 2] EOF sent (2)
+2015-02-18 06:00:07,677 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-18 06:00:07,793 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-18 06:00:07,793 DEBUG Secsh channel 3 opened.
+2015-02-18 06:00:07,832 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-18 06:00:07,862 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-18 06:00:07,956 DEBUG [chan 3] EOF received (3)
+2015-02-18 06:00:07,957 DEBUG [chan 3] EOF sent (3)
+2015-02-18 06:00:07,966 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-18 06:00:08,096 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-18 06:00:08,096 DEBUG Secsh channel 4 opened.
+2015-02-18 06:00:08,159 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-18 06:00:08,190 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-18 06:00:08,271 DEBUG [chan 4] EOF received (4)
+2015-02-18 06:00:08,272 DEBUG [chan 4] EOF sent (4)
+2015-02-18 06:00:08,294 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-18 06:00:08,377 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-18 06:00:08,377 DEBUG Secsh channel 5 opened.
+2015-02-18 06:00:08,426 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-18 06:00:08,457 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-18 06:00:08,609 DEBUG [chan 5] EOF received (5)
+2015-02-18 06:00:08,609 DEBUG [chan 5] EOF sent (5)
+2015-02-18 06:00:08,636 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-18 06:00:08,714 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-18 06:00:08,714 DEBUG Secsh channel 6 opened.
+2015-02-18 06:00:08,768 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-18 06:00:08,799 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-18 06:00:09,534 DEBUG [chan 6] EOF received (6)
+2015-02-18 06:00:09,535 DEBUG [chan 6] EOF sent (6)
+2015-02-18 06:00:09,548 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-18 06:00:09,639 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-18 06:00:09,639 DEBUG Secsh channel 7 opened.
+2015-02-18 06:00:09,679 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-18 06:00:09,710 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-18 06:00:13,145 DEBUG [chan 7] EOF received (7)
+2015-02-18 06:00:13,146 DEBUG [chan 7] EOF sent (7)
+2015-02-18 06:00:13,247 DEBUG EOF in transport thread
+2015-02-19 06:00:04,892 DEBUG starting thread (client mode): 0x2573750L
+2015-02-19 06:00:04,928 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-19 06:00:04,951 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-19 06:00:04,952 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-19 06:00:04,952 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-19 06:00:05,324 DEBUG Switch to new keys ...
+2015-02-19 06:00:05,349 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-19 06:00:05,409 DEBUG userauth is OK
+2015-02-19 06:00:05,688 INFO Authentication (publickey) successful!
+2015-02-19 06:00:05,704 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-19 06:00:05,734 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-19 06:00:05,735 DEBUG Secsh channel 0 opened.
+2015-02-19 06:00:05,768 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-19 06:00:05,805 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-19 06:00:05,805 DEBUG [chan 0] normalize('.')
+2015-02-19 06:00:05,830 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-19 06:00:05,854 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-19 06:00:05,878 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-19 06:00:05,903 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-19 06:00:05,933 DEBUG [chan 0] close(00000000)
+2015-02-19 06:00:06,012 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-19 06:00:06,036 INFO [chan 0] sftp session closed.
+2015-02-19 06:00:06,036 DEBUG [chan 0] EOF sent (0)
+2015-02-19 06:00:06,037 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-19 06:00:06,061 DEBUG [chan 0] EOF received (0)
+2015-02-19 06:00:06,084 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-19 06:00:06,085 DEBUG Secsh channel 1 opened.
+2015-02-19 06:00:06,132 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-19 06:00:06,170 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-19 06:00:06,171 DEBUG [chan 1] normalize('.')
+2015-02-19 06:00:06,195 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-19 06:00:06,219 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-19 06:00:06,244 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-19 06:00:06,268 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-19 06:00:07,537 DEBUG [chan 1] close(00000000)
+2015-02-19 06:00:07,830 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-19 06:00:07,854 INFO [chan 1] sftp session closed.
+2015-02-19 06:00:07,854 DEBUG [chan 1] EOF sent (1)
+2015-02-19 06:00:07,855 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-19 06:00:07,879 DEBUG [chan 1] EOF received (1)
+2015-02-19 06:00:07,903 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-19 06:00:07,903 DEBUG Secsh channel 2 opened.
+2015-02-19 06:00:07,956 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-19 06:00:07,982 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-19 06:00:08,054 DEBUG [chan 2] EOF received (2)
+2015-02-19 06:00:08,054 DEBUG [chan 2] EOF sent (2)
+2015-02-19 06:00:08,060 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-19 06:00:08,149 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-19 06:00:08,149 DEBUG Secsh channel 3 opened.
+2015-02-19 06:00:08,187 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-19 06:00:08,213 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-19 06:00:08,283 DEBUG [chan 3] EOF received (3)
+2015-02-19 06:00:08,283 DEBUG [chan 3] EOF sent (3)
+2015-02-19 06:00:08,289 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-19 06:00:08,383 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-19 06:00:08,384 DEBUG Secsh channel 4 opened.
+2015-02-19 06:00:08,417 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-19 06:00:08,443 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-19 06:00:08,527 DEBUG [chan 4] EOF received (4)
+2015-02-19 06:00:08,528 DEBUG [chan 4] EOF sent (4)
+2015-02-19 06:00:08,548 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-19 06:00:08,617 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-19 06:00:08,618 DEBUG Secsh channel 5 opened.
+2015-02-19 06:00:08,648 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-19 06:00:08,674 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-19 06:00:08,827 DEBUG [chan 5] EOF received (5)
+2015-02-19 06:00:08,828 DEBUG [chan 5] EOF sent (5)
+2015-02-19 06:00:08,854 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-19 06:00:08,914 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-19 06:00:08,915 DEBUG Secsh channel 6 opened.
+2015-02-19 06:00:08,955 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-19 06:00:08,982 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-19 06:00:09,733 DEBUG [chan 6] EOF received (6)
+2015-02-19 06:00:09,733 DEBUG [chan 6] EOF sent (6)
+2015-02-19 06:00:09,764 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-19 06:00:09,828 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-19 06:00:09,828 DEBUG Secsh channel 7 opened.
+2015-02-19 06:00:09,864 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-19 06:00:09,890 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-19 06:00:13,166 DEBUG [chan 7] EOF received (7)
+2015-02-19 06:00:13,166 DEBUG [chan 7] EOF sent (7)
+2015-02-19 06:00:13,268 DEBUG EOF in transport thread
+2015-02-20 06:00:05,610 DEBUG starting thread (client mode): 0x2490750L
+2015-02-20 06:00:05,644 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-20 06:00:05,667 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-20 06:00:05,668 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-20 06:00:05,668 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-20 06:00:06,075 DEBUG Switch to new keys ...
+2015-02-20 06:00:06,101 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-20 06:00:06,159 DEBUG userauth is OK
+2015-02-20 06:00:06,316 INFO Authentication (publickey) successful!
+2015-02-20 06:00:06,321 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-20 06:00:06,345 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-20 06:00:06,345 DEBUG Secsh channel 0 opened.
+2015-02-20 06:00:06,384 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-20 06:00:06,421 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-20 06:00:06,421 DEBUG [chan 0] normalize('.')
+2015-02-20 06:00:06,445 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-20 06:00:06,469 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-20 06:00:06,492 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-20 06:00:06,516 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-20 06:00:06,542 DEBUG [chan 0] close(00000000)
+2015-02-20 06:00:06,619 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-20 06:00:06,643 INFO [chan 0] sftp session closed.
+2015-02-20 06:00:06,644 DEBUG [chan 0] EOF sent (0)
+2015-02-20 06:00:06,645 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-20 06:00:06,668 DEBUG [chan 0] EOF received (0)
+2015-02-20 06:00:06,691 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-20 06:00:06,692 DEBUG Secsh channel 1 opened.
+2015-02-20 06:00:06,740 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-20 06:00:06,777 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-20 06:00:06,777 DEBUG [chan 1] normalize('.')
+2015-02-20 06:00:06,801 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-20 06:00:06,824 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-20 06:00:06,848 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-20 06:00:06,872 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-20 06:00:08,126 DEBUG [chan 1] close(00000000)
+2015-02-20 06:00:08,444 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-20 06:00:08,468 INFO [chan 1] sftp session closed.
+2015-02-20 06:00:08,468 DEBUG [chan 1] EOF sent (1)
+2015-02-20 06:00:08,469 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-20 06:00:08,493 DEBUG [chan 1] EOF received (1)
+2015-02-20 06:00:08,516 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-20 06:00:08,516 DEBUG Secsh channel 2 opened.
+2015-02-20 06:00:08,570 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-20 06:00:08,597 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-20 06:00:08,667 DEBUG [chan 2] EOF received (2)
+2015-02-20 06:00:08,667 DEBUG [chan 2] EOF sent (2)
+2015-02-20 06:00:08,675 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-20 06:00:08,760 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-20 06:00:08,761 DEBUG Secsh channel 3 opened.
+2015-02-20 06:00:08,802 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-20 06:00:08,828 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-20 06:00:08,898 DEBUG [chan 3] EOF received (3)
+2015-02-20 06:00:08,899 DEBUG [chan 3] EOF sent (3)
+2015-02-20 06:00:08,905 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-20 06:00:08,989 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-20 06:00:08,990 DEBUG Secsh channel 4 opened.
+2015-02-20 06:00:09,032 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-20 06:00:09,058 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-20 06:00:09,138 DEBUG [chan 4] EOF received (4)
+2015-02-20 06:00:09,139 DEBUG [chan 4] EOF sent (4)
+2015-02-20 06:00:09,162 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-20 06:00:09,230 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-20 06:00:09,230 DEBUG Secsh channel 5 opened.
+2015-02-20 06:00:09,257 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-20 06:00:09,282 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-20 06:00:09,433 DEBUG [chan 5] EOF received (5)
+2015-02-20 06:00:09,434 DEBUG [chan 5] EOF sent (5)
+2015-02-20 06:00:09,456 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-20 06:00:09,519 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-20 06:00:09,520 DEBUG Secsh channel 6 opened.
+2015-02-20 06:00:09,555 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-20 06:00:09,581 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-20 06:00:09,991 DEBUG [chan 6] EOF received (6)
+2015-02-20 06:00:09,992 DEBUG [chan 6] EOF sent (6)
+2015-02-20 06:00:10,003 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-20 06:00:10,077 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-20 06:00:10,078 DEBUG Secsh channel 7 opened.
+2015-02-20 06:00:10,103 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-20 06:00:10,128 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-20 06:00:13,644 DEBUG [chan 7] EOF received (7)
+2015-02-20 06:00:13,645 DEBUG [chan 7] EOF sent (7)
+2015-02-20 06:00:13,746 DEBUG EOF in transport thread
+2015-02-21 06:00:04,221 DEBUG starting thread (client mode): 0xf5c750L
+2015-02-21 06:00:04,256 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-21 06:00:04,279 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-21 06:00:04,280 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-21 06:00:04,280 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-21 06:00:04,706 DEBUG Switch to new keys ...
+2015-02-21 06:00:04,729 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-21 06:00:04,791 DEBUG userauth is OK
+2015-02-21 06:00:05,048 INFO Authentication (publickey) successful!
+2015-02-21 06:00:05,060 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-21 06:00:05,084 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-21 06:00:05,084 DEBUG Secsh channel 0 opened.
+2015-02-21 06:00:05,127 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-21 06:00:05,165 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-21 06:00:05,165 DEBUG [chan 0] normalize('.')
+2015-02-21 06:00:05,189 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-21 06:00:05,213 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-21 06:00:05,236 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-21 06:00:05,270 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-21 06:00:05,297 DEBUG [chan 0] close(00000000)
+2015-02-21 06:00:05,379 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-21 06:00:05,402 INFO [chan 0] sftp session closed.
+2015-02-21 06:00:05,402 DEBUG [chan 0] EOF sent (0)
+2015-02-21 06:00:05,403 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-21 06:00:05,427 DEBUG [chan 0] EOF received (0)
+2015-02-21 06:00:05,450 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-21 06:00:05,450 DEBUG Secsh channel 1 opened.
+2015-02-21 06:00:05,504 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-21 06:00:05,543 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-21 06:00:05,543 DEBUG [chan 1] normalize('.')
+2015-02-21 06:00:05,567 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-21 06:00:05,591 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-21 06:00:05,614 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-21 06:00:05,639 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-21 06:00:06,897 DEBUG [chan 1] close(00000000)
+2015-02-21 06:00:07,210 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-21 06:00:07,234 INFO [chan 1] sftp session closed.
+2015-02-21 06:00:07,234 DEBUG [chan 1] EOF sent (1)
+2015-02-21 06:00:07,235 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-21 06:00:07,259 DEBUG [chan 1] EOF received (1)
+2015-02-21 06:00:07,282 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-21 06:00:07,283 DEBUG Secsh channel 2 opened.
+2015-02-21 06:00:07,330 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-21 06:00:07,356 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-21 06:00:07,425 DEBUG [chan 2] EOF received (2)
+2015-02-21 06:00:07,426 DEBUG [chan 2] EOF sent (2)
+2015-02-21 06:00:07,458 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-21 06:00:07,520 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-21 06:00:07,520 DEBUG Secsh channel 3 opened.
+2015-02-21 06:00:07,551 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-21 06:00:07,576 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-21 06:00:07,650 DEBUG [chan 3] EOF received (3)
+2015-02-21 06:00:07,650 DEBUG [chan 3] EOF sent (3)
+2015-02-21 06:00:07,679 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-21 06:00:07,745 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-21 06:00:07,745 DEBUG Secsh channel 4 opened.
+2015-02-21 06:00:07,772 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-21 06:00:07,797 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-21 06:00:07,880 DEBUG [chan 4] EOF received (4)
+2015-02-21 06:00:07,881 DEBUG [chan 4] EOF sent (4)
+2015-02-21 06:00:07,902 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-21 06:00:07,970 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-21 06:00:07,970 DEBUG Secsh channel 5 opened.
+2015-02-21 06:00:07,995 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-21 06:00:08,020 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-21 06:00:08,173 DEBUG [chan 5] EOF received (5)
+2015-02-21 06:00:08,173 DEBUG [chan 5] EOF sent (5)
+2015-02-21 06:00:08,193 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-21 06:00:08,259 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-21 06:00:08,259 DEBUG Secsh channel 6 opened.
+2015-02-21 06:00:08,287 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-21 06:00:08,312 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-21 06:00:08,771 DEBUG [chan 6] EOF received (6)
+2015-02-21 06:00:08,772 DEBUG [chan 6] EOF sent (6)
+2015-02-21 06:00:08,787 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-21 06:00:08,858 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-21 06:00:08,858 DEBUG Secsh channel 7 opened.
+2015-02-21 06:00:08,913 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-21 06:00:08,939 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-21 06:00:12,474 DEBUG [chan 7] EOF received (7)
+2015-02-21 06:00:12,474 DEBUG [chan 7] EOF sent (7)
+2015-02-21 06:00:12,576 DEBUG EOF in transport thread
+2015-02-22 06:00:04,249 DEBUG starting thread (client mode): 0x1468750L
+2015-02-22 06:00:04,286 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-22 06:00:04,309 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-22 06:00:04,309 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-22 06:00:04,309 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-22 06:00:04,749 DEBUG Switch to new keys ...
+2015-02-22 06:00:04,772 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-22 06:00:04,833 DEBUG userauth is OK
+2015-02-22 06:00:05,189 INFO Authentication (publickey) successful!
+2015-02-22 06:00:05,210 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-22 06:00:05,234 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-22 06:00:05,234 DEBUG Secsh channel 0 opened.
+2015-02-22 06:00:05,278 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-22 06:00:05,318 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-22 06:00:05,318 DEBUG [chan 0] normalize('.')
+2015-02-22 06:00:05,342 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-22 06:00:05,366 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-22 06:00:05,389 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-22 06:00:05,413 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-22 06:00:05,440 DEBUG [chan 0] close(00000000)
+2015-02-22 06:00:05,519 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-22 06:00:05,542 INFO [chan 0] sftp session closed.
+2015-02-22 06:00:05,543 DEBUG [chan 0] EOF sent (0)
+2015-02-22 06:00:05,544 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-22 06:00:05,567 DEBUG [chan 0] EOF received (0)
+2015-02-22 06:00:05,590 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-22 06:00:05,590 DEBUG Secsh channel 1 opened.
+2015-02-22 06:00:05,644 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-22 06:00:05,683 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-22 06:00:05,683 DEBUG [chan 1] normalize('.')
+2015-02-22 06:00:05,707 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-22 06:00:05,735 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-22 06:00:05,758 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-22 06:00:05,782 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-22 06:00:07,073 DEBUG [chan 1] close(00000000)
+2015-02-22 06:00:07,388 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-22 06:00:07,412 INFO [chan 1] sftp session closed.
+2015-02-22 06:00:07,413 DEBUG [chan 1] EOF sent (1)
+2015-02-22 06:00:07,414 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-22 06:00:07,438 DEBUG [chan 1] EOF received (1)
+2015-02-22 06:00:07,461 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-22 06:00:07,461 DEBUG Secsh channel 2 opened.
+2015-02-22 06:00:07,508 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-22 06:00:07,534 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-22 06:00:07,604 DEBUG [chan 2] EOF received (2)
+2015-02-22 06:00:07,605 DEBUG [chan 2] EOF sent (2)
+2015-02-22 06:00:07,614 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-22 06:00:07,697 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-22 06:00:07,697 DEBUG Secsh channel 3 opened.
+2015-02-22 06:00:07,740 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-22 06:00:07,766 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-22 06:00:07,836 DEBUG [chan 3] EOF received (3)
+2015-02-22 06:00:07,836 DEBUG [chan 3] EOF sent (3)
+2015-02-22 06:00:07,845 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-22 06:00:07,925 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-22 06:00:07,925 DEBUG Secsh channel 4 opened.
+2015-02-22 06:00:07,970 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-22 06:00:07,996 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-22 06:00:08,081 DEBUG [chan 4] EOF received (4)
+2015-02-22 06:00:08,082 DEBUG [chan 4] EOF sent (4)
+2015-02-22 06:00:08,100 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-22 06:00:08,171 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-22 06:00:08,171 DEBUG Secsh channel 5 opened.
+2015-02-22 06:00:08,226 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-22 06:00:08,252 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-22 06:00:08,404 DEBUG [chan 5] EOF received (5)
+2015-02-22 06:00:08,405 DEBUG [chan 5] EOF sent (5)
+2015-02-22 06:00:08,430 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-22 06:00:08,490 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-22 06:00:08,490 DEBUG Secsh channel 6 opened.
+2015-02-22 06:00:08,524 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-22 06:00:08,550 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-22 06:00:09,140 DEBUG [chan 6] EOF received (6)
+2015-02-22 06:00:09,140 DEBUG [chan 6] EOF sent (6)
+2015-02-22 06:00:09,158 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-22 06:00:09,226 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-22 06:00:09,227 DEBUG Secsh channel 7 opened.
+2015-02-22 06:00:09,252 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-22 06:00:09,282 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-22 06:00:12,562 DEBUG [chan 7] EOF received (7)
+2015-02-22 06:00:12,562 DEBUG [chan 7] EOF sent (7)
+2015-02-22 06:00:12,664 DEBUG EOF in transport thread
+2015-02-23 06:00:03,837 DEBUG starting thread (client mode): 0x1d8c750L
+2015-02-23 06:00:03,873 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-23 06:00:03,896 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-23 06:00:03,896 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-23 06:00:03,897 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-23 06:00:04,303 DEBUG Switch to new keys ...
+2015-02-23 06:00:04,329 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-23 06:00:04,387 DEBUG userauth is OK
+2015-02-23 06:00:06,591 INFO Authentication (publickey) successful!
+2015-02-23 06:00:06,615 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-23 06:00:06,638 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-23 06:00:06,639 DEBUG Secsh channel 0 opened.
+2015-02-23 06:00:06,678 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-23 06:00:06,715 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-23 06:00:06,715 DEBUG [chan 0] normalize('.')
+2015-02-23 06:00:06,739 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-23 06:00:06,763 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-23 06:00:06,787 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-23 06:00:06,811 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-23 06:00:06,838 DEBUG [chan 0] close(00000000)
+2015-02-23 06:00:06,925 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-23 06:00:06,951 INFO [chan 0] sftp session closed.
+2015-02-23 06:00:06,952 DEBUG [chan 0] EOF sent (0)
+2015-02-23 06:00:06,953 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-23 06:00:06,976 DEBUG [chan 0] EOF received (0)
+2015-02-23 06:00:06,999 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-23 06:00:06,999 DEBUG Secsh channel 1 opened.
+2015-02-23 06:00:07,047 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-23 06:00:07,084 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-23 06:00:07,085 DEBUG [chan 1] normalize('.')
+2015-02-23 06:00:07,108 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-23 06:00:07,132 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-23 06:00:07,157 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-23 06:00:07,182 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-23 06:00:08,422 DEBUG [chan 1] close(00000000)
+2015-02-23 06:00:08,762 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-23 06:00:08,786 INFO [chan 1] sftp session closed.
+2015-02-23 06:00:08,786 DEBUG [chan 1] EOF sent (1)
+2015-02-23 06:00:08,787 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-23 06:00:08,811 DEBUG [chan 1] EOF received (1)
+2015-02-23 06:00:08,834 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-23 06:00:08,834 DEBUG Secsh channel 2 opened.
+2015-02-23 06:00:08,882 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-23 06:00:08,934 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-23 06:00:09,003 DEBUG [chan 2] EOF received (2)
+2015-02-23 06:00:09,004 DEBUG [chan 2] EOF sent (2)
+2015-02-23 06:00:09,014 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-23 06:00:09,096 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-23 06:00:09,097 DEBUG Secsh channel 3 opened.
+2015-02-23 06:00:09,140 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-23 06:00:09,166 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-23 06:00:09,236 DEBUG [chan 3] EOF received (3)
+2015-02-23 06:00:09,236 DEBUG [chan 3] EOF sent (3)
+2015-02-23 06:00:09,246 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-23 06:00:09,327 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-23 06:00:09,327 DEBUG Secsh channel 4 opened.
+2015-02-23 06:00:09,371 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-23 06:00:09,397 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-23 06:00:09,484 DEBUG [chan 4] EOF received (4)
+2015-02-23 06:00:09,485 DEBUG [chan 4] EOF sent (4)
+2015-02-23 06:00:09,501 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-23 06:00:09,578 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-23 06:00:09,578 DEBUG Secsh channel 5 opened.
+2015-02-23 06:00:09,627 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-23 06:00:09,654 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-23 06:00:09,810 DEBUG [chan 5] EOF received (5)
+2015-02-23 06:00:09,811 DEBUG [chan 5] EOF sent (5)
+2015-02-23 06:00:09,826 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-23 06:00:09,903 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-23 06:00:09,904 DEBUG Secsh channel 6 opened.
+2015-02-23 06:00:09,952 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-23 06:00:09,978 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-23 06:00:10,458 DEBUG [chan 6] EOF received (6)
+2015-02-23 06:00:10,459 DEBUG [chan 6] EOF sent (6)
+2015-02-23 06:00:10,464 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-23 06:00:10,553 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-23 06:00:10,553 DEBUG Secsh channel 7 opened.
+2015-02-23 06:00:10,591 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-23 06:00:10,617 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-23 06:00:14,045 DEBUG [chan 7] EOF received (7)
+2015-02-23 06:00:14,045 DEBUG [chan 7] EOF sent (7)
+2015-02-23 06:00:14,147 DEBUG EOF in transport thread
+2015-02-24 06:00:04,235 DEBUG starting thread (client mode): 0x21db750L
+2015-02-24 06:00:04,272 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-24 06:00:04,295 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-24 06:00:04,295 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-24 06:00:04,295 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-24 06:00:04,681 DEBUG Switch to new keys ...
+2015-02-24 06:00:04,701 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-24 06:00:04,765 DEBUG userauth is OK
+2015-02-24 06:00:04,975 INFO Authentication (publickey) successful!
+2015-02-24 06:00:04,987 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-24 06:00:05,011 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-24 06:00:05,011 DEBUG Secsh channel 0 opened.
+2015-02-24 06:00:05,050 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-24 06:00:05,092 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-24 06:00:05,092 DEBUG [chan 0] normalize('.')
+2015-02-24 06:00:05,117 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-24 06:00:05,140 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-24 06:00:05,164 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-24 06:00:05,188 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-24 06:00:05,229 DEBUG [chan 0] close(00000000)
+2015-02-24 06:00:05,299 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-24 06:00:05,342 INFO [chan 0] sftp session closed.
+2015-02-24 06:00:05,342 DEBUG [chan 0] EOF sent (0)
+2015-02-24 06:00:05,344 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-24 06:00:05,367 DEBUG [chan 0] EOF received (0)
+2015-02-24 06:00:05,390 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-24 06:00:05,391 DEBUG Secsh channel 1 opened.
+2015-02-24 06:00:05,445 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-24 06:00:05,483 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-24 06:00:05,483 DEBUG [chan 1] normalize('.')
+2015-02-24 06:00:05,507 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-24 06:00:05,556 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-24 06:00:05,579 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-24 06:00:05,603 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-24 06:00:06,930 DEBUG [chan 1] close(00000000)
+2015-02-24 06:00:07,182 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-24 06:00:07,206 INFO [chan 1] sftp session closed.
+2015-02-24 06:00:07,207 DEBUG [chan 1] EOF sent (1)
+2015-02-24 06:00:07,208 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-24 06:00:07,232 DEBUG [chan 1] EOF received (1)
+2015-02-24 06:00:07,255 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-24 06:00:07,255 DEBUG Secsh channel 2 opened.
+2015-02-24 06:00:07,305 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-24 06:00:07,331 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-24 06:00:07,402 DEBUG [chan 2] EOF received (2)
+2015-02-24 06:00:07,403 DEBUG [chan 2] EOF sent (2)
+2015-02-24 06:00:07,433 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-24 06:00:07,496 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-24 06:00:07,497 DEBUG Secsh channel 3 opened.
+2015-02-24 06:00:07,527 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-24 06:00:07,553 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-24 06:00:07,623 DEBUG [chan 3] EOF received (3)
+2015-02-24 06:00:07,623 DEBUG [chan 3] EOF sent (3)
+2015-02-24 06:00:07,656 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-24 06:00:07,717 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-24 06:00:07,718 DEBUG Secsh channel 4 opened.
+2015-02-24 06:00:07,749 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-24 06:00:07,775 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-24 06:00:07,858 DEBUG [chan 4] EOF received (4)
+2015-02-24 06:00:07,859 DEBUG [chan 4] EOF sent (4)
+2015-02-24 06:00:07,879 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-24 06:00:07,979 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-24 06:00:07,980 DEBUG Secsh channel 5 opened.
+2015-02-24 06:00:08,013 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-24 06:00:08,045 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-24 06:00:08,197 DEBUG [chan 5] EOF received (5)
+2015-02-24 06:00:08,197 DEBUG [chan 5] EOF sent (5)
+2015-02-24 06:00:08,217 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-24 06:00:08,288 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-24 06:00:08,288 DEBUG Secsh channel 6 opened.
+2015-02-24 06:00:08,345 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-24 06:00:08,371 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-24 06:00:08,931 DEBUG [chan 6] EOF received (6)
+2015-02-24 06:00:08,931 DEBUG [chan 6] EOF sent (6)
+2015-02-24 06:00:08,953 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-24 06:00:09,018 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-24 06:00:09,019 DEBUG Secsh channel 7 opened.
+2015-02-24 06:00:09,049 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-24 06:00:09,075 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-24 06:00:12,450 DEBUG [chan 7] EOF received (7)
+2015-02-24 06:00:12,450 DEBUG [chan 7] EOF sent (7)
+2015-02-24 06:00:12,552 DEBUG EOF in transport thread
+2015-02-25 06:00:03,813 DEBUG starting thread (client mode): 0x2bf3750L
+2015-02-25 06:00:03,874 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-02-25 06:00:03,897 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-02-25 06:00:03,897 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-02-25 06:00:03,898 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-02-25 06:00:04,323 DEBUG Switch to new keys ...
+2015-02-25 06:00:04,350 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-02-25 06:00:04,407 DEBUG userauth is OK
+2015-02-25 06:00:04,681 INFO Authentication (publickey) successful!
+2015-02-25 06:00:04,705 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-02-25 06:00:04,728 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-02-25 06:00:04,729 DEBUG Secsh channel 0 opened.
+2015-02-25 06:00:04,772 DEBUG [chan 0] Sesch channel 0 request ok
+2015-02-25 06:00:04,808 INFO [chan 0] Opened sftp connection (server version 3)
+2015-02-25 06:00:04,808 DEBUG [chan 0] normalize('.')
+2015-02-25 06:00:04,832 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-25 06:00:04,856 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-25 06:00:04,879 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-02-25 06:00:04,903 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-25 06:00:04,939 DEBUG [chan 0] close(00000000)
+2015-02-25 06:00:05,026 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-02-25 06:00:05,049 INFO [chan 0] sftp session closed.
+2015-02-25 06:00:05,050 DEBUG [chan 0] EOF sent (0)
+2015-02-25 06:00:05,051 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-02-25 06:00:05,074 DEBUG [chan 0] EOF received (0)
+2015-02-25 06:00:05,097 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-02-25 06:00:05,097 DEBUG Secsh channel 1 opened.
+2015-02-25 06:00:05,152 DEBUG [chan 1] Sesch channel 1 request ok
+2015-02-25 06:00:05,188 INFO [chan 1] Opened sftp connection (server version 3)
+2015-02-25 06:00:05,188 DEBUG [chan 1] normalize('.')
+2015-02-25 06:00:05,212 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-25 06:00:05,235 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-25 06:00:05,259 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-02-25 06:00:05,283 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-02-25 06:00:06,525 DEBUG [chan 1] close(00000000)
+2015-02-25 06:00:06,864 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-02-25 06:00:06,888 INFO [chan 1] sftp session closed.
+2015-02-25 06:00:06,888 DEBUG [chan 1] EOF sent (1)
+2015-02-25 06:00:06,889 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-02-25 06:00:06,913 DEBUG [chan 1] EOF received (1)
+2015-02-25 06:00:06,936 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-02-25 06:00:06,936 DEBUG Secsh channel 2 opened.
+2015-02-25 06:00:06,991 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-25 06:00:07,018 DEBUG [chan 2] Sesch channel 2 request ok
+2015-02-25 06:00:07,089 DEBUG [chan 2] EOF received (2)
+2015-02-25 06:00:07,090 DEBUG [chan 2] EOF sent (2)
+2015-02-25 06:00:07,121 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-02-25 06:00:07,185 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-02-25 06:00:07,185 DEBUG Secsh channel 3 opened.
+2015-02-25 06:00:07,220 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-25 06:00:07,245 DEBUG [chan 3] Sesch channel 3 request ok
+2015-02-25 06:00:07,324 DEBUG [chan 3] EOF received (3)
+2015-02-25 06:00:07,325 DEBUG [chan 3] EOF sent (3)
+2015-02-25 06:00:07,348 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-02-25 06:00:07,422 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-02-25 06:00:07,422 DEBUG Secsh channel 4 opened.
+2015-02-25 06:00:07,473 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-25 06:00:07,499 DEBUG [chan 4] Sesch channel 4 request ok
+2015-02-25 06:00:07,586 DEBUG [chan 4] EOF received (4)
+2015-02-25 06:00:07,587 DEBUG [chan 4] EOF sent (4)
+2015-02-25 06:00:07,605 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-02-25 06:00:07,680 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-02-25 06:00:07,680 DEBUG Secsh channel 5 opened.
+2015-02-25 06:00:07,731 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-25 06:00:07,759 DEBUG [chan 5] Sesch channel 5 request ok
+2015-02-25 06:00:07,917 DEBUG [chan 5] EOF received (5)
+2015-02-25 06:00:07,917 DEBUG [chan 5] EOF sent (5)
+2015-02-25 06:00:07,935 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-02-25 06:00:08,004 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-02-25 06:00:08,004 DEBUG Secsh channel 6 opened.
+2015-02-25 06:00:08,029 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-25 06:00:08,055 DEBUG [chan 6] Sesch channel 6 request ok
+2015-02-25 06:00:08,628 DEBUG [chan 6] EOF received (6)
+2015-02-25 06:00:08,629 DEBUG [chan 6] EOF sent (6)
+2015-02-25 06:00:08,631 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-02-25 06:00:08,714 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-02-25 06:00:08,715 DEBUG Secsh channel 7 opened.
+2015-02-25 06:00:08,756 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-25 06:00:08,782 DEBUG [chan 7] Sesch channel 7 request ok
+2015-02-25 06:00:12,365 DEBUG [chan 7] EOF received (7)
+2015-02-25 06:00:12,365 DEBUG [chan 7] EOF sent (7)
+2015-02-25 06:00:12,468 DEBUG EOF in transport thread
+2015-03-10 06:00:05,335 DEBUG starting thread (client mode): 0x27f9750L
+2015-03-10 06:00:05,371 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-10 06:00:05,395 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-10 06:00:05,395 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-10 06:00:05,396 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-10 06:00:05,831 DEBUG Switch to new keys ...
+2015-03-10 06:00:05,855 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-10 06:00:05,916 DEBUG userauth is OK
+2015-03-10 06:00:06,043 INFO Authentication (publickey) successful!
+2015-03-10 06:00:06,050 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-10 06:00:06,074 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-10 06:00:06,075 DEBUG Secsh channel 0 opened.
+2015-03-10 06:00:06,118 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-10 06:00:06,152 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-10 06:00:06,153 DEBUG [chan 0] normalize('.')
+2015-03-10 06:00:06,178 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-10 06:00:06,203 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-10 06:00:06,227 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-10 06:00:06,254 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-10 06:00:06,284 DEBUG [chan 0] close(00000000)
+2015-03-10 06:00:06,368 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-10 06:00:06,393 INFO [chan 0] sftp session closed.
+2015-03-10 06:00:06,394 DEBUG [chan 0] EOF sent (0)
+2015-03-10 06:00:06,395 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-10 06:00:06,419 DEBUG [chan 0] EOF received (0)
+2015-03-10 06:00:06,442 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-10 06:00:06,442 DEBUG Secsh channel 1 opened.
+2015-03-10 06:00:06,496 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-10 06:00:06,532 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-10 06:00:06,533 DEBUG [chan 1] normalize('.')
+2015-03-10 06:00:06,557 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-10 06:00:06,581 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-10 06:00:06,605 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-10 06:00:06,630 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-10 06:00:07,884 DEBUG [chan 1] close(00000000)
+2015-03-10 06:00:08,215 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-10 06:00:08,240 INFO [chan 1] sftp session closed.
+2015-03-10 06:00:08,240 DEBUG [chan 1] EOF sent (1)
+2015-03-10 06:00:08,241 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-10 06:00:08,265 DEBUG [chan 1] EOF received (1)
+2015-03-10 06:00:08,291 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-10 06:00:08,291 DEBUG Secsh channel 2 opened.
+2015-03-10 06:00:08,336 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-10 06:00:08,365 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-10 06:00:08,431 DEBUG [chan 2] EOF received (2)
+2015-03-10 06:00:08,431 DEBUG [chan 2] EOF sent (2)
+2015-03-10 06:00:08,442 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-10 06:00:08,526 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-10 06:00:08,526 DEBUG Secsh channel 3 opened.
+2015-03-10 06:00:08,569 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-10 06:00:08,597 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-10 06:00:08,663 DEBUG [chan 3] EOF received (3)
+2015-03-10 06:00:08,664 DEBUG [chan 3] EOF sent (3)
+2015-03-10 06:00:08,673 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-10 06:00:08,754 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-10 06:00:08,754 DEBUG Secsh channel 4 opened.
+2015-03-10 06:00:08,800 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-10 06:00:08,826 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-10 06:00:08,907 DEBUG [chan 4] EOF received (4)
+2015-03-10 06:00:08,908 DEBUG [chan 4] EOF sent (4)
+2015-03-10 06:00:08,931 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-10 06:00:08,997 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-10 06:00:08,997 DEBUG Secsh channel 5 opened.
+2015-03-10 06:00:09,031 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-10 06:00:09,057 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-10 06:00:09,212 DEBUG [chan 5] EOF received (5)
+2015-03-10 06:00:09,212 DEBUG [chan 5] EOF sent (5)
+2015-03-10 06:00:09,236 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-10 06:00:09,298 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-10 06:00:09,299 DEBUG Secsh channel 6 opened.
+2015-03-10 06:00:09,330 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-10 06:00:09,356 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-10 06:00:10,001 DEBUG [chan 6] EOF received (6)
+2015-03-10 06:00:10,001 DEBUG [chan 6] EOF sent (6)
+2015-03-10 06:00:10,010 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-10 06:00:10,088 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-10 06:00:10,088 DEBUG Secsh channel 7 opened.
+2015-03-10 06:00:10,137 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-10 06:00:10,163 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-10 06:00:13,510 DEBUG [chan 7] EOF received (7)
+2015-03-10 06:00:13,511 DEBUG [chan 7] EOF sent (7)
+2015-03-10 06:00:13,612 DEBUG EOF in transport thread
+2015-03-11 06:00:03,686 DEBUG starting thread (client mode): 0x2316750L
+2015-03-11 06:00:03,727 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-11 06:00:03,755 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-11 06:00:03,763 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-11 06:00:03,764 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-11 06:00:04,198 DEBUG Switch to new keys ...
+2015-03-11 06:00:04,213 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-11 06:00:04,291 DEBUG userauth is OK
+2015-03-11 06:00:04,421 INFO Authentication (publickey) successful!
+2015-03-11 06:00:04,424 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-11 06:00:04,452 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-11 06:00:04,453 DEBUG Secsh channel 0 opened.
+2015-03-11 06:00:04,496 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-11 06:00:04,533 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-11 06:00:04,533 DEBUG [chan 0] normalize('.')
+2015-03-11 06:00:04,562 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-11 06:00:04,590 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-11 06:00:04,619 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-11 06:00:04,648 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-11 06:00:04,679 DEBUG [chan 0] close(00000000)
+2015-03-11 06:00:04,772 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-11 06:00:04,800 INFO [chan 0] sftp session closed.
+2015-03-11 06:00:04,801 DEBUG [chan 0] EOF sent (0)
+2015-03-11 06:00:04,802 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-11 06:00:04,830 DEBUG [chan 0] EOF received (0)
+2015-03-11 06:00:04,858 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-11 06:00:04,858 DEBUG Secsh channel 1 opened.
+2015-03-11 06:00:04,908 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-11 06:00:04,944 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-11 06:00:04,944 DEBUG [chan 1] normalize('.')
+2015-03-11 06:00:04,973 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-11 06:00:05,001 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-11 06:00:05,030 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-11 06:00:05,059 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-11 06:00:06,307 DEBUG [chan 1] close(00000000)
+2015-03-11 06:00:06,647 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-11 06:00:06,675 INFO [chan 1] sftp session closed.
+2015-03-11 06:00:06,685 DEBUG [chan 1] EOF sent (1)
+2015-03-11 06:00:06,686 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-11 06:00:06,714 DEBUG [chan 1] EOF received (1)
+2015-03-11 06:00:06,742 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-11 06:00:06,742 DEBUG Secsh channel 2 opened.
+2015-03-11 06:00:06,785 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-11 06:00:06,816 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-11 06:00:06,886 DEBUG [chan 2] EOF received (2)
+2015-03-11 06:00:06,886 DEBUG [chan 2] EOF sent (2)
+2015-03-11 06:00:06,895 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-11 06:00:07,007 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-11 06:00:07,007 DEBUG Secsh channel 3 opened.
+2015-03-11 06:00:07,048 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-11 06:00:07,078 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-11 06:00:07,147 DEBUG [chan 3] EOF received (3)
+2015-03-11 06:00:07,147 DEBUG [chan 3] EOF sent (3)
+2015-03-11 06:00:07,157 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-11 06:00:07,263 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-11 06:00:07,263 DEBUG Secsh channel 4 opened.
+2015-03-11 06:00:07,292 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-11 06:00:07,323 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-11 06:00:07,408 DEBUG [chan 4] EOF received (4)
+2015-03-11 06:00:07,408 DEBUG [chan 4] EOF sent (4)
+2015-03-11 06:00:07,427 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-11 06:00:07,514 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-11 06:00:07,514 DEBUG Secsh channel 5 opened.
+2015-03-11 06:00:07,557 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-11 06:00:07,588 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-11 06:00:07,741 DEBUG [chan 5] EOF received (5)
+2015-03-11 06:00:07,742 DEBUG [chan 5] EOF sent (5)
+2015-03-11 06:00:07,760 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-11 06:00:07,840 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-11 06:00:07,840 DEBUG Secsh channel 6 opened.
+2015-03-11 06:00:07,890 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-11 06:00:07,921 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-11 06:00:08,732 DEBUG [chan 6] EOF received (6)
+2015-03-11 06:00:08,733 DEBUG [chan 6] EOF sent (6)
+2015-03-11 06:00:08,736 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-11 06:00:08,832 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-11 06:00:08,833 DEBUG Secsh channel 7 opened.
+2015-03-11 06:00:08,908 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-11 06:00:08,938 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-11 06:00:12,441 DEBUG [chan 7] EOF received (7)
+2015-03-11 06:00:12,442 DEBUG [chan 7] EOF sent (7)
+2015-03-11 06:00:12,543 DEBUG EOF in transport thread
+2015-03-12 06:00:03,118 DEBUG starting thread (client mode): 0x1f24750L
+2015-03-12 06:00:03,153 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-12 06:00:03,177 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-12 06:00:03,177 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-12 06:00:03,177 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-12 06:00:03,615 DEBUG Switch to new keys ...
+2015-03-12 06:00:03,630 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-12 06:00:03,699 DEBUG userauth is OK
+2015-03-12 06:00:04,027 INFO Authentication (publickey) successful!
+2015-03-12 06:00:04,037 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-12 06:00:04,061 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-12 06:00:04,061 DEBUG Secsh channel 0 opened.
+2015-03-12 06:00:04,104 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-12 06:00:04,141 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-12 06:00:04,141 DEBUG [chan 0] normalize('.')
+2015-03-12 06:00:04,165 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-12 06:00:04,189 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-12 06:00:04,213 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-12 06:00:04,236 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-12 06:00:04,263 DEBUG [chan 0] close(00000000)
+2015-03-12 06:00:04,352 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-12 06:00:04,376 INFO [chan 0] sftp session closed.
+2015-03-12 06:00:04,376 DEBUG [chan 0] EOF sent (0)
+2015-03-12 06:00:04,377 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-12 06:00:04,401 DEBUG [chan 0] EOF received (0)
+2015-03-12 06:00:04,424 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-12 06:00:04,424 DEBUG Secsh channel 1 opened.
+2015-03-12 06:00:04,478 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-12 06:00:04,515 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-12 06:00:04,515 DEBUG [chan 1] normalize('.')
+2015-03-12 06:00:04,539 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-12 06:00:04,563 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-12 06:00:04,586 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-12 06:00:04,611 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-12 06:00:05,870 DEBUG [chan 1] close(00000000)
+2015-03-12 06:00:06,195 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-12 06:00:06,219 INFO [chan 1] sftp session closed.
+2015-03-12 06:00:06,219 DEBUG [chan 1] EOF sent (1)
+2015-03-12 06:00:06,220 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-12 06:00:06,243 DEBUG [chan 1] EOF received (1)
+2015-03-12 06:00:06,266 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-12 06:00:06,267 DEBUG Secsh channel 2 opened.
+2015-03-12 06:00:06,346 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-12 06:00:06,372 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-12 06:00:06,443 DEBUG [chan 2] EOF received (2)
+2015-03-12 06:00:06,444 DEBUG [chan 2] EOF sent (2)
+2015-03-12 06:00:06,452 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-12 06:00:06,537 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-12 06:00:06,538 DEBUG Secsh channel 3 opened.
+2015-03-12 06:00:06,578 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-12 06:00:06,603 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-12 06:00:06,672 DEBUG [chan 3] EOF received (3)
+2015-03-12 06:00:06,672 DEBUG [chan 3] EOF sent (3)
+2015-03-12 06:00:06,682 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-12 06:00:06,762 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-12 06:00:06,762 DEBUG Secsh channel 4 opened.
+2015-03-12 06:00:06,808 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-12 06:00:06,834 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-12 06:00:06,917 DEBUG [chan 4] EOF received (4)
+2015-03-12 06:00:06,918 DEBUG [chan 4] EOF sent (4)
+2015-03-12 06:00:06,938 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-12 06:00:07,008 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-12 06:00:07,008 DEBUG Secsh channel 5 opened.
+2015-03-12 06:00:07,064 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-12 06:00:07,089 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-12 06:00:07,242 DEBUG [chan 5] EOF received (5)
+2015-03-12 06:00:07,242 DEBUG [chan 5] EOF sent (5)
+2015-03-12 06:00:07,268 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-12 06:00:07,328 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-12 06:00:07,329 DEBUG Secsh channel 6 opened.
+2015-03-12 06:00:07,367 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-12 06:00:07,393 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-12 06:00:08,037 DEBUG [chan 6] EOF received (6)
+2015-03-12 06:00:08,037 DEBUG [chan 6] EOF sent (6)
+2015-03-12 06:00:08,070 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-12 06:00:08,127 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-12 06:00:08,127 DEBUG Secsh channel 7 opened.
+2015-03-12 06:00:08,166 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-12 06:00:08,192 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-12 06:00:11,729 DEBUG [chan 7] EOF received (7)
+2015-03-12 06:00:11,729 DEBUG [chan 7] EOF sent (7)
+2015-03-12 06:00:11,831 DEBUG EOF in transport thread
+2015-03-17 06:00:05,568 DEBUG starting thread (client mode): 0x2326750L
+2015-03-17 06:00:05,781 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-17 06:00:05,978 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-17 06:00:05,978 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-17 06:00:05,979 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-17 06:00:06,532 DEBUG Switch to new keys ...
+2015-03-17 06:00:06,557 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-17 06:00:06,964 DEBUG userauth is OK
+2015-03-17 06:00:07,610 INFO Authentication (publickey) successful!
+2015-03-17 06:00:07,616 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-17 06:00:07,811 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-17 06:00:07,812 DEBUG Secsh channel 0 opened.
+2015-03-17 06:00:08,019 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-17 06:00:08,216 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-17 06:00:08,217 DEBUG [chan 0] normalize('.')
+2015-03-17 06:00:08,415 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-17 06:00:08,609 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-17 06:00:08,809 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-17 06:00:09,003 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-17 06:00:09,208 DEBUG [chan 0] close(00000000)
+2015-03-17 06:00:09,626 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-17 06:00:09,823 INFO [chan 0] sftp session closed.
+2015-03-17 06:00:09,823 DEBUG [chan 0] EOF sent (0)
+2015-03-17 06:00:09,824 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-17 06:00:10,023 DEBUG [chan 0] EOF received (0)
+2015-03-17 06:00:10,222 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-17 06:00:10,222 DEBUG Secsh channel 1 opened.
+2015-03-17 06:00:10,428 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-17 06:00:10,626 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-17 06:00:10,626 DEBUG [chan 1] normalize('.')
+2015-03-17 06:00:10,825 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-17 06:00:11,025 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-17 06:00:11,224 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-17 06:00:11,424 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-17 06:00:13,570 DEBUG [chan 1] close(00000000)
+2015-03-17 06:00:13,870 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-17 06:00:13,894 INFO [chan 1] sftp session closed.
+2015-03-17 06:00:13,894 DEBUG [chan 1] EOF sent (1)
+2015-03-17 06:00:13,896 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-17 06:00:13,920 DEBUG [chan 1] EOF received (1)
+2015-03-17 06:00:13,943 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-17 06:00:13,943 DEBUG Secsh channel 2 opened.
+2015-03-17 06:00:13,995 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-17 06:00:14,022 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-17 06:00:14,091 DEBUG [chan 2] EOF received (2)
+2015-03-17 06:00:14,091 DEBUG [chan 2] EOF sent (2)
+2015-03-17 06:00:14,096 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-17 06:00:14,186 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-17 06:00:14,187 DEBUG Secsh channel 3 opened.
+2015-03-17 06:00:14,223 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-17 06:00:14,249 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-17 06:00:14,315 DEBUG [chan 3] EOF received (3)
+2015-03-17 06:00:14,316 DEBUG [chan 3] EOF sent (3)
+2015-03-17 06:00:14,322 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-17 06:00:14,414 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-17 06:00:14,415 DEBUG Secsh channel 4 opened.
+2015-03-17 06:00:14,449 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-17 06:00:14,482 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-17 06:00:14,568 DEBUG [chan 4] EOF received (4)
+2015-03-17 06:00:14,568 DEBUG [chan 4] EOF sent (4)
+2015-03-17 06:00:14,587 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-17 06:00:14,865 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-17 06:00:14,866 DEBUG Secsh channel 5 opened.
+2015-03-17 06:00:15,093 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-17 06:00:15,294 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-17 06:00:15,449 DEBUG [chan 5] EOF received (5)
+2015-03-17 06:00:15,449 DEBUG [chan 5] EOF sent (5)
+2015-03-17 06:00:15,467 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-17 06:00:15,535 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-17 06:00:15,536 DEBUG Secsh channel 6 opened.
+2015-03-17 06:00:15,567 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-17 06:00:15,593 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-17 06:00:16,454 DEBUG [chan 6] EOF received (6)
+2015-03-17 06:00:16,455 DEBUG [chan 6] EOF sent (6)
+2015-03-17 06:00:16,481 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-17 06:00:16,551 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-17 06:00:16,552 DEBUG Secsh channel 7 opened.
+2015-03-17 06:00:16,606 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-17 06:00:16,633 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-17 06:00:19,854 DEBUG [chan 7] EOF received (7)
+2015-03-17 06:00:19,855 DEBUG [chan 7] EOF sent (7)
+2015-03-17 06:00:19,957 DEBUG EOF in transport thread
+2015-03-18 06:00:05,069 DEBUG starting thread (client mode): 0xf2f750L
+2015-03-18 06:00:05,105 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-18 06:00:05,128 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-18 06:00:05,129 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-18 06:00:05,129 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-18 06:00:05,538 DEBUG Switch to new keys ...
+2015-03-18 06:00:05,562 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-18 06:00:05,623 DEBUG userauth is OK
+2015-03-18 06:00:05,898 INFO Authentication (publickey) successful!
+2015-03-18 06:00:05,921 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-18 06:00:05,945 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-18 06:00:05,946 DEBUG Secsh channel 0 opened.
+2015-03-18 06:00:05,989 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-18 06:00:06,026 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-18 06:00:06,026 DEBUG [chan 0] normalize('.')
+2015-03-18 06:00:06,050 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-18 06:00:06,074 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-18 06:00:06,099 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-18 06:00:06,123 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-18 06:00:06,172 DEBUG [chan 0] close(00000000)
+2015-03-18 06:00:06,243 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-18 06:00:06,267 INFO [chan 0] sftp session closed.
+2015-03-18 06:00:06,268 DEBUG [chan 0] EOF sent (0)
+2015-03-18 06:00:06,269 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-18 06:00:06,293 DEBUG [chan 0] EOF received (0)
+2015-03-18 06:00:06,316 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-18 06:00:06,316 DEBUG Secsh channel 1 opened.
+2015-03-18 06:00:06,369 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-18 06:00:06,406 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-18 06:00:06,406 DEBUG [chan 1] normalize('.')
+2015-03-18 06:00:06,430 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-18 06:00:06,455 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-18 06:00:06,480 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-18 06:00:06,504 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-18 06:00:07,816 DEBUG [chan 1] close(00000000)
+2015-03-18 06:00:08,129 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-18 06:00:08,154 INFO [chan 1] sftp session closed.
+2015-03-18 06:00:08,154 DEBUG [chan 1] EOF sent (1)
+2015-03-18 06:00:08,155 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-18 06:00:08,180 DEBUG [chan 1] EOF received (1)
+2015-03-18 06:00:08,204 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-18 06:00:08,204 DEBUG Secsh channel 2 opened.
+2015-03-18 06:00:08,250 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-18 06:00:08,276 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-18 06:00:08,347 DEBUG [chan 2] EOF received (2)
+2015-03-18 06:00:08,347 DEBUG [chan 2] EOF sent (2)
+2015-03-18 06:00:08,356 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-18 06:00:08,454 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-18 06:00:08,455 DEBUG Secsh channel 3 opened.
+2015-03-18 06:00:08,483 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-18 06:00:08,509 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-18 06:00:08,578 DEBUG [chan 3] EOF received (3)
+2015-03-18 06:00:08,579 DEBUG [chan 3] EOF sent (3)
+2015-03-18 06:00:08,588 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-18 06:00:08,674 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-18 06:00:08,675 DEBUG Secsh channel 4 opened.
+2015-03-18 06:00:08,713 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-18 06:00:08,739 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-18 06:00:08,825 DEBUG [chan 4] EOF received (4)
+2015-03-18 06:00:08,825 DEBUG [chan 4] EOF sent (4)
+2015-03-18 06:00:08,845 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-18 06:00:08,914 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-18 06:00:08,915 DEBUG Secsh channel 5 opened.
+2015-03-18 06:00:08,970 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-18 06:00:08,996 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-18 06:00:09,152 DEBUG [chan 5] EOF received (5)
+2015-03-18 06:00:09,152 DEBUG [chan 5] EOF sent (5)
+2015-03-18 06:00:09,175 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-18 06:00:09,238 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-18 06:00:09,239 DEBUG Secsh channel 6 opened.
+2015-03-18 06:00:09,268 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-18 06:00:09,295 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-18 06:00:10,077 DEBUG [chan 6] EOF received (6)
+2015-03-18 06:00:10,078 DEBUG [chan 6] EOF sent (6)
+2015-03-18 06:00:10,105 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-18 06:00:10,164 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-18 06:00:10,164 DEBUG Secsh channel 7 opened.
+2015-03-18 06:00:10,205 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-18 06:00:10,231 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-18 06:00:13,849 DEBUG [chan 7] EOF received (7)
+2015-03-18 06:00:13,850 DEBUG [chan 7] EOF sent (7)
+2015-03-18 06:00:13,952 DEBUG EOF in transport thread
+2015-03-19 06:00:07,311 DEBUG starting thread (client mode): 0x1e6f750L
+2015-03-19 06:00:07,346 INFO Connected (version 2.0, client OpenSSH_5.3)
+2015-03-19 06:00:07,370 DEBUG kex algos:[u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-03-19 06:00:07,370 DEBUG Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-03-19 06:00:07,371 DEBUG using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-03-19 06:00:07,813 DEBUG Switch to new keys ...
+2015-03-19 06:00:07,837 DEBUG Trying discovered key d78bcaeca61cfbb5cd36e0be8bf3cf8c in /home/lmd/.ssh/id_rsa
+2015-03-19 06:00:07,898 DEBUG userauth is OK
+2015-03-19 06:00:08,208 INFO Authentication (publickey) successful!
+2015-03-19 06:00:08,218 DEBUG [chan 0] Max packet in: 32768 bytes
+2015-03-19 06:00:08,242 DEBUG [chan 0] Max packet out: 32768 bytes
+2015-03-19 06:00:08,242 DEBUG Secsh channel 0 opened.
+2015-03-19 06:00:08,282 DEBUG [chan 0] Sesch channel 0 request ok
+2015-03-19 06:00:08,319 INFO [chan 0] Opened sftp connection (server version 3)
+2015-03-19 06:00:08,319 DEBUG [chan 0] normalize('.')
+2015-03-19 06:00:08,344 DEBUG [chan 0] lstat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-19 06:00:08,369 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-19 06:00:08,393 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb')
+2015-03-19 06:00:08,418 DEBUG [chan 0] open('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-19 06:00:08,468 DEBUG [chan 0] close(00000000)
+2015-03-19 06:00:08,545 DEBUG [chan 0] stat('/tmp/lbe_backend_sta_anti_cheat_product_channel.tar.gz')
+2015-03-19 06:00:08,569 INFO [chan 0] sftp session closed.
+2015-03-19 06:00:08,570 DEBUG [chan 0] EOF sent (0)
+2015-03-19 06:00:08,571 DEBUG [chan 1] Max packet in: 32768 bytes
+2015-03-19 06:00:08,596 DEBUG [chan 0] EOF received (0)
+2015-03-19 06:00:08,619 DEBUG [chan 1] Max packet out: 32768 bytes
+2015-03-19 06:00:08,619 DEBUG Secsh channel 1 opened.
+2015-03-19 06:00:08,667 DEBUG [chan 1] Sesch channel 1 request ok
+2015-03-19 06:00:08,704 INFO [chan 1] Opened sftp connection (server version 3)
+2015-03-19 06:00:08,705 DEBUG [chan 1] normalize('.')
+2015-03-19 06:00:08,729 DEBUG [chan 1] lstat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-19 06:00:08,754 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-19 06:00:08,778 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb')
+2015-03-19 06:00:08,803 DEBUG [chan 1] open('/tmp/lbe_backend_sta_product_channel.tar.gz', 'wb') -> 00000000
+2015-03-19 06:00:10,126 DEBUG [chan 1] close(00000000)
+2015-03-19 06:00:10,397 DEBUG [chan 1] stat('/tmp/lbe_backend_sta_product_channel.tar.gz')
+2015-03-19 06:00:10,421 INFO [chan 1] sftp session closed.
+2015-03-19 06:00:10,422 DEBUG [chan 1] EOF sent (1)
+2015-03-19 06:00:10,422 DEBUG [chan 2] Max packet in: 32768 bytes
+2015-03-19 06:00:10,447 DEBUG [chan 1] EOF received (1)
+2015-03-19 06:00:10,470 DEBUG [chan 2] Max packet out: 32768 bytes
+2015-03-19 06:00:10,470 DEBUG Secsh channel 2 opened.
+2015-03-19 06:00:10,517 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-19 06:00:10,543 DEBUG [chan 2] Sesch channel 2 request ok
+2015-03-19 06:00:10,614 DEBUG [chan 2] EOF received (2)
+2015-03-19 06:00:10,615 DEBUG [chan 2] EOF sent (2)
+2015-03-19 06:00:10,623 DEBUG [chan 3] Max packet in: 32768 bytes
+2015-03-19 06:00:10,709 DEBUG [chan 3] Max packet out: 32768 bytes
+2015-03-19 06:00:10,709 DEBUG Secsh channel 3 opened.
+2015-03-19 06:00:10,749 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-19 06:00:10,775 DEBUG [chan 3] Sesch channel 3 request ok
+2015-03-19 06:00:10,844 DEBUG [chan 3] EOF received (3)
+2015-03-19 06:00:10,844 DEBUG [chan 3] EOF sent (3)
+2015-03-19 06:00:10,855 DEBUG [chan 4] Max packet in: 32768 bytes
+2015-03-19 06:00:10,946 DEBUG [chan 4] Max packet out: 32768 bytes
+2015-03-19 06:00:10,946 DEBUG Secsh channel 4 opened.
+2015-03-19 06:00:10,981 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-19 06:00:11,006 DEBUG [chan 4] Sesch channel 4 request ok
+2015-03-19 06:00:11,092 DEBUG [chan 4] EOF received (4)
+2015-03-19 06:00:11,092 DEBUG [chan 4] EOF sent (4)
+2015-03-19 06:00:11,111 DEBUG [chan 5] Max packet in: 32768 bytes
+2015-03-19 06:00:11,181 DEBUG [chan 5] Max packet out: 32768 bytes
+2015-03-19 06:00:11,181 DEBUG Secsh channel 5 opened.
+2015-03-19 06:00:11,237 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-19 06:00:11,263 DEBUG [chan 5] Sesch channel 5 request ok
+2015-03-19 06:00:11,417 DEBUG [chan 5] EOF received (5)
+2015-03-19 06:00:11,418 DEBUG [chan 5] EOF sent (5)
+2015-03-19 06:00:11,436 DEBUG [chan 6] Max packet in: 32768 bytes
+2015-03-19 06:00:11,504 DEBUG [chan 6] Max packet out: 32768 bytes
+2015-03-19 06:00:11,505 DEBUG Secsh channel 6 opened.
+2015-03-19 06:00:11,530 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-19 06:00:11,556 DEBUG [chan 6] Sesch channel 6 request ok
+2015-03-19 06:00:12,237 DEBUG [chan 6] EOF received (6)
+2015-03-19 06:00:12,238 DEBUG [chan 6] EOF sent (6)
+2015-03-19 06:00:12,468 DEBUG [chan 7] Max packet in: 32768 bytes
+2015-03-19 06:00:12,553 DEBUG [chan 7] Max packet out: 32768 bytes
+2015-03-19 06:00:12,554 DEBUG Secsh channel 7 opened.
+2015-03-19 06:00:12,595 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-19 06:00:12,621 DEBUG [chan 7] Sesch channel 7 request ok
+2015-03-19 06:00:16,322 DEBUG [chan 7] EOF received (7)
+2015-03-19 06:00:16,322 DEBUG [chan 7] EOF sent (7)
+2015-03-19 06:00:16,424 DEBUG EOF in transport thread
